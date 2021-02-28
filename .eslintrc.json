@@ -38,6 +38,8 @@
         "import/prefer-default-export": "off",
         "no-mixed-spaces-and-tabs": "off",
         "no-console": "off",
-        "react/button-has-type": "off"
+        "react/button-has-type": "off",
+        "operator-linebreak": "off",
+        "react/no-array-index-key": "off"
     }
 }
