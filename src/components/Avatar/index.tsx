@@ -7,6 +7,7 @@ const Avatar: FC<IAvatarProps> = ({
 	alt,
 	src,
 	children,
+	draggable = 'false',
 	...rest
 }) => {
 	return (
@@ -14,6 +15,7 @@ const Avatar: FC<IAvatarProps> = ({
 			<img
 				src={src}
 				alt={alt}
+				draggable={draggable}
 				className={className}
 				{...rest}
 			/>
