@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"description": "resume for Amirreza Hemmati",
 	"main": "index.js",
+	"private": "true",
 	"scripts": {
 		"start": "next",
 		"start:server": "next start",
