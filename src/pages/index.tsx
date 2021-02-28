@@ -1,10 +1,13 @@
 import { VFC } from 'react';
-import { Button } from '../components';
+import { Avatar } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<Button>خرید بسته</Button>
+			<Avatar
+				src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
+				alt="test"
+			/>
 		</div>
 	);
 };
