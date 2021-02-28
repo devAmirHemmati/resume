@@ -1,18 +1,10 @@
 import { VFC } from 'react';
-import { Card } from '../components';
+import { Button } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<Card
-				art={{
-					message: 'ویژه',
-					position: 'bottomRight',
-				}}
-				style={{ height: 300, width: 500 }}
-			>
-				test
-			</Card>
+			<Button>خرید بسته</Button>
 		</div>
 	);
 };

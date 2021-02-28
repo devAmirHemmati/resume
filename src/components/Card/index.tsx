@@ -1,4 +1,3 @@
-import { Console } from 'console';
 import { FC } from 'react';
 import Utilities from '../../Services/Utilities';
 import styles from './Card.module.scss';
