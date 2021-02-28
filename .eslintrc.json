@@ -34,6 +34,9 @@
         "react/prop-types": "off",
         "import/no-unresolved": "off",
         "import/extensions": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "import/prefer-default-export": "off",
+        "no-mixed-spaces-and-tabs": "off",
+        "no-console": "off"
     }
 }
