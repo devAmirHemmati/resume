@@ -1,0 +1,84 @@
+colors: 
+first: #1e1e28
+second: #5c5c6f
+third: #fafafc
+forth: #8c8c8e
+
+----------------------------------
+
+font-family: 
+mikhak
+estedad
+
+__________________________________
+
+default:
+  font-size: 13px
+  line-height: 1.7
+  font-weight: 400
+  color: second
+  estedad
+
+display-1:
+  font-size: 52px
+  font-weight: 800
+  color: third
+  mikhak
+
+display-5:
+  font-size: 16px
+  font-weight: 
+  color: first
+  mikhak
+
+display-4:
+  font-size: 18px
+  font-weight: 600
+  color: first
+  mikhak
+
+display-6
+  font-size: 14px
+  font-weight: 400
+  color: first
+  mikhak
+
+text-sm:
+  font-size: 13px
+  font-weight: normal
+  color: second
+  estedad
+
+subtitle:
+  font-size: 12px
+  font-weight: lighter
+  color: forth
+  estedad
+
+date:
+  font-size: 12px
+  font-weight: 400
+  color: second
+  estedad
+
+text-lg:
+  font-size: 16px
+  font-weight: 400
+  color: third
+
+
+link-sm
+  font-size: 12px
+  font-weight: 600
+  color: second
+  mikhak
+
+__________________________________
+
+initial theme:
+
+h1,h2,h3,h4,h5,h6
+font-family: mikhak
+
+div, span, p 
+font-family: estedad
