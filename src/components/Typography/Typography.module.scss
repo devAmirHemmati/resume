@@ -1,0 +1,233 @@
+@mixin MTypography(
+	$font-size,
+	$font-weight,
+	$color,
+	$font-family
+) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	font-family: $font-family;
+}
+
+// variable
+// color
+$dark: #1e1e28;
+$lite: #fafafc;
+$muted: #8c8c8e;
+$secondary: #5c5c6f;
+$danger: #f44336;
+// font family
+$mikhak: mikhak;
+$estedad: estedad;
+
+.Typography {
+	line-height: 1.7;
+
+	&Color {
+		&Dark {
+			color: $dark !important;
+		}
+
+		&Lite {
+			color: $lite !important;
+		}
+
+		&Muted {
+			color: $muted !important;
+		}
+
+		&Secondary {
+			color: $secondary !important;
+		}
+
+		&Danger {
+			color: $danger !important;
+		}
+	}
+
+	&Variant {
+		&Default {
+			@include MTypography(
+				13px,
+				400,
+				$secondary,
+				$estedad
+			);
+		}
+
+		&Display1 {
+			@include MTypography(
+				52px,
+				800,
+				$lite,
+				$mikhak
+			);
+		}
+
+		&Display4 {
+			@include MTypography(
+				18px,
+				600,
+				$dark,
+				$mikhak
+			);
+		}
+
+		&display5 {
+			@include MTypography(
+				16px,
+				600,
+				$dark,
+				$mikhak
+			);
+		}
+
+		&Display6 {
+			@include MTypography(
+				14px,
+				400,
+				$dark,
+				$mikhak
+			);
+		}
+
+		&TextSmall {
+			@include MTypography(
+				13px,
+				normal,
+				$secondary,
+				$estedad
+			);
+		}
+
+		&TextLarge {
+			@include MTypography(
+				16px,
+				400,
+				$secondary,
+				$lite
+			);
+		}
+
+		&Subtitle {
+			@include MTypography(
+				12px,
+				400,
+				$secondary,
+				$estedad
+			);
+		}
+
+		&Date {
+			@include MTypography(
+				12px,
+				400,
+				$secondary,
+				$estedad
+			);
+		}
+
+		&LinkSmall {
+			@include MTypography(
+				12px,
+				600,
+				$secondary,
+				$estedad
+			);
+			text-decoration: none;
+		}
+	}
+
+	&Align {
+		&Right {
+			text-align: right;
+		}
+
+		&Left {
+			text-align: left;
+		}
+
+		&Center {
+			text-align: center;
+		}
+
+		&Right {
+			text-align: right;
+		}
+
+		&Inherit {
+			text-align: inherit;
+		}
+
+		&Justify {
+			text-align: justify;
+		}
+	}
+
+	&NoWrap {
+		white-space: nowrap;
+	}
+
+	&Display {
+		&Inline {
+			display: inline;
+		}
+
+		&InlineBlock {
+			display: inline-block;
+		}
+
+		&Block {
+			display: block;
+		}
+
+		&Initial {
+			display: initial;
+		}
+
+		&None {
+			display: none;
+		}
+	}
+
+	&NoneSelection {
+		&::selection {
+			background-color: transparent;
+		}
+	}
+
+	&Decoration {
+		&None {
+			text-decoration: none !important;
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+
+		&UnderLine {
+			text-decoration: underline !important;
+
+			&:hover {
+				text-decoration: underline !important;
+			}
+		}
+
+		&LineThrough {
+			text-decoration: line-through !important;
+
+			&:hover {
+				text-decoration: line-through !important;
+			}
+		}
+
+		&OverLine {
+			text-decoration: overline !important;
+
+			&:hover {
+				text-decoration: overline !important;
+			}
+		}
+	}
+}

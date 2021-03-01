@@ -1,8 +1,8 @@
 colors: 
-first: #1e1e28
-second: #5c5c6f
-third: #fafafc
-forth: #8c8c8e
+dark: #1e1e28
+secondary: #5c5c6f
+lite: #fafafc
+muted: #8c8c8e
 
 ----------------------------------
 
@@ -16,61 +16,61 @@ default:
   font-size: 13px
   line-height: 1.7
   font-weight: 400
-  color: second
+  color: secondary
   estedad
 
 display-1:
   font-size: 52px
   font-weight: 800
-  color: third
+  color: lite
   mikhak
 
 display-5:
   font-size: 16px
-  font-weight: 
-  color: first
+  font-weight: 600
+  color: dark
   mikhak
 
 display-4:
   font-size: 18px
   font-weight: 600
-  color: first
+  color: dark
   mikhak
 
 display-6
   font-size: 14px
   font-weight: 400
-  color: first
+  color: dark
   mikhak
 
 text-sm:
   font-size: 13px
   font-weight: normal
-  color: second
+  color: secondary
   estedad
 
 subtitle:
   font-size: 12px
   font-weight: lighter
-  color: forth
+  color: muted
   estedad
 
 date:
   font-size: 12px
   font-weight: 400
-  color: second
+  color: secondary
   estedad
 
 text-lg:
   font-size: 16px
   font-weight: 400
-  color: third
+  color: lite
 
 
 link-sm
   font-size: 12px
   font-weight: 600
-  color: second
+  color: secondary
   mikhak
 
 __________________________________

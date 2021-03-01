@@ -1,13 +1,17 @@
 import { VFC } from 'react';
-import { Avatar } from '../components';
+import { Typography } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<Avatar
-				src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
-				alt="test"
-			/>
+			<Typography
+				variant="LinkSmall"
+				color="Muted"
+				component="Link"
+				href="/about"
+			>
+				testing
+			</Typography>
 		</div>
 	);
 };
