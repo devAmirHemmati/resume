@@ -1,0 +1,10 @@
+@import './../../styles/abstract/variables.scss';
+
+.Container {
+	width: 70px;
+	height: 70px;
+
+	.CircleProgress {
+		padding-bottom: 8px;
+	}
+}

@@ -1,17 +1,10 @@
 import { VFC } from 'react';
-import { Typography } from '../components';
+import { CircleProgress } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<Typography
-				variant="LinkSmall"
-				color="Muted"
-				component="Link"
-				href="/about"
-			>
-				testing
-			</Typography>
+			<CircleProgress value={50} text="testing" />
 		</div>
 	);
 };

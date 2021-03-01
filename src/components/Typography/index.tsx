@@ -55,6 +55,7 @@ const Typography: FC<ITypographyProps> = forwardRef(
 		}
 
 		const classes = `
+		${styles.Typography}
 		${styles[variant]} ${
 			styles[`TypographyDecoration${decoration}`]
 		} ${styles[`TypographyVariant${variant}`]} ${

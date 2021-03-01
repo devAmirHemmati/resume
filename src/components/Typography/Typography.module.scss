@@ -1,3 +1,5 @@
+@import './../../styles/abstract/variables.scss';
+
 @mixin MTypography(
 	$font-size,
 	$font-weight,
@@ -10,19 +12,10 @@
 	font-family: $font-family;
 }
 
-// variable
-// color
-$dark: #1e1e28;
-$lite: #fafafc;
-$muted: #8c8c8e;
-$secondary: #5c5c6f;
-$danger: #f44336;
-// font family
-$mikhak: mikhak;
-$estedad: estedad;
-
 .Typography {
 	line-height: 1.7;
+	margin: 0 !important;
+	padding: 0 !important;
 
 	&Color {
 		&Dark {

@@ -28,6 +28,7 @@
 	},
 	"homepage": "https://gitlab.com/devAmirHemmati/resume#readme",
 	"devDependencies": {
+		"@types/node": "^14.14.31",
 		"@typescript-eslint/eslint-plugin": "^4.15.2",
 		"@typescript-eslint/parser": "^4.15.2",
 		"commitizen": "^4.2.3",
@@ -47,6 +48,7 @@
 		"next": "^10.0.6",
 		"node-sass": "^5.0.0",
 		"react": "^17.0.1",
+		"react-circular-progressbar": "^2.0.3",
 		"react-dom": "^17.0.1"
 	},
 	"config": {
