@@ -1,0 +1,141 @@
+// Mikhak Font
+@font-face {
+	font-family: 'Mikhak';
+	src: url('./../../public/Fonts/Mikhak/weight100.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Mikhak/weight100.ttf')
+			format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mikhak';
+	src: url('./../../public/Fonts/Mikhak/weight-300.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Mikhak/weight-300.ttf')
+			format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mikhak';
+	src: url('./../../public/Fonts/Mikhak/weight-500.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Mikhak/weight-500.ttf')
+			format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mikhak';
+	src: url('./../../public/Fonts/Mikhak/weight-700.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Mikhak/weight-700.ttf')
+			format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Mikhak';
+	src: url('./../../public/Fonts/Mikhak/weight-900.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Mikhak/weight-900.ttf')
+			format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+// Vazir Font
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Regular.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Regular.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Regular.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Regular.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Regular.ttf')
+			format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Bold.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Bold.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Bold.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Bold.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Bold.ttf')
+			format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Black.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Black.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Black.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Black.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Black.ttf')
+			format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Medium.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Medium.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Medium.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Medium.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Medium.ttf')
+			format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Light.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Light.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Light.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Light.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Light.ttf')
+			format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Vazir;
+	src: url('./../../public/Fonts/Vazir/Vazir-Thin.eot');
+	src: url('./../../public/Fonts/Vazir/Vazir-Thin.eot?#iefix')
+			format('embedded-opentype'),
+		url('./../../public/Fonts/Vazir/Vazir-Thin.woff2')
+			format('woff2'),
+		url('./../../public/Fonts/Vazir/Vazir-Thin.woff')
+			format('woff'),
+		url('./../../public/Fonts/Vazir/Vazir-Thin.ttf')
+			format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}

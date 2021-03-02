@@ -38,6 +38,7 @@
         "react/jsx-one-expression-per-line": "off",
         "import/prefer-default-export": "off",
         "no-mixed-spaces-and-tabs": "off",
+        "import/no-useless-path-segments": "off",
         "no-console": "off",
         "react/button-has-type": "off",
         "operator-linebreak": "off",

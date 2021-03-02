@@ -20,6 +20,7 @@ const Typography: FC<ITypographyProps> = forwardRef(
 			noWrap,
 			noneSelection,
 			className,
+			fontFamily,
 			flash,
 			href,
 			...others
@@ -99,7 +100,11 @@ const Typography: FC<ITypographyProps> = forwardRef(
 				href={href}
 				{...others}
 				className={classes}
-				style={{ cursor: cursorStyle, ...style }}
+				style={{
+					cursor: cursorStyle,
+					fontFamily,
+					...style,
+				}}
 			>
 				{children || text}
 			</Component>

@@ -42,6 +42,8 @@ type decoration =
 	| 'LineThrough'
 	| 'OverLine';
 
+type tFontFamily = 'Vazir' | 'mikhak';
+
 export interface ITypographyProps extends others {
 	variant?: variant;
 	component?: ElementType | 'Link';
@@ -59,4 +61,5 @@ export interface ITypographyProps extends others {
 	>;
 	labelForm?: boolean;
 	flash?: boolean;
+	fontFamily?: tFontFamily;
 }
