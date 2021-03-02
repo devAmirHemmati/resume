@@ -1,4 +1,9 @@
-@import 'abstract/variables.scss';
+// abstract
+@import 'abstract/variables';
 
-@import 'base/fonts.scss';
-@import 'base/base.scss';
+// base
+@import 'base/fonts';
+@import 'base/base';
+
+// app
+@import 'App';

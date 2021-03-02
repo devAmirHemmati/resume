@@ -1,8 +1,10 @@
+@import './../../styles/abstract/variables';
+
 .Badge {
 	background-color: rgb(240, 240, 240);
 	border-radius: 15px;
 	padding: 5px 15px;
 	box-shadow: inset 0 3px 8px 0
-		rgba(15, 15, 5, 0.4);
+		$lite-theme-box-shadow;
 	display: inline-block;
 }
