@@ -1,15 +1,10 @@
 import { VFC } from 'react';
-import { ListItem } from '../components';
+import { Badge } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<ul>
-				<ListItem>سلام بر شما</ListItem>
-				<ListItem>سلام بر شما</ListItem>
-				<ListItem>سلام بر شما</ListItem>
-				<ListItem>سلام بر شما</ListItem>
-			</ul>
+			<Badge>سلام امیررضا همتی هسمت</Badge>
 		</div>
 	);
 };
