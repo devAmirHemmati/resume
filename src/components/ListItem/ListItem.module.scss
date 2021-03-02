@@ -1,0 +1,12 @@
+.ListItem {
+	margin-bottom: 5px;
+	list-style: none;
+	padding: 0;
+	direction: rtl;
+	display: flex;
+
+	span {
+		display: inline-block;
+		padding-right: 10px !important;
+	}
+}

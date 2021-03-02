@@ -1,10 +1,15 @@
 import { VFC } from 'react';
-import { CircleProgress } from '../components';
+import { ListItem } from '../components';
 
 const Home: VFC = () => {
 	return (
 		<div>
-			<CircleProgress value={50} text="testing" />
+			<ul>
+				<ListItem>سلام بر شما</ListItem>
+				<ListItem>سلام بر شما</ListItem>
+				<ListItem>سلام بر شما</ListItem>
+				<ListItem>سلام بر شما</ListItem>
+			</ul>
 		</div>
 	);
 };
