@@ -43,6 +43,14 @@
 		}
 	}
 
+	&MenuList {
+		height: calc(100% - 70px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		overflow: hidden;
+	}
+
 	&Active {
 		left: 0;
 	}

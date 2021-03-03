@@ -1,14 +1,31 @@
-import { useState, VFC } from 'react';
+import { useState, VFC, useEffect } from 'react';
 import {
 	MenuIcon,
+	MenuItem,
 	Typography,
 } from '../../components';
+import NavigationItems from '../../constant/navigationItems/NavigationItems';
 import styles from './Navbar.module.scss';
 
 const Menubar: VFC = () => {
 	const [activeMenu, setActiveMenu] = useState<
 		boolean
 	>(false);
+	const [
+		showMenuList,
+		setShowMenuList,
+	] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (!activeMenu) {
+			setShowMenuList(activeMenu);
+			return;
+		}
+
+		setTimeout(() => {
+			setShowMenuList(activeMenu);
+		}, 250);
+	}, [activeMenu]);
 
 	const switchActiveMenuHandler = (): void => {
 		setActiveMenu(
@@ -39,6 +56,32 @@ const Menubar: VFC = () => {
 		);
 	};
 
+	const NavbarMenuList = () => {
+		return (
+			<ul
+				className={styles.NavbarMenuList}
+				style={{
+					visibility: !activeMenu
+						? 'hidden'
+						: 'initial',
+				}}
+			>
+				{NavigationItems.map(
+					({ text, ...rest }, key) => (
+						<MenuItem
+							{...rest}
+							key={key}
+							index={key}
+							active={showMenuList}
+						>
+							{text}
+						</MenuItem>
+					),
+				)}
+			</ul>
+		);
+	};
+
 	return (
 		<div
 			className={`${styles.Navbar} ${
@@ -48,6 +91,8 @@ const Menubar: VFC = () => {
 			{NavbarMenuBar()}
 
 			{!activeMenu && NavbarTitle()}
+
+			{NavbarMenuList()}
 		</div>
 	);
 };

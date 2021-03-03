@@ -13,7 +13,7 @@ const MenuItem: FC<IMenuItemProps> = forwardRef(
 			children,
 			items,
 			href,
-			to,
+			to = '/',
 			style,
 			active,
 			index = 0,
