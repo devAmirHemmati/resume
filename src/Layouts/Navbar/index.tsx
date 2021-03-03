@@ -1,16 +1,26 @@
 import { useState, VFC, useEffect } from 'react';
 import {
+	useDispatch,
+	useSelector,
+} from 'react-redux';
+import {
 	MenuIcon,
 	MenuItem,
 	Typography,
 } from '../../components';
 import NavigationItems from '../../constant/navigationItems/NavigationItems';
+import { switchActiveNavbar } from './../../store/reducers/Navbar/actions';
+import ISelectorState from '../../store/@types';
 import styles from './Navbar.module.scss';
 
 const Menubar: VFC = () => {
-	const [activeMenu, setActiveMenu] = useState<
+	const dispatch = useDispatch();
+
+	const activeMenu = useSelector<
+		ISelectorState,
 		boolean
-	>(false);
+	>((store) => store.NavbarReducer.active);
+
 	const [
 		showMenuList,
 		setShowMenuList,
@@ -28,9 +38,7 @@ const Menubar: VFC = () => {
 	}, [activeMenu]);
 
 	const switchActiveMenuHandler = (): void => {
-		setActiveMenu(
-			(prevActiveMenu) => !prevActiveMenu,
-		);
+		dispatch(switchActiveNavbar());
 	};
 
 	const NavbarMenuBar = () => {
