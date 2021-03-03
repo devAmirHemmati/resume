@@ -1,0 +1,87 @@
+@import './../../styles/abstract/variables.scss';
+
+.MenuItem {
+	$transform-size: -100px;
+	$padding-x: 30px;
+	$padding-y: 7px;
+
+	list-style: none;
+
+	&Active {
+		animation-name: AShowItem;
+		animation-duration: $animation-transition;
+		animation-fill-mode: forwards;
+		transform: translate($transform-size, 0);
+
+		@keyframes AShowItem {
+			from {
+				transform: translate($transform-size, 0);
+			}
+
+			to {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	&DeActive {
+		animation-name: AHideItem;
+		animation-duration: $animation-transition;
+		animation-fill-mode: forwards;
+		transform: translate(0, 0);
+
+		@keyframes AHideItem {
+			from {
+				transform: translate(0, 0);
+			}
+
+			to {
+				transform: translate($transform-size, 0);
+			}
+		}
+	}
+
+	&Link {
+		padding: $padding-y $padding-x !important;
+		display: inline-block;
+		width: 100%;
+	}
+
+	&List {
+		&TextBox {
+			padding: $padding-y $padding-x !important;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+
+			svg {
+				fill: $secondary;
+				transition: $animation-transition;
+			}
+
+			span {
+				color: $secondary;
+				transition: $animation-transition;
+			}
+
+			&:hover {
+				svg {
+					fill: $dark;
+				}
+
+				span {
+					color: $dark;
+				}
+			}
+		}
+
+		ul {
+			box-shadow: inset 0 3px 8px 0
+				$lite-theme-box-shadow;
+			background-color: $lite-theme-box-background;
+			list-style: none;
+			padding: 15px 0;
+		}
+	}
+}

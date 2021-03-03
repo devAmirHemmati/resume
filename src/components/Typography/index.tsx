@@ -23,6 +23,7 @@ const Typography: FC<ITypographyProps> = forwardRef(
 			fontFamily,
 			flash,
 			href,
+			hoverColor,
 			...others
 		},
 		ref,
@@ -61,6 +62,12 @@ const Typography: FC<ITypographyProps> = forwardRef(
 			styles[`TypographyDecoration${decoration}`]
 		} ${styles[`TypographyVariant${variant}`]} ${
 			styles[`TypographyColor${color}`]
+		} ${styles[`TypographyColor${color}`]} ${
+			typeof hoverColor === 'string'
+				? styles[
+						`TypographyHoverColor${hoverColor}`
+				  ]
+				: ''
 		} ${
 			noneSelection
 				? styles.TypographyNoneSelection

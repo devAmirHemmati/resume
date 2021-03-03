@@ -16,6 +16,7 @@
 	line-height: 1.7;
 	margin: 0 !important;
 	padding: 0 !important;
+	transition: $animation-transition;
 
 	&Color {
 		&Dark {
@@ -36,6 +37,38 @@
 
 		&Danger {
 			color: $danger !important;
+		}
+	}
+
+	&HoverColor {
+		&Dark {
+			&:hover {
+				color: $dark !important;
+			}
+		}
+
+		&Lite {
+			&:hover {
+				color: $lite !important;
+			}
+		}
+
+		&Muted {
+			&:hover {
+				color: $muted !important;
+			}
+		}
+
+		&Secondary {
+			&:hover {
+				color: $secondary !important;
+			}
+		}
+
+		&Danger {
+			&:hover {
+				color: $danger !important;
+			}
 		}
 	}
 

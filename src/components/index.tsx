@@ -8,3 +8,4 @@ export { default as Progress } from './Progress';
 export { default as ListItem } from './ListItem';
 export { default as Badge } from './Badge';
 export { default as MenuIcon } from './MenuIcon';
+export { default as MenuItem } from './MenuItem';

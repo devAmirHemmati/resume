@@ -55,6 +55,7 @@ export interface ITypographyProps extends others {
 	display?: display;
 	style?: CSSProperties;
 	color?: color;
+	hoverColor?: color;
 	noneSelection?: boolean;
 	activeStyle?: StyleHTMLAttributes<
 		HTMLLinkElement
