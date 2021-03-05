@@ -1,5 +1,6 @@
 import { VFC } from 'react';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import {
 	Avatar,
 	ListQAA,
@@ -13,9 +14,15 @@ import DUMMY_LANGUAGES from '../../constant/DUMMY/languages';
 import DUMMY_LIST_SKILLS from '../../constant/DUMMY/listSkills';
 import DUMMY_SKILLS from '../../constant/DUMMY/skills';
 import DUMMY_SOCIALS from '../../constant/DUMMY/socials';
+import ISelectorState from '../../store/@types';
 import styles from './Aside.module.scss';
 
 const Aside: VFC = () => {
+	const activeAside = useSelector<
+		ISelectorState,
+		boolean
+	>((store) => store.AsideReducer.active);
+
 	const AsideHeader = () => {
 		return (
 			<div className={styles.AsideHeader}>
@@ -99,9 +106,8 @@ const Aside: VFC = () => {
 						}
 					>
 						{DUMMY_SKILLS.map((skill, key) => (
-							<div>
+							<div key={key}>
 								<Progress
-									key={key}
 									text={skill.text}
 									value={skill.value}
 								/>
@@ -154,7 +160,11 @@ const Aside: VFC = () => {
 	};
 
 	return (
-		<aside className={styles.Aside}>
+		<aside
+			className={`${styles.Aside} ${
+				activeAside ? styles.AsideActive : ''
+			}`}
+		>
 			{AsideHeader()}
 
 			{AsideDescription()}

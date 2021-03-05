@@ -7,9 +7,10 @@ const Progress: VFC<IProgressProps> = ({
 	value,
 	text,
 	notShowNumberValue,
+	...rest
 }) => {
 	return (
-		<div className={styles.Container}>
+		<div className={styles.Container} {...rest}>
 			<div className={styles.ContainerHeader}>
 				<Typography
 					component="h6"

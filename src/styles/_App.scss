@@ -1,9 +1,12 @@
 .App {
 	position: relative;
 	overflow: hidden;
-	box-shadow: 0 3px 8px 0 $lite-theme-box-shadow;
 
 	& > * {
 		height: 100%;
+	}
+
+	@include media('min', 'lg') {
+		box-shadow: 0 3px 8px 0 $lite-theme-box-shadow;
 	}
 }

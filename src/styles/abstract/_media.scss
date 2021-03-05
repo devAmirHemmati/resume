@@ -1,0 +1,47 @@
+@mixin media($syntax, $device) {
+	@if $syntax == 'max' {
+		@if ($device == 'xs') {
+			@media (max-width: 575.98px) {
+				@content;
+			}
+		} @else if ($device == 'sm') {
+			@media (max-width: 767.98px) {
+				@content;
+			}
+		} @else if ($device == 'md') {
+			@media (max-width: 991.98px) {
+				@content;
+			}
+		} @else if ($device == 'lg') {
+			@media (max-width: 1199.98px) {
+				@content;
+			}
+		} @else if ($device == 'xl') {
+			@media (max-width: 500000) {
+				@content;
+			}
+		}
+	} @else if $syntax == 'min' {
+		@if ($device == 'xs') {
+			@media (max-width: 575.98px) {
+				@content;
+			}
+		} @else if ($device == 'sm') {
+			@media (min-width: 576px) {
+				@content;
+			}
+		} @else if ($device == 'md') {
+			@media (min-width: 768px) {
+				@content;
+			}
+		} @else if ($device == 'lg') {
+			@media (min-width: 992px) {
+				@content;
+			}
+		} @else if ($device == 'xl') {
+			@media (min-width: 1200px) {
+				@content;
+			}
+		}
+	}
+}

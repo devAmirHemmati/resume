@@ -12,6 +12,7 @@ import NavigationItems from '../../constant/navigationItems/NavigationItems';
 import { switchActiveNavbar } from './../../store/reducers/Navbar/actions';
 import ISelectorState from '../../store/@types';
 import styles from './Navbar.module.scss';
+import { deActiveAside } from '../../store/reducers/Aside/actions';
 
 const Menubar: VFC = () => {
 	const dispatch = useDispatch();
@@ -20,6 +21,11 @@ const Menubar: VFC = () => {
 		ISelectorState,
 		boolean
 	>((store) => store.NavbarReducer.active);
+
+	const activeAside = useSelector<
+		ISelectorState,
+		boolean
+	>((store) => store.AsideReducer.active);
 
 	const [
 		showMenuList,
@@ -38,6 +44,9 @@ const Menubar: VFC = () => {
 	}, [activeMenu]);
 
 	const switchActiveMenuHandler = (): void => {
+		if (activeAside) {
+			dispatch(deActiveAside());
+		}
 		dispatch(switchActiveNavbar());
 	};
 

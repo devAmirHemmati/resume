@@ -1,16 +1,17 @@
 @import './../../styles/abstract/variables';
+@import './../../styles/abstract/media';
 
 .Aside {
 	$header-height: 235px;
 	$footer-height: 50px;
 	position: absolute;
-	right: 0;
 	top: 0;
 	width: 290px;
 	height: 100%;
 	z-index: 100;
 	background-color: $lite-theme-box-background;
 	box-shadow: 0 3px 8px 0 $lite-theme-box-shadow;
+	transition: $animation-transition;
 
 	&Header {
 		height: $header-height;
@@ -91,5 +92,16 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 35px;
+	}
+
+	&Active {
+		right: 0 !important;
+	}
+
+	@include media('max', 'md') {
+		right: -300px;
+	}
+	@include media('min', 'lg') {
+		right: 0;
 	}
 }

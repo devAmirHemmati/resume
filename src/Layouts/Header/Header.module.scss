@@ -1,0 +1,71 @@
+@import './../../styles/abstract/variables';
+@import './../../styles/abstract/media';
+
+.Header {
+	position: absolute;
+	background-color: $lite-theme-box-background;
+	height: 70px;
+	width: 100%;
+	z-index: 45;
+	transition: $animation-transition;
+
+	& > div {
+		padding: 0 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	&MenuIcon {
+		height: 70px;
+		transition: $animation-transition;
+
+		& > div {
+			height: 100%;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 80px;
+
+			& > * {
+				bottom: 3px;
+			}
+		}
+
+		&Disable {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&Active {
+			opacity: 0;
+		}
+	}
+
+	&IconAside {
+		cursor: pointer;
+		transition: $animation-transition;
+
+		&Active {
+			transform: translate(-290px, 0);
+		}
+
+		&Disable {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	@include media('max', 'md') {
+		left: 0;
+		width: 100%;
+		top: 0;
+	}
+	@include media('min', 'lg') {
+		top: -70px;
+		left: 80px;
+		width: calc(100% - (290px + 80px));
+	}
+}

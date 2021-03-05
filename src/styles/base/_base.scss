@@ -13,6 +13,13 @@ body {
 	height: 100%;
 }
 
+div {
+	&:active,
+	&:focus {
+		outline: none;
+	}
+}
+
 .ReactCollapse--collapse {
 	transition: $animation-transition;
 }
@@ -21,16 +28,28 @@ body {
 	padding: 0 10px;
 	display: flex;
 	align-items: center;
+	cursor: default;
+
+	*::selection {
+		background-color: transparent;
+	}
 }
 
 .container {
-	padding: 15px;
 	max-width: 1440px;
 	margin: 0 auto;
-	height: calc(100vh - 30px);
 
 	& > div {
 		height: 100%;
+	}
+
+	@include media('max', 'md') {
+		height: 100vh;
+	}
+
+	@include media('min', 'lg') {
+		padding: 15px;
+		height: calc(100vh - 30px);
 	}
 }
 

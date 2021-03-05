@@ -1,4 +1,5 @@
 @import './../../styles/abstract/variables';
+@import './../../styles/abstract/media';
 
 .Navbar {
 	position: absolute;
@@ -6,9 +7,9 @@
 	top: 0;
 	width: 230px;
 	background-color: $lite-theme-box-background;
-	left: -150px;
 	box-shadow: 0 3px 8px 0 $lite-theme-box-shadow;
 	transition: $animation-transition;
+	z-index: 50;
 
 	&MenuIcon {
 		height: 70px;
@@ -52,6 +53,13 @@
 	}
 
 	&Active {
-		left: 0;
+		left: 0 !important;
+	}
+
+	@include media('max', 'md') {
+		left: -240px;
+	}
+	@include media('min', 'lg') {
+		left: -150px;
 	}
 }
