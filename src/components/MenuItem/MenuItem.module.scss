@@ -62,6 +62,7 @@
 			span {
 				color: $secondary;
 				transition: $animation-transition;
+				cursor: pointer !important;
 			}
 
 			&:hover {

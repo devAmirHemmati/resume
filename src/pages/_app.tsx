@@ -1,8 +1,9 @@
 import { VFC } from 'react';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
+import 'rc-tooltip/assets/bootstrap.css';
 import './../styles/main.scss';
-import { Navbar } from '../Layouts';
+import { Aside, Navbar } from '../Layouts';
 import store from '../store';
 
 const MyApp: VFC = ({
@@ -16,6 +17,8 @@ const MyApp: VFC = ({
 					<Navbar />
 
 					<Component {...pageProps} />
+
+					<Aside />
 				</div>
 			</div>
 		</Provider>

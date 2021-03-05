@@ -50,6 +50,7 @@ const CircleProgress: VFC<ICircleProgressProps> = ({
 					component="h6"
 					variant="Display6"
 					align="Center"
+					noneSelection
 				>
 					{text}
 				</Typography>

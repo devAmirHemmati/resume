@@ -14,6 +14,7 @@ const Progress: VFC<IProgressProps> = ({
 				<Typography
 					component="h6"
 					variant="Display6"
+					noneSelection
 					className={styles.ContainerHeaderText}
 				>
 					{text}
@@ -22,6 +23,7 @@ const Progress: VFC<IProgressProps> = ({
 				{!notShowNumberValue && (
 					<Typography
 						component="span"
+						noneSelection
 						className={
 							styles.ContainerHeaderValue
 						}

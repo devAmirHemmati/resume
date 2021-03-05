@@ -17,6 +17,12 @@ body {
 	transition: $animation-transition;
 }
 
+.rc-tooltip-inner {
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+
 .container {
 	padding: 15px;
 	max-width: 1440px;

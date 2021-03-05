@@ -29,6 +29,7 @@
 	"homepage": "https://gitlab.com/devAmirHemmati/resume#readme",
 	"devDependencies": {
 		"@types/node": "^14.14.31",
+		"@types/rc-tooltip": "^3.7.3",
 		"@types/react-collapse": "^5.0.0",
 		"@types/react-redux": "^7.1.16",
 		"@types/redux": "^3.6.0",
@@ -52,6 +53,7 @@
 	"dependencies": {
 		"next": "^10.0.6",
 		"node-sass": "^5.0.0",
+		"rc-tooltip": "^5.1.0",
 		"react": "^17.0.1",
 		"react-circular-progressbar": "^2.0.3",
 		"react-collapse": "^5.1.0",

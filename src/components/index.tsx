@@ -9,3 +9,5 @@ export { default as ListItem } from './ListItem';
 export { default as Badge } from './Badge';
 export { default as MenuIcon } from './MenuIcon';
 export { default as MenuItem } from './MenuItem';
+export { default as SocialNetworkIcon } from './SocialNetworkIcon';
+export { default as ListQAA } from './ListQAA';
