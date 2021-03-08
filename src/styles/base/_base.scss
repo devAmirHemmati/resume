@@ -43,11 +43,11 @@ div {
 		height: 100%;
 	}
 
-	@include media('max', 'md') {
+	@include media('max', 'lg') {
 		height: 100vh;
 	}
 
-	@include media('min', 'lg') {
+	@include media('min', 'xl') {
 		padding: 15px;
 		height: calc(100vh - 30px);
 	}

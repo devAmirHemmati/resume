@@ -4,7 +4,7 @@ import {
 	useSelector,
 } from 'react-redux';
 import { FaEllipsisV } from 'react-icons/fa';
-import { MenuIcon } from '../../components';
+import { MenuIcon } from '../../interfaces';
 import ISelectorState from '../../store/@types';
 import { switchActiveNavbar } from '../../store/reducers/Navbar/actions';
 import { switchActiveAside } from '../../store/reducers/Aside/actions';

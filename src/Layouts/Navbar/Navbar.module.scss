@@ -56,10 +56,10 @@
 		left: 0 !important;
 	}
 
-	@include media('max', 'md') {
+	@include media('max', 'lg') {
 		left: -240px;
 	}
-	@include media('min', 'lg') {
+	@include media('min', 'xl') {
 		left: -150px;
 	}
 }

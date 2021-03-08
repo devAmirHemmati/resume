@@ -58,12 +58,12 @@
 		}
 	}
 
-	@include media('max', 'md') {
+	@include media('max', 'lg') {
 		left: 0;
 		width: 100%;
 		top: 0;
 	}
-	@include media('min', 'lg') {
+	@include media('min', 'xl') {
 		top: -70px;
 		left: 80px;
 		width: calc(100% - (290px + 80px));

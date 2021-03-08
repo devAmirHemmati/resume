@@ -9,7 +9,7 @@ import {
 	CircleProgress,
 	Progress,
 	ListItem,
-} from '../../components';
+} from '../../interfaces';
 import DUMMY_LANGUAGES from '../../constant/DUMMY/languages';
 import DUMMY_LIST_SKILLS from '../../constant/DUMMY/listSkills';
 import DUMMY_SKILLS from '../../constant/DUMMY/skills';

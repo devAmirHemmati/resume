@@ -1,0 +1,77 @@
+@import './../../../styles/abstract/media';
+
+.Banner {
+	background: linear-gradient(
+			rgba(000, 000, 000, 0.35),
+			rgba(000, 000, 000, 0.35)
+		),
+		url('/Images/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	padding: 60px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 5%;
+		top: -30px;
+		height: 30px;
+		width: 90%;
+		box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+		background-color: rgba(255, 255, 255, 0.88);
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+
+	&Content {
+		h1 {
+			line-height: 1.2 !important;
+			margin-bottom: 15px !important;
+
+			@include media('max', 1600px) {
+				font-size: 42px;
+			}
+
+			@include media('max', 1400px) {
+				font-size: 36px;
+			}
+
+			@include media('max', 1199px) {
+				font-size: 52px;
+			}
+
+			@include media('max', 1032px) {
+				font-size: 42px;
+				text-align: center;
+			}
+		}
+
+		p {
+			margin-bottom: 25px !important;
+
+			span {
+				font-weight: bold !important;
+			}
+		}
+
+		@include media('max', 1032px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&ImageBox {
+		img {
+			width: 400px;
+			position: absolute;
+			bottom: -1px;
+			left: 30px;
+		}
+
+		@include media('max', 1032px) {
+			display: none;
+		}
+	}
+}

@@ -98,10 +98,10 @@
 		right: 0 !important;
 	}
 
-	@include media('max', 'md') {
+	@include media('max', 'lg') {
 		right: -300px;
 	}
-	@include media('min', 'lg') {
+	@include media('min', 'xl') {
 		right: 0;
 	}
 }

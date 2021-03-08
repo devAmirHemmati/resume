@@ -1,94 +1,10 @@
 import { VFC } from 'react';
+import { Banner } from '../components/Index';
 
 const Home: VFC = () => {
 	return (
-		<div
-			style={{
-				background: 'white',
-				height: 1500,
-			}}
-		>
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			home
-			<hr />
-			end
+		<div>
+			<Banner />
 		</div>
 	);
 };

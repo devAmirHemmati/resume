@@ -7,7 +7,7 @@ import {
 	MenuIcon,
 	MenuItem,
 	Typography,
-} from '../../components';
+} from '../../interfaces';
 import NavigationItems from '../../constant/navigationItems/NavigationItems';
 import { switchActiveNavbar } from './../../store/reducers/Navbar/actions';
 import ISelectorState from '../../store/@types';
