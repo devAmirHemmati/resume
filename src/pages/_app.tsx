@@ -5,6 +5,7 @@ import 'rc-tooltip/assets/bootstrap.css';
 import './../styles/main.scss';
 import {
 	Aside,
+	Head,
 	Header,
 	Navbar,
 	PageContainer,
@@ -16,20 +17,24 @@ const MyApp: VFC = ({
 	pageProps,
 }: AppProps) => {
 	return (
-		<Provider store={store}>
-			<div className="container">
-				<div className="App">
-					<Navbar />
+		<>
+			<Head />
 
-					<Header />
-					<PageContainer>
-						<Component {...pageProps} />
-					</PageContainer>
+			<Provider store={store}>
+				<div className="container">
+					<div className="App">
+						<Navbar />
 
-					<Aside />
+						<Header />
+						<PageContainer>
+							<Component {...pageProps} />
+						</PageContainer>
+
+						<Aside />
+					</div>
 				</div>
-			</div>
-		</Provider>
+			</Provider>
+		</>
 	);
 };
 
