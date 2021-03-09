@@ -88,5 +88,10 @@
 	}
 
 	@include media('max', 1032px) {
+		padding: 60px 30px;
+	}
+
+	@include media('max', 'sm') {
+		min-height: 300px;
 	}
 }

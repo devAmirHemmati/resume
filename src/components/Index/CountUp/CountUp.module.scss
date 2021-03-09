@@ -1,0 +1,35 @@
+@import './../../../styles/abstract/media';
+@import './../../../styles/abstract/variables';
+
+.CountUp {
+	&List {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style: none;
+
+		li {
+			flex-basis: 25%;
+			padding-top: 25px;
+			text-align: center;
+
+			span {
+				line-height: 0;
+
+				&:first-child {
+					font-size: 22px;
+					color: $danger;
+				}
+
+				&:last-child {
+					font-size: 15px;
+					font-weight: 500;
+				}
+			}
+
+			@include media('max', 'sm') {
+				flex-basis: 50%;
+			}
+		}
+	}
+}

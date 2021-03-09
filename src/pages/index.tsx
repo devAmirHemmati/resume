@@ -1,5 +1,8 @@
 import { VFC } from 'react';
-import { Banner } from '../components/Index';
+import {
+	Banner,
+	CountUp,
+} from '../components/Index';
 import { DUMMY_HOME } from './../constant/DUMMY/home';
 
 const Home: VFC = () => {
@@ -10,6 +13,8 @@ const Home: VFC = () => {
 				skills={DUMMY_HOME.skills}
 				profile={DUMMY_HOME.avatar}
 			/>
+
+			<CountUp items={DUMMY_HOME.countUp} />
 		</div>
 	);
 };
