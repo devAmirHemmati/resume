@@ -50,7 +50,7 @@
 		p {
 			margin-bottom: 25px !important;
 
-			span {
+			i {
 				font-weight: bold !important;
 			}
 		}
@@ -73,5 +73,20 @@
 		@include media('max', 1032px) {
 			display: none;
 		}
+	}
+
+	@include media('max', 1600px) {
+		margin-top: 30px;
+	}
+
+	@include media('max', 1400px) {
+		margin-top: 40px;
+	}
+
+	@include media('max', 1199px) {
+		margin-top: 0;
+	}
+
+	@include media('max', 1032px) {
 	}
 }

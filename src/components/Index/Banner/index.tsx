@@ -1,14 +1,18 @@
 import { VFC } from 'react';
 import Link from 'next/link';
+import ReactRotatingText from 'react-rotating-text';
 import {
 	Button,
 	Typography,
 } from '../../../interfaces';
-import type { IComponentProps } from './../../types';
 import styles from './Banner.module.scss';
+import { IBanner } from './types';
 
-const Banner: VFC<IComponentProps> = ({
+const Banner: VFC<IBanner> = ({
 	className = '',
+	profile,
+	skills,
+	title,
 	...rest
 }) => {
 	return (
@@ -22,11 +26,13 @@ const Banner: VFC<IComponentProps> = ({
 					variant="Display1"
 					fontFamily="Vazir"
 					noneSelection
-				>
-					رزومه و نمونه کارهای من را
-					<br />
-					مشاهده کنید!
-				</Typography>
+					dangerouslySetInnerHTML={{
+						__html: title.replace(
+							/\n/g,
+							'<br />',
+						),
+					}}
+				/>
 
 				<Typography
 					component="p"
@@ -44,7 +50,16 @@ const Banner: VFC<IComponentProps> = ({
 					>
 						{'<code>'}
 					</Typography>
-					&nbsp; برنامه نویس تحت وب و اندروید
+					&nbsp;
+					{skills[0].concat(' ').trimLeft()}
+					<ReactRotatingText
+						items={skills
+							.map((item) => `${item} `)
+							.slice(1, skills.length)}
+						typingInterval={170}
+						deletingInterval={20}
+						pause={2000}
+					/>
 					&nbsp;
 					<Typography
 						component="i"
@@ -53,7 +68,7 @@ const Banner: VFC<IComponentProps> = ({
 						color="Danger"
 						noneSelection
 					>
-						{'</code>'}
+						{'<code>'}
 					</Typography>
 				</Typography>
 
@@ -66,7 +81,7 @@ const Banner: VFC<IComponentProps> = ({
 
 			<div className={styles.BannerImageBox}>
 				<img
-					src="/Images/profile-lg.png"
+					src={profile}
 					alt="Profile"
 					draggable="false"
 				/>
