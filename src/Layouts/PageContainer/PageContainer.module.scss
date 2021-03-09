@@ -47,6 +47,8 @@
 
 			&ActiveAside {
 				@include media('max', 'md') {
+					min-height: 98.9vh;
+					height: calc(100% + 90px);
 					opacity: 0.7;
 					visibility: initial;
 				}
