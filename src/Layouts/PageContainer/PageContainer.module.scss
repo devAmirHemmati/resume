@@ -30,6 +30,11 @@
 			padding-top: 60px;
 		}
 
+		@include media('max', 'sm') {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
 		&Shadow {
 			position: absolute;
 			width: calc(100% + 60px);

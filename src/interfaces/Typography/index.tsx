@@ -1,5 +1,7 @@
 import { forwardRef, useRef, FC } from 'react';
 import Link from 'next/link';
+import { FaAngleLeft } from 'react-icons/fa';
+
 import { ITypographyProps } from './types';
 import styles from './Typography.module.scss';
 
@@ -97,6 +99,10 @@ const Typography: FC<ITypographyProps> = forwardRef(
 						{...others}
 					>
 						{children || text}
+
+						{flash && (
+							<FaAngleLeft color="#f44336" />
+						)}
 					</a>
 				</Link>
 			);

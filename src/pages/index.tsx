@@ -2,6 +2,7 @@ import { VFC } from 'react';
 import {
 	Banner,
 	CountUp,
+	Services,
 } from '../components/Index';
 import { DUMMY_HOME } from './../constant/DUMMY/home';
 
@@ -15,6 +16,8 @@ const Home: VFC = () => {
 			/>
 
 			<CountUp items={DUMMY_HOME.countUp} />
+
+			<Services services={DUMMY_HOME.services} />
 		</div>
 	);
 };
