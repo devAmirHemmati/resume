@@ -12,9 +12,15 @@
 			flex-basis: 25%;
 			padding-top: 25px;
 			text-align: center;
+			cursor: default !important;
 
 			span {
+				cursor: default !important;
 				line-height: 0;
+
+				&::selection {
+					background-color: transparent;
+				}
 
 				&:first-child {
 					font-size: 22px;

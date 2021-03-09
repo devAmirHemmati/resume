@@ -5,3 +5,10 @@
 .position-relative {
 	position: relative;
 }
+
+%none-selection,
+.none-selection {
+	&::selection {
+		background-color: transparent;
+	}
+}
