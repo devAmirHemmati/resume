@@ -1,35 +1,41 @@
-import { FC, ElementType } from 'react';
+import { FC, ElementType, forwardRef } from 'react';
 import { IButtonProps } from './types';
 import styles from './Button.module.scss';
 
-const Button: FC<IButtonProps> = ({
-	type = 'button',
-	children,
-	className = '',
-	noneSelection,
-	component = 'button',
-	...rest
-}) => {
-	const customRest: any = rest;
+const Button: FC<IButtonProps> = forwardRef(
+	(
+		{
+			type = 'button',
+			children,
+			className = '',
+			noneSelection,
+			component = 'button',
+			...rest
+		},
+		ref,
+	) => {
+		const customRest: any = rest;
 
-	if (component === 'button') {
-		customRest.type = type;
-	}
+		if (component === 'button') {
+			customRest.type = type;
+		}
 
-	const Component: ElementType = component;
+		const Component: ElementType = component;
 
-	return (
-		<Component
-			className={`${styles.Button} ${
-				noneSelection
-					? styles.ButtonNoneSelection
-					: ''
-			} ${className}`}
-			{...customRest}
-		>
-			{children}
-		</Component>
-	);
-};
+		return (
+			<Component
+				className={`${styles.Button} ${
+					noneSelection
+						? styles.ButtonNoneSelection
+						: ''
+				} ${className}`}
+				{...customRest}
+				ref={ref as any}
+			>
+				{children}
+			</Component>
+		);
+	},
+);
 
 export default Button;

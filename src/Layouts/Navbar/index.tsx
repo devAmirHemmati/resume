@@ -9,7 +9,10 @@ import {
 	Typography,
 } from '../../interfaces';
 import NavigationItems from '../../constant/navigationItems/NavigationItems';
-import { switchActiveNavbar } from './../../store/reducers/Navbar/actions';
+import {
+	deActiveNavbar,
+	switchActiveNavbar,
+} from './../../store/reducers/Navbar/actions';
 import ISelectorState from '../../store/@types';
 import styles from './Navbar.module.scss';
 import { deActiveAside } from '../../store/reducers/Aside/actions';
@@ -74,6 +77,10 @@ const Menubar: VFC = () => {
 	};
 
 	const NavbarMenuList = () => {
+		const clickItemHandler = (): void => {
+			dispatch(deActiveNavbar());
+		};
+
 		return (
 			<ul
 				className={styles.NavbarMenuList}
@@ -90,6 +97,7 @@ const Menubar: VFC = () => {
 							key={key}
 							index={key}
 							active={showMenuList}
+							onClick={clickItemHandler}
 						>
 							{text}
 						</MenuItem>
