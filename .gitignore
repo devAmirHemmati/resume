@@ -43,3 +43,4 @@ packages/react-devtools-scheduling-profiler/dist
 yarn.lock
 yarn-error.log
 package-lock.json
+.next

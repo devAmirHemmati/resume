@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { default as Banner } from './Banner';","map":{"version":3,"sources":["/home/amir/Files/projects/resume/src/components/Index/index.ts"],"names":["default","Banner"],"mappings":"AAAA,SAASA,OAAO,IAAIC,MAApB,QAAkC,UAAlC","sourcesContent":["export { default as Banner } from './Banner';\n"]},"metadata":{},"sourceType":"module"}
