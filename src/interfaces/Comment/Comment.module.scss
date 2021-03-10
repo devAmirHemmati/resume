@@ -1,0 +1,41 @@
+.Comment {
+	overflow: initial;
+
+	&Avatar {
+		position: absolute;
+		left: 40px;
+		top: -32.5px;
+		border-radius: 50%;
+		width: 65px;
+		height: 65px;
+	}
+
+	&Container {
+		overflow: hidden;
+
+		h5 {
+			font-weight: bold !important;
+		}
+
+		&WorkName {
+			display: inline-block;
+			padding-top: 3px !important;
+		}
+
+		p {
+			margin-top: 15px !important;
+		}
+
+		&Rating {
+			margin-top: 15px;
+			padding: 8px 15px;
+			display: flex;
+			align-items: center;
+
+			svg {
+				font-size: 12px;
+				color: #f44336;
+			}
+		}
+	}
+}

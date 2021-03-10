@@ -9,6 +9,7 @@ const Badge: FC<IBadgeProps> = forwardRef(
 			children,
 			className = '',
 			noneSelection,
+			notText = false,
 			...rest
 		},
 		ref,
@@ -19,12 +20,16 @@ const Badge: FC<IBadgeProps> = forwardRef(
 				className={`${styles.Badge} ${className}`}
 				{...rest}
 			>
-				<Typography
-					component="span"
-					noneSelection={noneSelection}
-				>
-					{children}
-				</Typography>
+				{!notText ? (
+					<Typography
+						component="span"
+						noneSelection={noneSelection}
+					>
+						{children}
+					</Typography>
+				) : (
+					children
+				)}
 			</span>
 		);
 	},

@@ -11,3 +11,4 @@ export { default as MenuIcon } from './MenuIcon';
 export { default as MenuItem } from './MenuItem';
 export { default as SocialNetworkIcon } from './SocialNetworkIcon';
 export { default as ListQAA } from './ListQAA';
+export { default as Comment } from './Comment';
