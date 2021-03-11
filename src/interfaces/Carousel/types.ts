@@ -10,4 +10,5 @@ export interface ICarouselProps
 	hideDots?: boolean;
 	hideArrow?: boolean;
 	hideFeature?: boolean;
+	offset?: number;
 }

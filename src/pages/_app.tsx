@@ -11,6 +11,7 @@ import {
 	PageContainer,
 } from '../Layouts';
 import store from '../store';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 const MyApp: VFC = ({
 	Component,

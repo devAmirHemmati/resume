@@ -6,7 +6,6 @@ import {
 } from 'react-icons/fa';
 import styles from './Carousel.module.scss';
 import { ICarouselProps } from './types';
-import '@brainhubeu/react-carousel/lib/style.css';
 
 const CustomCarousel: FC<ICarouselProps> = forwardRef(
 	(
@@ -20,6 +19,7 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 			hideDots,
 			hideFeature,
 			hideArrow,
+			offset = 15,
 			...rest
 		},
 		ref,
@@ -36,10 +36,10 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 
 		const isEndSlide = (
 			newSlideNumber: number = customActiveSlide,
-			decreases: number = 1,
+			decreases: number = slidesPerPage,
 		): boolean => {
 			return (
-				newSlideNumber ===
+				newSlideNumber >
 				Array.from(children as []).length -
 					decreases
 			);
@@ -48,11 +48,15 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 		const setNewSlideHandler = (
 			newSlideNumber: number,
 		): void => {
-			if (
-				isEndSlide(newSlideNumber) ||
-				newSlideNumber < 0
-			) {
+			if (newSlideNumber < 0) {
 				return;
+			}
+
+			if (isEndSlide(newSlideNumber)) {
+				// eslint-disable-next-line
+				newSlideNumber =
+					Array.from(children as []).length -
+					slidesPerPage;
 			}
 
 			if (typeof onChangeSlide === 'function') {
@@ -72,7 +76,7 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 					rtl={rtl}
 					value={customActiveSlide}
 					slidesPerPage={slidesPerPage}
-					offset={15}
+					offset={offset}
 					onChange={setNewSlideHandler}
 				>
 					{children}
@@ -83,7 +87,7 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 						{!hideArrow && (
 							<div
 								className={
-									styles.CarouseleatureArrow
+									styles.CarouselFeatureArrow
 								}
 							>
 								<FaAngleRight
@@ -106,7 +110,7 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 									} ${
 										isEndSlide(
 											customActiveSlide,
-											2,
+											slidesPerPage + 1,
 										)
 											? styles.CarouselFeatureArrowItemDisabled
 											: ''
@@ -130,7 +134,8 @@ const CustomCarousel: FC<ICarouselProps> = forwardRef(
 									.slice(
 										0,
 										Array.from(children as any)
-											.length - 1,
+											.length -
+											(slidesPerPage - 1),
 									)
 									.map((_, key) => (
 										<span

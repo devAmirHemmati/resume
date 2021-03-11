@@ -1,3 +1,5 @@
+import { IComment } from '../../components/Index/Comments/types';
+
 interface IHome {
 	skills: string[];
 	title: string;
@@ -7,6 +9,7 @@ interface IHome {
 		title: string;
 		description: string;
 	}[];
+	comments: IComment[];
 }
 
 export const DUMMY_HOME: IHome = {
@@ -67,6 +70,53 @@ export const DUMMY_HOME: IHome = {
 			title: 'طراحی سایت',
 			description:
 				'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.',
+		},
+	],
+	comments: [
+		{
+			avatar:
+				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/11/testimonial-1-1-65x65-1.jpg',
+			name: 'امیررضا همتی',
+			description:
+				'همکاری با علی یک تجربه بسیار لذت بخش بود.در کنار تخصصی که در کار دارد از اخلاق خوبی برخوردار است و همیشه مانند یک دوست و حامی همراه اعضای گروه است.از او چیزهای بسیازی زیادی یاد گرفتم که همیشه برای من ارزشمند است.',
+			rating: 1,
+			workName: 'Direct',
+		},
+		{
+			avatar:
+				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/11/testimonial-1-1-65x65-1.jpg',
+			name: 'امیررضا همتی',
+			description:
+				'همکاری با علی یک تجربه بسیار لذت بخش بود.در کنار تخصصی که در کار دارد از اخلاق خوبی برخوردار است و همیشه مانند یک دوست و حامی همراه اعضای گروه است.از او چیزهای بسیازی زیادی یاد گرفتم که همیشه برای من ارزشمند است.',
+			rating: 2,
+			workName: 'Direct',
+		},
+		{
+			avatar:
+				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/11/testimonial-1-1-65x65-1.jpg',
+			name: 'امیررضا همتی',
+			description:
+				'همکاری با علی یک تجربه بسیار لذت بخش بود.در کنار تخصصی که در کار دارد از اخلاق خوبی برخوردار است و همیشه مانند یک دوست و حامی همراه اعضای گروه است.از او چیزهای بسیازی زیادی یاد گرفتم که همیشه برای من ارزشمند است.',
+			rating: 3,
+			workName: 'Direct',
+		},
+		{
+			avatar:
+				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/11/testimonial-1-1-65x65-1.jpg',
+			name: 'امیررضا همتی',
+			description:
+				'همکاری با علی یک تجربه بسیار لذت بخش بود.در کنار تخصصی که در کار دارد از اخلاق خوبی برخوردار است و همیشه مانند یک دوست و حامی همراه اعضای گروه است.از او چیزهای بسیازی زیادی یاد گرفتم که همیشه برای من ارزشمند است.',
+			rating: 4,
+			workName: 'Direct',
+		},
+		{
+			avatar:
+				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/11/testimonial-1-1-65x65-1.jpg',
+			name: 'امیررضا همتی',
+			description:
+				'همکاری با علی یک تجربه بسیار لذت بخش بود.در کنار تخصصی که در کار دارد از اخلاق خوبی برخوردار است و همیشه مانند یک دوست و حامی همراه اعضای گروه است.از او چیزهای بسیازی زیادی یاد گرفتم که همیشه برای من ارزشمند است.',
+			rating: 5,
+			workName: 'Direct',
 		},
 	],
 };
