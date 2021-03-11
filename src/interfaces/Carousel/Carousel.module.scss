@@ -1,0 +1,49 @@
+@import './../../styles/abstract/variables';
+
+.Carousel {
+	direction: rtl;
+	&Feature {
+		padding-top: 15px;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+
+		&Arrow {
+			display: flex;
+			align-items: center;
+			&Item {
+				cursor: pointer;
+				font-size: 18px;
+
+				&Disabled {
+					opacity: 0.3;
+					cursor: default;
+				}
+			}
+		}
+
+		&Dots {
+			display: flex;
+			align-items: center;
+			position: relative;
+			bottom: 4px;
+
+			&Item {
+				width: 7px;
+				height: 7px;
+				border-radius: 2px;
+				background-color: $secondary;
+				display: inline-block;
+				margin: 0 4px;
+				cursor: pointer;
+				transition: $animation-transition;
+
+				&Active {
+					width: 20px;
+					background-color: $danger;
+				}
+			}
+		}
+	}
+}
