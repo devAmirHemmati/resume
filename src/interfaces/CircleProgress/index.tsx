@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { VFC, useState, useEffect } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import styles from './CircleProgress.module.scss';
 import 'react-circular-progressbar/dist/styles.css';
@@ -9,11 +9,19 @@ const CircleProgress: VFC<ICircleProgressProps> = ({
 	value,
 	text,
 }) => {
+	const [customValue, setCustomValue] = useState<
+		number
+	>(0);
+
+	useEffect(() => {
+		setCustomValue(value);
+	}, [value]);
+
 	return (
 		<div className={styles.Container}>
 			<div className={styles.CircleProgress}>
 				<CircularProgressbar
-					value={value}
+					value={customValue}
 					text={`${value}%`}
 					styles={{
 						root: {
@@ -23,7 +31,7 @@ const CircleProgress: VFC<ICircleProgressProps> = ({
 							stroke: '#f44336',
 							strokeLinecap: 'butt',
 							transition:
-								'stroke-dashoffset 0.5s ease 0s',
+								'stroke-dashoffset 1.2s ease 0s',
 							transform: 'rotate(0turn)',
 							transformOrigin: 'center center',
 						},

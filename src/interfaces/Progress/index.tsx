@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { VFC, useState, useEffect } from 'react';
 import { IProgressProps } from './types';
 import styles from './Progress.module.scss';
 import { Typography } from '..';
@@ -9,6 +9,14 @@ const Progress: VFC<IProgressProps> = ({
 	notShowNumberValue,
 	...rest
 }) => {
+	const [customValue, setCustomValue] = useState<
+		number
+	>(0);
+
+	useEffect(() => {
+		setCustomValue(value);
+	}, [value]);
+
 	return (
 		<div className={styles.Container} {...rest}>
 			<div className={styles.ContainerHeader}>
@@ -35,7 +43,9 @@ const Progress: VFC<IProgressProps> = ({
 			</div>
 
 			<div className={styles.Progress}>
-				<div style={{ width: `${value}%` }} />
+				<div
+					style={{ width: `${customValue}%` }}
+				/>
 			</div>
 		</div>
 	);
