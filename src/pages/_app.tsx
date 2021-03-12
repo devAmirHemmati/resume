@@ -5,6 +5,7 @@ import 'rc-tooltip/assets/bootstrap.css';
 import './../styles/main.scss';
 import {
 	Aside,
+	Footer,
 	Head,
 	Header,
 	Navbar,
@@ -29,6 +30,8 @@ const MyApp: VFC = ({
 						<Header />
 						<PageContainer>
 							<Component {...pageProps} />
+
+							<Footer />
 						</PageContainer>
 
 						<Aside />
