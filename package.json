@@ -55,6 +55,7 @@
 		"@brainhubeu/react-carousel": "^1.19.26",
 		"next": "^10.0.6",
 		"node-sass": "^5.0.0",
+		"nprogress": "^0.2.0",
 		"rc-tooltip": "^5.1.0",
 		"react": "^17.0.1",
 		"react-circular-progressbar": "^2.0.3",
@@ -66,6 +67,9 @@
 		"react-rotating-text": "^1.4.1",
 		"redux": "^4.0.5",
 		"redux-thunk": "^2.3.0"
+	},
+	"resolutions": {
+		"styled-jsx": "3.0.0"
 	},
 	"config": {
 		"ghooks": {

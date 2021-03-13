@@ -37,6 +37,7 @@ const PageContainer: FC = ({ children }) => {
 					? styles.ContainerActiveNavbar
 					: ''
 			}`}
+			id="page-container"
 		>
 			<div className={styles.ContainerPage}>
 				<div className="position-relative">

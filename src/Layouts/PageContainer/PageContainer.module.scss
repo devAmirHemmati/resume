@@ -20,7 +20,7 @@
 
 	&Page {
 		padding: 0 30px;
-		padding-top: 70px;
+		padding-top: 30px;
 
 		@include media('max', 'lg') {
 			padding-top: 80px;
@@ -47,7 +47,7 @@
 			transition: $animation-transition;
 
 			&ActiveNavbar {
-				min-height: 98.9vh;
+				min-height: calc(98.9vh + 40px);
 				height: calc(100% + 90px);
 
 				opacity: 0.7;
@@ -56,7 +56,7 @@
 
 			&ActiveAside {
 				@include media('max', 'lg') {
-					min-height: 98.9vh;
+					min-height: calc(98.9vh + 40px);
 					height: calc(100% + 90px);
 					opacity: 0.7;
 					visibility: initial;

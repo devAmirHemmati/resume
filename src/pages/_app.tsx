@@ -1,4 +1,6 @@
-import { VFC } from 'react';
+import { VFC, useEffect } from 'react';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import 'rc-tooltip/assets/bootstrap.css';
@@ -18,6 +20,51 @@ const MyApp: VFC = ({
 	Component,
 	pageProps,
 }: AppProps) => {
+	useEffect(() => {
+		NProgress.configure({
+			showSpinner: false,
+			parent: '#page-container',
+		});
+
+		Router.events.on('routeChangeStart', () => {
+			return NProgress.start();
+		});
+
+		Router.events.on(
+			'routeChangeComplete',
+			() => {
+				return NProgress.done();
+			},
+		);
+
+		Router.events.on('routeChangeError', () => {
+			return NProgress.done();
+		});
+
+		return () => {
+			Router.events.off(
+				'routeChangeStart',
+				() => {
+					return NProgress.start();
+				},
+			);
+
+			Router.events.off(
+				'routeChangeComplete',
+				() => {
+					return NProgress.done();
+				},
+			);
+
+			Router.events.off(
+				'routeChangeError',
+				() => {
+					return NProgress.done();
+				},
+			);
+		};
+	}, []);
+
 	return (
 		<>
 			<Head />
