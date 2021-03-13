@@ -1,4 +1,9 @@
-import { useState, VFC, useEffect } from 'react';
+import {
+	useState,
+	VFC,
+	useEffect,
+	MouseEvent,
+} from 'react';
 import {
 	useDispatch,
 	useSelector,
@@ -77,7 +82,12 @@ const Menubar: VFC = () => {
 	};
 
 	const NavbarMenuList = () => {
-		const clickItemHandler = (): void => {
+		const clickItemHandler = (
+			event: any,
+		): void => {
+			if (event.target.nodeName !== 'A') {
+				return;
+			}
 			dispatch(deActiveNavbar());
 		};
 
