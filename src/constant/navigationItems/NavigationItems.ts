@@ -9,6 +9,10 @@ const NavigationItems: IMenuListItem[] = [
 		text: 'نمونه کار',
 		items: [
 			{
+				text: 'لیست تمام نمونه کار ها',
+				to: '/my-works',
+			},
+			{
 				text: 'اولی',
 				to: '/my-works/1',
 			},

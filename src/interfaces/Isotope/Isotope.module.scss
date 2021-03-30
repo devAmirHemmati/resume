@@ -1,0 +1,22 @@
+.Isotope {
+	padding-top: 20px;
+
+	&FilterList {
+		list-style: none;
+		display: flex;
+
+		li {
+			margin-left: 15px;
+		}
+	}
+
+	&Container {
+		position: relative;
+		left: -10px;
+
+		&Item {
+			background-color: blue;
+			width: 33.33%;
+		}
+	}
+}

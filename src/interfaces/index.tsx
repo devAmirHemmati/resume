@@ -13,3 +13,4 @@ export { default as SocialNetworkIcon } from './SocialNetworkIcon';
 export { default as ListQAA } from './ListQAA';
 export { default as Comment } from './Comment';
 export { default as Carousel } from './Carousel';
+export { default as Isotope } from './Isotope';
