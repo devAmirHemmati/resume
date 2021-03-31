@@ -1,6 +1,10 @@
 export const DUMMY_MY_WORK: {
+	title: string;
+	label: string;
 	gallery: { src: string; alt: string }[];
 } = {
+	title: 'طراحی کارت ویزیت',
+	label: 'تجربه کاربری',
 	gallery: [
 		{
 			src:
