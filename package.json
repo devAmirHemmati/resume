@@ -67,7 +67,8 @@
 		"react-redux": "^7.2.2",
 		"react-rotating-text": "^1.4.1",
 		"redux": "^4.0.5",
-		"redux-thunk": "^2.3.0"
+		"redux-thunk": "^2.3.0",
+		"simple-react-lightbox": "^3.6.4"
 	},
 	"config": {
 		"ghooks": {

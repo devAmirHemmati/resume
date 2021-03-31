@@ -1,6 +1,7 @@
 import { VFC, useEffect } from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import SimpleReactLightbox from 'simple-react-lightbox';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import 'rc-tooltip/assets/bootstrap.css';
@@ -72,16 +73,18 @@ const MyApp: VFC = ({
 			<Provider store={store}>
 				<div className="container">
 					<div className="App">
-						<Navbar />
+						<SimpleReactLightbox>
+							<Navbar />
 
-						<Header />
-						<PageContainer>
-							<Component {...pageProps} />
+							<Header />
+							<PageContainer>
+								<Component {...pageProps} />
 
-							<Footer />
-						</PageContainer>
+								<Footer />
+							</PageContainer>
 
-						<Aside />
+							<Aside />
+						</SimpleReactLightbox>
 					</div>
 				</div>
 			</Provider>

@@ -1,1 +1,1 @@
-export { default as FilterWorks } from './FilterWorks';
+export { default as IsotopeWorks } from './IsotopeWorks';
