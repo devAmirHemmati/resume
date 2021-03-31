@@ -1,5 +1,8 @@
 import { VFC } from 'react';
-import { Comments } from '../../components/Index';
+import {
+	Comments,
+	CountUp,
+} from '../../components/Index';
 import {
 	WorkDetails,
 	WorkGallery,
@@ -54,6 +57,10 @@ const MyWork: VFC = () => {
 					comments={DUMMY_HOME.comments}
 					title="نظر مشتری"
 				/>
+			</div>
+
+			<div style={{ paddingTop: 20 }}>
+				<CountUp items={DUMMY_HOME.countUp} />
 			</div>
 		</div>
 	);
