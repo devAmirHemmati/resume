@@ -1,5 +1,6 @@
 import { VFC } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
+import { AiOutlineExpandAlt } from 'react-icons/ai';
 import { useGetWindowSize } from '../../../hooks';
 import { Carousel } from '../../../interfaces';
 import { IWorkGalleryProps } from './types';
@@ -44,7 +45,26 @@ const Gallery: VFC<IWorkGalleryProps> = ({
 						offset={size === 'xs' ? 0 : 15}
 					>
 						{items.map((data, key) => (
-							<div key={key}>
+							<div
+								key={key}
+								className={styles.GalleryItem}
+							>
+								<div data-feature="box">
+									<div
+										className={
+											styles.GalleryItemShadow
+										}
+									/>
+
+									<span
+										className={
+											styles.GalleryItemIcon
+										}
+									>
+										<AiOutlineExpandAlt />
+									</span>
+								</div>
+
 								<a href={data.src}>
 									<img
 										src={data.src}
