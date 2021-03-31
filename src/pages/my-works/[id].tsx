@@ -1,5 +1,8 @@
 import { VFC } from 'react';
-import { WorkGallery } from '../../components/MyWork';
+import {
+	WorkDetails,
+	WorkGallery,
+} from '../../components/MyWork';
 import {
 	Badge,
 	Typography,
@@ -29,6 +32,18 @@ const MyWork: VFC = () => {
 			<div style={{ paddingTop: 25 }}>
 				<WorkGallery
 					items={DUMMY_MY_WORK.gallery}
+				/>
+			</div>
+
+			<div style={{ paddingTop: 60 }}>
+				<WorkDetails
+					customer={DUMMY_MY_WORK.customer}
+					description={DUMMY_MY_WORK.description}
+					doneDate={DUMMY_MY_WORK.doneDate}
+					location={DUMMY_MY_WORK.location}
+					startDate={DUMMY_MY_WORK.startDate}
+					status={DUMMY_MY_WORK.status}
+					url={DUMMY_MY_WORK.url}
 				/>
 			</div>
 		</div>

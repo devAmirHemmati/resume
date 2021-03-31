@@ -52,6 +52,7 @@
         "function-paren-newline": "off",
         "no-new": "off",
         "no-param-reassign": "off",
-        "no-use-before-define": "off"
+        "no-use-before-define": "off",
+        "radix": "off"
     }
 }
