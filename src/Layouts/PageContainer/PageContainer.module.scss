@@ -20,14 +20,14 @@
 
 	&Page {
 		padding: 0 30px;
-		padding-top: 30px;
+		padding-top: 20px;
 
 		@include media('max', 'lg') {
-			padding-top: 80px;
+			padding-top: 20px;
 		}
 
 		@include media('max', 1032px) {
-			padding-top: 60px;
+			padding-top: 20px;
 		}
 
 		@include media('max', 'sm') {

@@ -31,6 +31,7 @@ const Isotope: FC<IIsotopeProps> = ({
 	const containerRef = useRef<HTMLDivElement>();
 
 	useEffect(() => {
+		resizeHandler();
 		window.addEventListener(
 			'resize',
 			resizeHandler,

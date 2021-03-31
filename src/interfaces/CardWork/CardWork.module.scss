@@ -1,4 +1,5 @@
 @import './../../styles/abstract/variables';
+@import './../../styles/abstract/media';
 
 .CardWork {
 	width: 100%;
@@ -41,7 +42,11 @@
 		right: 0;
 		width: 100%;
 		transition: $animation-transition;
-		bottom: -100%;
+		bottom: 0;
+
+		@include media('min', 'lg') {
+			bottom: -100%;
+		}
 	}
 
 	&:hover {
