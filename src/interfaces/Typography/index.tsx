@@ -101,7 +101,14 @@ const Typography: FC<ITypographyProps> = forwardRef(
 						{children || text}
 
 						{flash && (
-							<FaAngleLeft color="#f44336" />
+							<FaAngleLeft
+								color="#f44336"
+								style={{
+									position: 'relative',
+									top: 3,
+									right: 1,
+								}}
+							/>
 						)}
 					</a>
 				</Link>

@@ -12,4 +12,6 @@ export type tCardsDefault = {
 export interface IIsotopeProps {
 	filtersDefault: tFilterDefault[];
 	cardsDefault: tCardsDefault[];
+	unitHeight?: number;
+	cols?: number;
 }

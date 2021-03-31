@@ -1,0 +1,61 @@
+@import './../../styles/abstract/variables';
+
+.CardWork {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	transition: $animation-transition;
+
+	&Link {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		&::after {
+			content: '';
+			transition: $animation-transition;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(000, 000, 000, 0.2);
+		}
+
+		&:hover {
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	&Content {
+		position: absolute;
+		right: 0;
+		width: 100%;
+		transition: $animation-transition;
+		bottom: -100%;
+	}
+
+	&:hover {
+		.CardWorkContent {
+			bottom: 0;
+
+			h5 {
+				font-weight: bold;
+			}
+
+			p {
+				margin-top: 5px !important;
+				margin-bottom: 15px !important;
+			}
+		}
+	}
+}

@@ -6,6 +6,7 @@ import {
 } from 'react';
 import IsoTopeGrid from 'react-isotope';
 import { Typography } from '..';
+import { useGetWindowSize } from '../../hooks';
 import styles from './Isotope.module.scss';
 import { IIsotopeProps } from './types';
 
@@ -13,6 +14,8 @@ const Isotope: FC<IIsotopeProps> = ({
 	cardsDefault,
 	filtersDefault,
 	children,
+	unitHeight = 100,
+	cols = 2,
 }) => {
 	const [filters, updateFilters] = useState(
 		filtersDefault,
@@ -25,21 +28,36 @@ const Isotope: FC<IIsotopeProps> = ({
 		itemWidth,
 		setItemWidth,
 	] = useState<number>(0);
-	const [
-		noOfCols,
-		setNoOfCols,
-	] = useState<number>(2);
-
 	const containerRef = useRef<HTMLDivElement>();
 
 	useEffect(() => {
-		setTimeout(() => {
-			setContainerHeight(
-				containerRef.current.scrollHeight + 30,
+		window.addEventListener(
+			'resize',
+			resizeHandler,
+		);
+
+		return () => {
+			window.removeEventListener(
+				'resize',
+				resizeHandler,
 			);
+		};
+	}, []);
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			if (containerRef.current) {
+				setContainerHeight(
+					containerRef.current.scrollHeight + 2,
+				);
+			}
 
 			resizeWindowHandler();
-		}, 530);
+		}, 225);
+
+		return () => {
+			clearInterval(timer);
+		};
 	}, [filters]);
 
 	useEffect(() => {
@@ -61,17 +79,19 @@ const Isotope: FC<IIsotopeProps> = ({
 			return;
 		}
 
-		if (window.innerWidth > 575.98) {
-			setNoOfCols(2);
-		} else {
-			setNoOfCols(1);
-		}
-
 		setItemWidth(
 			(containerRef.current.offsetWidth -
-				(noOfCols === 1 ? 0 : 10 * noOfCols)) /
-				noOfCols,
+				(cols === 1 ? 0 : 10)) /
+				cols,
 		);
+	}
+
+	function resizeHandler() {
+		updateFilters((prevFilters) => {
+			prevFilters[0].isChecked = true;
+
+			return prevFilters;
+		});
 	}
 
 	const onFilter = (
@@ -125,8 +145,8 @@ const Isotope: FC<IIsotopeProps> = ({
 		return (
 			<IsoTopeGrid
 				gridLayout={cardsDefault as any}
-				noOfCols={noOfCols}
-				unitHeight={100}
+				noOfCols={cols}
+				unitHeight={unitHeight}
 				unitWidth={itemWidth}
 				filters={filters}
 			>
@@ -154,4 +174,37 @@ const Isotope: FC<IIsotopeProps> = ({
 	);
 };
 
-export default Isotope;
+const Compose: FC<IIsotopeProps> = ({
+	cols,
+	...rest
+}) => {
+	const [size] = useGetWindowSize();
+
+	const [loading, setLoading] = useState<boolean>(
+		true,
+	);
+
+	useEffect(() => {
+		setLoading(true);
+	}, [size]);
+
+	useEffect(() => {
+		if (loading) {
+			setLoading(false);
+		}
+	}, [loading]);
+
+	let noCols: number = cols;
+	if (size === 'xs') {
+		noCols = 1;
+	} else {
+		noCols = 2;
+	}
+
+	if (loading) {
+		return <></>;
+	}
+	return <Isotope cols={noCols || 2} {...rest} />;
+};
+
+export default Compose;
