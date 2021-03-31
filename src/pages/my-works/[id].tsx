@@ -1,8 +1,10 @@
 import { VFC } from 'react';
+import { Comments } from '../../components/Index';
 import {
 	WorkDetails,
 	WorkGallery,
 } from '../../components/MyWork';
+import { DUMMY_HOME } from '../../constant/DUMMY/home';
 import {
 	Badge,
 	Typography,
@@ -44,6 +46,13 @@ const MyWork: VFC = () => {
 					startDate={DUMMY_MY_WORK.startDate}
 					status={DUMMY_MY_WORK.status}
 					url={DUMMY_MY_WORK.url}
+				/>
+			</div>
+
+			<div>
+				<Comments
+					comments={DUMMY_HOME.comments}
+					title="نظر مشتری"
 				/>
 			</div>
 		</div>

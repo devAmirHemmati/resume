@@ -20,7 +20,10 @@ const Home: VFC = () => {
 
 			<Services services={DUMMY_HOME.services} />
 
-			<Comments comments={DUMMY_HOME.comments} />
+			<Comments
+				title="نظر مشتریان"
+				comments={DUMMY_HOME.comments}
+			/>
 		</div>
 	);
 };

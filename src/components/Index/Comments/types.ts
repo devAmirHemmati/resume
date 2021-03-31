@@ -11,4 +11,5 @@ export interface IComment {
 export interface ICommentsProps
 	extends IComponentProps {
 	comments: IComment[];
+	title: string;
 }

@@ -15,6 +15,7 @@ import { ICommentsProps } from './types';
 const Comments: VFC<ICommentsProps> = ({
 	comments,
 	className = '',
+	title,
 	...rest
 }) => {
 	const [item, setItem] = useState<number>(2);
@@ -58,7 +59,7 @@ const Comments: VFC<ICommentsProps> = ({
 				variant="Display4"
 				noneSelection
 			>
-				نظر مشتریان
+				{title}
 			</Typography>
 
 			<div className={styles.CommentsList}>
