@@ -1,6 +1,9 @@
 import { forwardRef, useRef, FC } from 'react';
 import Link from 'next/link';
-import { FaAngleLeft } from 'react-icons/fa';
+import {
+	FaAngleLeft,
+	FaAngleRight,
+} from 'react-icons/fa';
 
 import { ITypographyProps } from './types';
 import styles from './Typography.module.scss';
@@ -24,6 +27,7 @@ const Typography: FC<ITypographyProps> = forwardRef(
 			className,
 			fontFamily,
 			flash,
+			flashBack,
 			href,
 			hoverColor,
 			...others
@@ -98,6 +102,17 @@ const Typography: FC<ITypographyProps> = forwardRef(
 						}}
 						{...others}
 					>
+						{flashBack && (
+							<FaAngleRight
+								color="#f44336"
+								style={{
+									position: 'relative',
+									top: 3,
+									left: 1,
+								}}
+							/>
+						)}
+
 						{children || text}
 
 						{flash && (
@@ -126,6 +141,17 @@ const Typography: FC<ITypographyProps> = forwardRef(
 					...style,
 				}}
 			>
+				{flashBack && (
+					<FaAngleRight
+						color="#f44336"
+						style={{
+							position: 'relative',
+							top: 3,
+							left: 1,
+						}}
+					/>
+				)}
+
 				{children || text}
 
 				{flash && (

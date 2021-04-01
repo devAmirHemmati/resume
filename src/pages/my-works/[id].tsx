@@ -4,6 +4,7 @@ import {
 	CountUp,
 } from '../../components/Index';
 import {
+	Links,
 	WorkBanner,
 	WorkDetails,
 	WorkGallery,
@@ -66,6 +67,10 @@ const MyWork: VFC = () => {
 
 			<div style={{ marginTop: 40 }}>
 				<WorkBanner />
+			</div>
+
+			<div style={{ marginTop: 25 }}>
+				<Links />
 			</div>
 		</section>
 	);
