@@ -1,0 +1,53 @@
+@import './../../../styles/abstract/media';
+
+.Banner {
+	background: linear-gradient(
+			rgba(000, 000, 000, 0.35),
+			rgba(000, 000, 000, 0.35)
+		),
+		url('/Images/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		line-height: 1.2 !important;
+		margin-bottom: 15px !important;
+
+		@include media('max', 1600px) {
+			font-size: 42px ‌ !important;
+		}
+
+		@include media('max', 1400px) {
+			font-size: 36px ‌ !important;
+		}
+
+		@include media('max', 1199px) {
+			font-size: 52px ‌ !important;
+		}
+
+		@include media('max', 1032px) {
+			font-size: 42px ‌ !important;
+			text-align: center;
+		}
+
+		@include media('max', 1032px) {
+		}
+	}
+
+	p {
+		position: relative;
+		bottom: 10px;
+	}
+
+	a {
+		margin-top: 20px !important;
+	}
+
+	@include media('max', 1032px) {
+		padding: 60px 30px;
+	}
+}

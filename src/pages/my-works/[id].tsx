@@ -4,6 +4,7 @@ import {
 	CountUp,
 } from '../../components/Index';
 import {
+	WorkBanner,
 	WorkDetails,
 	WorkGallery,
 } from '../../components/MyWork';
@@ -16,7 +17,7 @@ import { DUMMY_MY_WORK } from './../../constant/DUMMY/my-work';
 
 const MyWork: VFC = () => {
 	return (
-		<div>
+		<section>
 			<div className="d-flex justify-content-between align-items-center">
 				<Typography
 					component="h1"
@@ -62,7 +63,11 @@ const MyWork: VFC = () => {
 			<div style={{ paddingTop: 20 }}>
 				<CountUp items={DUMMY_HOME.countUp} />
 			</div>
-		</div>
+
+			<div style={{ marginTop: 40 }}>
+				<WorkBanner />
+			</div>
+		</section>
 	);
 };
 
