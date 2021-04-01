@@ -129,6 +129,44 @@ const Typography: FC<ITypographyProps> = forwardRef(
 				</Link>
 			);
 		}
+		if (component === 'a') {
+			return (
+				<a
+					ref={ref as any}
+					className={classes}
+					style={{
+						cursor: cursorStyle,
+						...style,
+					}}
+					href={href}
+					{...others}
+				>
+					{flashBack && (
+						<FaAngleRight
+							color="#f44336"
+							style={{
+								position: 'relative',
+								top: 3,
+								left: 1,
+							}}
+						/>
+					)}
+
+					{children || text}
+
+					{flash && (
+						<FaAngleLeft
+							color="#f44336"
+							style={{
+								position: 'relative',
+								top: 3,
+								right: 1,
+							}}
+						/>
+					)}
+				</a>
+			);
+		}
 		return (
 			<Component
 				ref={ref}
@@ -141,29 +179,7 @@ const Typography: FC<ITypographyProps> = forwardRef(
 					...style,
 				}}
 			>
-				{flashBack && (
-					<FaAngleRight
-						color="#f44336"
-						style={{
-							position: 'relative',
-							top: 3,
-							left: 1,
-						}}
-					/>
-				)}
-
 				{children || text}
-
-				{flash && (
-					<FaAngleLeft
-						color="#f44336"
-						style={{
-							position: 'relative',
-							top: 3,
-							right: 1,
-						}}
-					/>
-				)}
 			</Component>
 		);
 	},
