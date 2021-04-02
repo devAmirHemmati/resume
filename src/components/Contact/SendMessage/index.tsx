@@ -20,10 +20,9 @@ import {
 import styles from './SendMessage.module.scss';
 
 const SendMessage: VFC = () => {
-	const [
-		fullName,
-		setFullName,
-	] = useState<string>('');
+	const [fullName, setFullName] = useState<
+		string
+	>('');
 	const [email, setEmail] = useState<string>('');
 	const [message, setMessage] = useState<string>(
 		'',

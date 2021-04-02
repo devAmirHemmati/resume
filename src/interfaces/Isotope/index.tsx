@@ -24,10 +24,9 @@ const Isotope: FC<IIsotopeProps> = ({
 		containerHeight,
 		setContainerHeight,
 	] = useState<number>(0);
-	const [
-		itemWidth,
-		setItemWidth,
-	] = useState<number>(0);
+	const [itemWidth, setItemWidth] = useState<
+		number
+	>(0);
 	const containerRef = useRef<HTMLDivElement>();
 
 	useEffect(() => {

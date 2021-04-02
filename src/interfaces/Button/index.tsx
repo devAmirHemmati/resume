@@ -1,4 +1,8 @@
-import { FC, ElementType, forwardRef } from 'react';
+import {
+	FC,
+	ElementType,
+	forwardRef,
+} from 'react';
 import { IButtonProps } from './types';
 import styles from './Button.module.scss';
 

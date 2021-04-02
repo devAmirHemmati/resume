@@ -15,10 +15,9 @@ const TextArea: VFC<ITextAreaProps> = forwardRef(
 		},
 		ref,
 	) => {
-		const [
-			isFocus,
-			setIsFocus,
-		] = useState<boolean>(false);
+		const [isFocus, setIsFocus] = useState<
+			boolean
+		>(false);
 
 		const blurHandler = (event) => {
 			setIsFocus(false);
