@@ -1,0 +1,62 @@
+@import './../../../styles/abstract/media';
+
+.Information {
+	&Container {
+		margin-top: 25px;
+
+		&Item {
+			@include media('max', 'sm') {
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+
+			@include media('min', 'md') {
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+
+				&:nth-child(odd) {
+					div {
+						padding-left: 15px;
+					}
+				}
+
+				&:nth-child(even) {
+					div {
+						padding-right: 15px;
+					}
+				}
+			}
+
+			@include media('min', 'lg') {
+				margin-bottom: 0 !important;
+
+				&:last-child {
+					& > div {
+						padding-left: 0 !important;
+						padding-right: 15px;
+					}
+				}
+
+				&:first-child {
+					& > div {
+						padding-right: 0;
+					}
+				}
+
+				&:not(:first-child) {
+					& > div {
+						padding-right: 15px;
+					}
+				}
+
+				&:not(:last-child) {
+					& > div {
+						padding-left: 15px;
+					}
+				}
+			}
+		}
+	}
+}

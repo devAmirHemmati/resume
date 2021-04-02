@@ -7,8 +7,15 @@ const ListQAA: VFC<IListQAA> = ({
 	answer,
 	question,
 	className,
+	href,
 	...rest
 }) => {
+	const restAnswer: any = {};
+
+	if (typeof href === 'string') {
+		restAnswer.target = '_blank';
+	}
+
 	return (
 		<li
 			className={`${styles.ListQAA} ${className}`}
@@ -25,9 +32,14 @@ const ListQAA: VFC<IListQAA> = ({
 			</Typography>
 
 			<Typography
-				component="span"
+				component={
+					typeof href === 'string' ? 'a' : 'span'
+				}
+				href={href}
 				variant="TextSmall"
 				fontFamily="Vazir"
+				decoration="None"
+				{...restAnswer}
 			>
 				{answer}
 			</Typography>
