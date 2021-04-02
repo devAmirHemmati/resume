@@ -1,7 +1,9 @@
 import { VFC } from 'react';
-import { ContactInformation } from '../components/Contact';
+import {
+	ContactInformation,
+	ContactSendMessage,
+} from '../components/Contact';
 import { DUMMY_CONTACT } from '../constant/DUMMY/contact';
-import { Field, TextArea } from '../interfaces';
 
 const Contact: VFC = () => {
 	return (
@@ -26,14 +28,8 @@ const Contact: VFC = () => {
 				/>
 			</div>
 
-			<div style={{ marginTop: 30, width: 300 }}>
-				<Field>
-					<TextArea id="text" />
-				</Field>
-
-				<Field>
-					<TextArea id="text" />
-				</Field>
+			<div style={{ marginTop: 30 }}>
+				<ContactSendMessage />
 			</div>
 		</div>
 	);

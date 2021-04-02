@@ -92,7 +92,10 @@ const MyApp: VFC = ({
 				</div>
 			</Provider>
 
-			<ToastContainer />
+			<ToastContainer
+				rtl
+				position="bottom-center"
+			/>
 		</>
 	);
 };

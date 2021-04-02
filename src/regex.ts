@@ -1,5 +1,5 @@
-export const rIsPersianOnly = /[آ-ی ء چ]+/;
-export const rIsEnglishOnly = /[a-z A-Z]/;
+export const rIsPersianOnly = /^[\u0600-\u06FF\s]+$/;
+export const rIsEnglishOnly = /^[a-z A-Z]$/;
 export const rNumberOnly = /\d/;
 export const rNoNumberOnly = /\D/g;
 

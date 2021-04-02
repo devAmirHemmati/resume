@@ -30,6 +30,7 @@ const Information: VFC<IInformationProps> = ({
 			<Typography
 				component="h4"
 				variant="Display4"
+				noneSelection
 			>
 				{title}
 			</Typography>

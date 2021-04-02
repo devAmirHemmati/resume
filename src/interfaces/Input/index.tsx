@@ -15,6 +15,7 @@ const Input: VFC<IInputProps> = forwardRef(
 			type,
 			onFocus,
 			onBlur,
+			icon = type,
 			...rest
 		},
 		ref,
@@ -42,7 +43,7 @@ const Input: VFC<IInputProps> = forwardRef(
 
 		let Icon: any;
 
-		switch (type) {
+		switch (icon) {
 			case 'text':
 				Icon = FaUserAlt;
 				break;

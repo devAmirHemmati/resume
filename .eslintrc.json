@@ -55,6 +55,8 @@
         "no-use-before-define": "off",
         "radix": "off",
         "jsx-a11y/label-has-associated-control": "off",
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "no-else-return": "off",
+        "no-useless-return": "off"
     }
 }
