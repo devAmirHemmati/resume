@@ -1,6 +1,7 @@
 import { VFC } from 'react';
 import { ContactInformation } from '../components/Contact';
 import { DUMMY_CONTACT } from '../constant/DUMMY/contact';
+import { Input, TextArea } from '../interfaces';
 
 const Contact: VFC = () => {
 	return (
@@ -23,6 +24,10 @@ const Contact: VFC = () => {
 					virgool={DUMMY_CONTACT.links.virgool}
 					whatsapp={DUMMY_CONTACT.links.whatsapp}
 				/>
+			</div>
+
+			<div style={{ marginTop: 30, width: 300 }}>
+				<TextArea id="text" />
 			</div>
 		</div>
 	);

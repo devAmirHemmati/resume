@@ -36,6 +36,11 @@ const ListQAA: VFC<IListQAA> = ({
 					typeof href === 'string' ? 'a' : 'span'
 				}
 				href={href}
+				hoverColor={
+					typeof href === 'string'
+						? 'Dark'
+						: 'Secondary'
+				}
 				variant="TextSmall"
 				fontFamily="Vazir"
 				decoration="None"
