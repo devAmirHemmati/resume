@@ -1,3 +1,13 @@
+import {
+	rIsEnglishOnly,
+	rIsPersianOnly,
+} from '../regex';
+
+type tPattern =
+	| 'persianOnly'
+	| 'englishOnly'
+	| 'numberOnly';
+
 class Utilities {
 	// hello word => Hello world
 	static upperCaseFirstLetter(

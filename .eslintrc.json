@@ -53,6 +53,8 @@
         "no-new": "off",
         "no-param-reassign": "off",
         "no-use-before-define": "off",
-        "radix": "off"
+        "radix": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-restricted-syntax": "off"
     }
 }

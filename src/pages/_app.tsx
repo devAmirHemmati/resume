@@ -1,6 +1,7 @@
 import { VFC, useEffect } from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { ToastContainer } from 'react-toastify';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
@@ -16,6 +17,7 @@ import {
 } from '../Layouts';
 import store from '../store';
 import '@brainhubeu/react-carousel/lib/style.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyApp: VFC = ({
 	Component,
@@ -89,6 +91,8 @@ const MyApp: VFC = ({
 					</div>
 				</div>
 			</Provider>
+
+			<ToastContainer />
 		</>
 	);
 };
