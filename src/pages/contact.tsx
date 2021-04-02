@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import { ContactInformation } from '../components/Contact';
 import { DUMMY_CONTACT } from '../constant/DUMMY/contact';
-import { Input, TextArea } from '../interfaces';
+import { Field, TextArea } from '../interfaces';
 
 const Contact: VFC = () => {
 	return (
@@ -27,7 +27,13 @@ const Contact: VFC = () => {
 			</div>
 
 			<div style={{ marginTop: 30, width: 300 }}>
-				<TextArea id="text" />
+				<Field>
+					<TextArea id="text" />
+				</Field>
+
+				<Field>
+					<TextArea id="text" />
+				</Field>
 			</div>
 		</div>
 	);
