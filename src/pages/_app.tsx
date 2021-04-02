@@ -25,6 +25,7 @@ const MyApp: VFC = ({
 		NProgress.configure({
 			showSpinner: false,
 			parent: '#page-container',
+			trickle: false,
 		});
 
 		Router.events.on('routeChangeStart', () => {
