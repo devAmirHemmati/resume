@@ -7,6 +7,7 @@ const Card: FC<ICardProps> = ({
 	children,
 	className,
 	art,
+	flash,
 	...rest
 }) => {
 	const ArtBox = () => {
@@ -35,6 +36,10 @@ const Card: FC<ICardProps> = ({
 			{...rest}
 		>
 			{typeof art !== 'undefined' && ArtBox()}
+
+			{flash && (
+				<span className={styles.CardFlash} />
+			)}
 
 			{children}
 		</div>

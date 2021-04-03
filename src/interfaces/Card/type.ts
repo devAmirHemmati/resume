@@ -16,4 +16,5 @@ type tArt =
 export interface ICardProps
 	extends AllHTMLAttributes<HTMLDivElement> {
 	art?: tArt;
+	flash?: boolean;
 }

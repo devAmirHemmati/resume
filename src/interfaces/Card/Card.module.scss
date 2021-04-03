@@ -4,7 +4,6 @@
 	padding: 30px;
 	box-shadow: 0 3px 8px 0 $lite-theme-box-shadow;
 	position: relative;
-	overflow: hidden;
 	transition: 0.2s;
 	background-color: #fff;
 
@@ -43,6 +42,17 @@
 				transform: rotate(-40deg);
 			}
 		}
+	}
+
+	&Flash {
+		width: 15px;
+		height: 15px;
+		display: inline-block;
+		background-color: #fff;
+		transform: rotate(45deg);
+		position: absolute;
+		right: -8px;
+		top: 12px;
 	}
 
 	&:hover {
