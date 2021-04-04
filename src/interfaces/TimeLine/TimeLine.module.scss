@@ -1,0 +1,48 @@
+@import './../../styles/abstract/variables';
+
+.TimeLine {
+	position: relative;
+	width: 50%;
+
+	&Circle {
+		position: absolute;
+		right: -6px;
+		top: 15px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: #fff;
+		border: 3px solid $danger;
+		z-index: 1;
+		transition: $animation-transition;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&Content {
+		position: relative;
+		right: 35px;
+	}
+
+	&End {
+		&::after {
+			height: 0 !important;
+		}
+	}
+
+	&NotFirstIndex {
+		margin-top: 36px;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: calc(100% + 36px);
+		width: 5px;
+		background-color: #c0c0ca;
+		top: 15px;
+		right: 0;
+	}
+}
