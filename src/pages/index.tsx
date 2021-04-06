@@ -3,7 +3,7 @@ import {
 	Banner,
 	Comments,
 	CountUp,
-	Services,
+	IndexWorks,
 } from '../components/Index';
 import { DUMMY_HOME } from './../constant/DUMMY/home';
 
@@ -18,7 +18,7 @@ const Home: VFC = () => {
 
 			<CountUp items={DUMMY_HOME.countUp} />
 
-			<Services services={DUMMY_HOME.services} />
+			<IndexWorks />
 
 			<Comments
 				title="نظر مشتریان"

@@ -1,9 +1,11 @@
-import { VFC } from 'react';
+import { VFC, useState, useEffect } from 'react';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
 import {
 	useDispatch,
 	useSelector,
 } from 'react-redux';
+import { Collapse } from 'react-collapse';
+
 import {
 	Avatar,
 	ListQAA,
@@ -23,14 +25,24 @@ import { deActiveAside } from '../../store/reducers/Aside/actions';
 import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
 
 const Aside: VFC = () => {
+	const dispatch = useDispatch();
+
 	const activeAside = useSelector<
 		ISelectorState,
 		boolean
 	>((store) => store.AsideReducer.active);
+	const [
+		isShowData,
+		setIsShowData,
+	] = useState<boolean>(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setIsShowData(true);
+		}, 650);
+	}, []);
 
 	const AsideHeader = () => {
-		const dispatch = useDispatch();
-
 		const clickLinkHandler = (): void => {
 			dispatch(deActiveAside());
 			dispatch(deActiveNavbar());
@@ -74,6 +86,20 @@ const Aside: VFC = () => {
 	const AsideDescription = () => {
 		return (
 			<div className={styles.AsideDescription}>
+				<div
+					className={styles.AsideDescriptionItem}
+				>
+					<Collapse isOpened={isShowData}>
+						<Typography noneSelection>
+							امیررضا همتی هستم، برنامه نویس ریکت
+							جی اس. شدیدا علاقمند به یادگیری
+							مباحث برنامه نویسی. هرروز تلاش میکنم
+							تا علم خود را در برنامه نویسی بیشتر
+							و بیشتر کنم
+						</Typography>
+					</Collapse>
+				</div>
+
 				<div
 					className={styles.AsideDescriptionItem}
 				>

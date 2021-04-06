@@ -1,0 +1,11 @@
+.Container {
+	padding-top: 40px;
+
+	&Carousel {
+		padding-top: 25px;
+
+		&Item {
+			height: 300px;
+		}
+	}
+}
