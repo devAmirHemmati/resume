@@ -5,30 +5,7 @@ import { useGetWindowSize } from '../../../hooks';
 import { Carousel } from '../../../interfaces';
 import { IWorkGalleryProps } from './types';
 import styles from './Gallery.module.scss';
-
-const options = {
-	buttons: {
-		backgroundColor: 'transparent',
-		iconColor: '#fff',
-	},
-	settings: {
-		overlayColor: 'rgba(000,000,000, 0.8)',
-		transitionSpeed: 1000,
-		transitionTimingFunction: 'linear',
-	},
-	thumbnails: {
-		thumbnailsSize: ['120px', '100px'],
-		thumbnailsOpacity: 0.4,
-	},
-	caption: {
-		captionColor: 'rgba(000,000,000, 0.8)',
-	},
-	progressBar: {
-		size: '4px',
-		backgroundColor: 'rgba(255, 237, 225, 1)',
-		fillColor: '#AF9AB2',
-	},
-};
+import { lightBoxOptions } from '../../../options';
 
 const Gallery: VFC<IWorkGalleryProps> = ({
 	items,
@@ -37,7 +14,7 @@ const Gallery: VFC<IWorkGalleryProps> = ({
 
 	return (
 		<section>
-			<SRLWrapper options={options}>
+			<SRLWrapper options={lightBoxOptions}>
 				<div className={styles.GalleryItem}>
 					<div>
 						<Carousel

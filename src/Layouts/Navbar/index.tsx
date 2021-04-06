@@ -1,9 +1,4 @@
-import {
-	useState,
-	VFC,
-	useEffect,
-	MouseEvent,
-} from 'react';
+import { useState, VFC, useEffect } from 'react';
 import {
 	useDispatch,
 	useSelector,

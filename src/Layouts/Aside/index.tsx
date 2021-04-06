@@ -4,6 +4,7 @@ import {
 	useDispatch,
 	useSelector,
 } from 'react-redux';
+import { SRLWrapper } from 'simple-react-lightbox';
 import { Collapse } from 'react-collapse';
 
 import {
@@ -23,6 +24,7 @@ import ISelectorState from '../../store/@types';
 import styles from './Aside.module.scss';
 import { deActiveAside } from '../../store/reducers/Aside/actions';
 import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
+import { lightBoxOptions } from '../../options';
 
 const Aside: VFC = () => {
 	const dispatch = useDispatch();
@@ -50,10 +52,14 @@ const Aside: VFC = () => {
 
 		return (
 			<div className={styles.AsideHeader}>
-				<Avatar
-					src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
-					alt="avatar"
-				/>
+				<SRLWrapper options={lightBoxOptions}>
+					<a href="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg">
+						<Avatar
+							src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
+							alt="avatar"
+						/>
+					</a>
+				</SRLWrapper>
 
 				<Typography
 					component="Link"
