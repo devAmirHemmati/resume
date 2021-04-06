@@ -1,0 +1,11 @@
+@import './../../../styles/abstract/media';
+
+.Education {
+	@include media('max', 'md') {
+		margin-top: 40px;
+	}
+
+	&Items {
+		padding-top: 25px;
+	}
+}

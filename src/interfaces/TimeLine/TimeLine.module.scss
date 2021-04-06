@@ -2,6 +2,7 @@
 
 .TimeLine {
 	position: relative;
+	width: calc(100% - 65px);
 
 	&Circle {
 		position: absolute;
