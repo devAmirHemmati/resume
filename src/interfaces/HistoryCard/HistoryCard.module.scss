@@ -1,0 +1,11 @@
+.HistoryCard {
+	&Header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&Description {
+		margin-top: 10px !important;
+	}
+}
