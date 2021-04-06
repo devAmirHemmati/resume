@@ -1,6 +1,9 @@
 import { VFC } from 'react';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
+import {
+	useDispatch,
+	useSelector,
+} from 'react-redux';
 import {
 	Avatar,
 	ListQAA,
@@ -16,6 +19,8 @@ import DUMMY_SKILLS from '../../constant/DUMMY/skills';
 import DUMMY_SOCIALS from '../../constant/DUMMY/socials';
 import ISelectorState from '../../store/@types';
 import styles from './Aside.module.scss';
+import { deActiveAside } from '../../store/reducers/Aside/actions';
+import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
 
 const Aside: VFC = () => {
 	const activeAside = useSelector<
@@ -24,6 +29,13 @@ const Aside: VFC = () => {
 	>((store) => store.AsideReducer.active);
 
 	const AsideHeader = () => {
+		const dispatch = useDispatch();
+
+		const clickLinkHandler = (): void => {
+			dispatch(deActiveAside());
+			dispatch(deActiveNavbar());
+		};
+
 		return (
 			<div className={styles.AsideHeader}>
 				<Avatar
@@ -39,6 +51,7 @@ const Aside: VFC = () => {
 					color="Dark"
 					decoration="None"
 					hoverColor="Danger"
+					onClick={clickLinkHandler}
 					noneSelection
 				>
 					امیررضا همتی
