@@ -53,12 +53,14 @@ const Aside: VFC = () => {
 		return (
 			<div className={styles.AsideHeader}>
 				<SRLWrapper options={lightBoxOptions}>
-					<a href="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg">
-						<Avatar
-							src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
-							alt="avatar"
-						/>
-					</a>
+					<div className="avatar-image">
+						<a href="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg">
+							<Avatar
+								src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
+								alt="avatar"
+							/>
+						</a>
+					</div>
 				</SRLWrapper>
 
 				<Typography
