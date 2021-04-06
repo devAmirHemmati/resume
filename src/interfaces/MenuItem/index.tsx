@@ -1,4 +1,5 @@
 import { FC, forwardRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import { AiOutlineCaretLeft } from 'react-icons/ai';
 import Link from 'next/link';
 import { Collapse } from 'react-collapse';
@@ -21,9 +22,11 @@ const MenuItem: FC<IMenuItemProps> = forwardRef(
 		},
 		ref,
 	) => {
-		const [showItems, setShowItems] = useState<
-			boolean
-		>(false);
+		const router = useRouter();
+		const [
+			showItems,
+			setShowItems,
+		] = useState<boolean>(false);
 
 		const MenuItemLink = () => {
 			if (typeof href === 'string') {
@@ -47,6 +50,11 @@ const MenuItem: FC<IMenuItemProps> = forwardRef(
 						component="a"
 						variant="TextSmall"
 						fontFamily="mikhak"
+						color={
+							router.pathname === to
+								? 'Dark'
+								: 'Secondary'
+						}
 						hoverColor="Dark"
 						className={styles.MenuItemLink}
 					>
