@@ -29,6 +29,7 @@
 	},
 	"homepage": "https://gitlab.com/devAmirHemmati/resume#readme",
 	"devDependencies": {
+		"@types/axios": "^0.14.0",
 		"@types/node": "^14.14.31",
 		"@types/rc-tooltip": "^3.7.3",
 		"@types/react-collapse": "^5.0.0",
@@ -54,6 +55,7 @@
 	},
 	"dependencies": {
 		"@brainhubeu/react-carousel": "^1.19.26",
+		"axios": "^0.21.1",
 		"jalali-moment": "^3.3.10",
 		"next": "^10.0.6",
 		"node-sass": "^5.0.0",

@@ -16,18 +16,23 @@ import {
 	Progress,
 	ListItem,
 } from '../../interfaces';
-import DUMMY_LANGUAGES from '../../constant/DUMMY/languages';
-import DUMMY_LIST_SKILLS from '../../constant/DUMMY/listSkills';
-import DUMMY_SKILLS from '../../constant/DUMMY/skills';
-import DUMMY_SOCIALS from '../../constant/DUMMY/socials';
 import ISelectorState from '../../store/@types';
 import styles from './Aside.module.scss';
 import { deActiveAside } from '../../store/reducers/Aside/actions';
 import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
 import { lightBoxOptions } from '../../options';
+import { useGetUserInformation } from '../../hooks';
+import Utilities from '../../Services/Utilities';
 
 const Aside: VFC = () => {
 	const dispatch = useDispatch();
+	const {
+		profile,
+		language,
+		skill,
+		social,
+		knowledge,
+	} = useGetUserInformation();
 
 	const activeAside = useSelector<
 		ISelectorState,
@@ -54,9 +59,9 @@ const Aside: VFC = () => {
 			<div className={styles.AsideHeader}>
 				<SRLWrapper options={lightBoxOptions}>
 					<div className="avatar-image">
-						<a href="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg">
+						<a href={profile.normal_avatar}>
 							<Avatar
-								src="http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/face-1.jpg"
+								src={profile.small_avatar}
 								alt="avatar"
 							/>
 						</a>
@@ -74,7 +79,7 @@ const Aside: VFC = () => {
 					onClick={clickLinkHandler}
 					noneSelection
 				>
-					امیررضا همتی
+					{profile.firstname} {profile.lastname}
 				</Typography>
 
 				<Typography
@@ -113,15 +118,18 @@ const Aside: VFC = () => {
 				>
 					<ListQAA
 						question="محل سکونت"
-						answer="ایران"
+						answer={profile.country}
 					/>
 
 					<ListQAA
 						question="شهر"
-						answer="شیراز"
+						answer={profile.city}
 					/>
 
-					<ListQAA question="سن" answer="۱۸" />
+					<ListQAA
+						question="سن"
+						answer={profile.age}
+					/>
 				</div>
 
 				<div
@@ -132,15 +140,15 @@ const Aside: VFC = () => {
 							styles.AsideDescriptionItemLanguages
 						}
 					>
-						{DUMMY_LANGUAGES.map(
-							(language, key) => (
-								<CircleProgress
-									key={key}
-									text={language.text}
-									value={language.value}
-								/>
-							),
-						)}
+						{language.map((languageItem, key) => (
+							<CircleProgress
+								key={key}
+								text={languageItem.title}
+								value={parseInt(
+									languageItem.percent,
+								)}
+							/>
+						))}
 					</div>
 				</div>
 
@@ -152,11 +160,13 @@ const Aside: VFC = () => {
 							styles.AsideDescriptionItemSkills
 						}
 					>
-						{DUMMY_SKILLS.map((skill, key) => (
+						{skill.map((skillItem, key) => (
 							<div key={key}>
 								<Progress
-									text={skill.text}
-									value={skill.value}
+									text={skillItem.title}
+									value={parseInt(
+										skillItem.percent,
+									)}
 								/>
 							</div>
 						))}
@@ -166,9 +176,9 @@ const Aside: VFC = () => {
 				<div
 					className={styles.AsideDescriptionItem}
 				>
-					{DUMMY_LIST_SKILLS.map((item, key) => (
+					{knowledge.map((item, key) => (
 						<ListItem key={key}>
-							{item.text}
+							{item.value}
 						</ListItem>
 					))}
 				</div>
@@ -194,11 +204,15 @@ const Aside: VFC = () => {
 	const AsideFooter = () => {
 		return (
 			<div className={styles.AsideFooter}>
-				{DUMMY_SOCIALS.map((item, key) => (
+				{social.map((item, key) => (
 					<SocialNetworkIcon
-						Icon={item.Icon}
+						Icon={Utilities.getIconWihName(
+							Utilities.getSocialNameInLink(
+								item.link,
+							).name,
+						)}
 						title={item.title}
-						url={item.url}
+						url={item.link}
 						key={key}
 					/>
 				))}
