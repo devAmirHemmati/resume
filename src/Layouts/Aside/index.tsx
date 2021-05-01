@@ -23,6 +23,7 @@ import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
 import { lightBoxOptions } from '../../options';
 import { useGetUserInformation } from '../../hooks';
 import Utilities from '../../Services/Utilities';
+import { SplashScreen } from '..';
 
 const Aside: VFC = () => {
 	const dispatch = useDispatch();
@@ -33,6 +34,13 @@ const Aside: VFC = () => {
 		social,
 		knowledge,
 	} = useGetUserInformation();
+	const userInformationLoading = useSelector<
+		ISelectorState,
+		boolean
+	>(
+		(store) =>
+			store.UserInformationReducer.loading,
+	);
 
 	const activeAside = useSelector<
 		ISelectorState,
@@ -226,11 +234,16 @@ const Aside: VFC = () => {
 				activeAside ? styles.AsideActive : ''
 			}`}
 		>
-			{AsideHeader()}
+			<SplashScreen
+				isOpened={!userInformationLoading}
+			/>
 
-			{AsideDescription()}
+			{!userInformationLoading && AsideHeader()}
 
-			{AsideFooter()}
+			{!userInformationLoading &&
+				AsideDescription()}
+
+			{!userInformationLoading && AsideFooter()}
 		</aside>
 	);
 };

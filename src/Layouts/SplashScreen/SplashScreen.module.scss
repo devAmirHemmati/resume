@@ -1,0 +1,31 @@
+@import './../../styles/abstract/variables';
+
+.Container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $lite-theme-box-background;
+	z-index: 2000;
+	transition: $animation-transition;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&Content {
+		h2 {
+			margin-bottom: 20px !important;
+		}
+
+		span {
+			display: block;
+			margin-top: 8px !important;
+		}
+	}
+
+	&Remove {
+		opacity: 0;
+		visibility: collapse;
+	}
+}

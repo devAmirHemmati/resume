@@ -58,6 +58,7 @@
         "no-restricted-syntax": "off",
         "no-else-return": "off",
         "no-useless-return": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "no-shadow": "off"
     }
 }
