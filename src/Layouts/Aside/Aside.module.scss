@@ -54,9 +54,19 @@
 			&Languages {
 				display: flex;
 				align-items: center;
-				justify-content: space-around;
+				justify-content: space-between;
+				flex-wrap: wrap;
 				padding-bottom: 35px;
-				padding-top: 5px;
+
+				&Item {
+					flex-basis: 33.33%;
+					display: flex;
+					justify-content: center;
+
+					&:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+						padding-top: 50px;
+					}
+				}
 			}
 
 			&Skills {

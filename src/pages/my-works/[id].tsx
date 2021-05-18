@@ -1,5 +1,9 @@
 import { VFC } from 'react';
 import {
+	APIGetMyWork,
+	APIGetMyWorks,
+} from '../../Api';
+import {
 	Comments,
 	CountUp,
 } from '../../components/Index';
@@ -14,9 +18,12 @@ import {
 	Badge,
 	Typography,
 } from '../../interfaces';
+import { IMyWorkPageProps } from '../../pages-types';
 import { DUMMY_MY_WORK } from './../../constant/DUMMY/my-work';
 
-const MyWork: VFC = () => {
+const MyWork: VFC<IMyWorkPageProps> = ({
+	work,
+}) => {
 	return (
 		<section>
 			<div className="d-flex justify-content-between align-items-center">
@@ -28,7 +35,7 @@ const MyWork: VFC = () => {
 					style={{ fontSize: 22 }}
 					noneSelection
 				>
-					{DUMMY_MY_WORK.title}
+					{work.title}
 				</Typography>
 
 				<Badge noneSelection>
@@ -36,30 +43,52 @@ const MyWork: VFC = () => {
 				</Badge>
 			</div>
 
-			<div style={{ paddingTop: 25 }}>
-				<WorkGallery
-					items={DUMMY_MY_WORK.gallery}
-				/>
-			</div>
+			{work.pictures.length >= 1 && (
+				<div style={{ paddingTop: 25 }}>
+					<WorkGallery
+						items={work.pictures.map(
+							(pictureItem) => ({
+								alt: pictureItem.alt,
+								src: pictureItem.src,
+							}),
+						)}
+					/>
+				</div>
+			)}
 
 			<div style={{ paddingTop: 60 }}>
 				<WorkDetails
-					customer={DUMMY_MY_WORK.customer}
-					description={DUMMY_MY_WORK.description}
-					doneDate={DUMMY_MY_WORK.doneDate}
-					location={DUMMY_MY_WORK.location}
-					startDate={DUMMY_MY_WORK.startDate}
-					status={DUMMY_MY_WORK.status}
-					url={DUMMY_MY_WORK.url}
+					customer={work.customer}
+					description={work.description}
+					doneDate={new Date()}
+					location={work.location}
+					startDate={new Date()}
+					status={work.status}
+					url={work.url}
 				/>
 			</div>
 
-			<div>
-				<Comments
-					comments={DUMMY_HOME.comments}
-					title="نظر مشتری"
-				/>
-			</div>
+			{work.comments.length >= 1 && (
+				<div>
+					<Comments
+						comments={work.comments.map(
+							(item) => ({
+								avatar: item.avatar,
+								name: item.name,
+								description: item.description,
+								rating: parseInt(item.rating) as
+									| 1
+									| 2
+									| 3
+									| 4
+									| 5,
+								workName: work.title,
+							}),
+						)}
+						title="نظر مشتری"
+					/>
+				</div>
+			)}
 
 			<div style={{ paddingTop: 20 }}>
 				<CountUp items={DUMMY_HOME.countUp} />
@@ -75,5 +104,30 @@ const MyWork: VFC = () => {
 		</section>
 	);
 };
+
+export async function getStaticProps({ params }) {
+	const work = await APIGetMyWork(params.id);
+
+	return {
+		props: {
+			work,
+		},
+	};
+}
+
+export async function getStaticPaths() {
+	const works = await APIGetMyWorks();
+
+	return {
+		paths: works.map((post) => {
+			return {
+				params: {
+					id: post.id.toString(),
+				},
+			};
+		}),
+		fallback: false,
+	};
+}
 
 export default MyWork;

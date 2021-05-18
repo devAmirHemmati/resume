@@ -20,13 +20,10 @@ const Isotope: FC<IIsotopeProps> = ({
 	const [filters, updateFilters] = useState(
 		filtersDefault,
 	);
-	const [
-		containerHeight,
-		setContainerHeight,
-	] = useState<number>(0);
-	const [itemWidth, setItemWidth] = useState<
-		number
-	>(0);
+	const [containerHeight, setContainerHeight] =
+		useState<number>(0);
+	const [itemWidth, setItemWidth] =
+		useState<number>(0);
 	const containerRef = useRef<HTMLDivElement>();
 
 	useEffect(() => {
@@ -180,9 +177,8 @@ const Compose: FC<IIsotopeProps> = ({
 }) => {
 	const [size] = useGetWindowSize();
 
-	const [loading, setLoading] = useState<boolean>(
-		true,
-	);
+	const [loading, setLoading] =
+		useState<boolean>(true);
 
 	useEffect(() => {
 		setLoading(true);

@@ -8,7 +8,6 @@ import {
 	MenuItem,
 	Typography,
 } from '../../interfaces';
-import NavigationItems from '../../constant/navigationItems/NavigationItems';
 import {
 	deActiveNavbar,
 	switchActiveNavbar,
@@ -16,9 +15,11 @@ import {
 import ISelectorState from '../../store/@types';
 import styles from './Navbar.module.scss';
 import { deActiveAside } from '../../store/reducers/Aside/actions';
+import { useGetUserInformation } from '../../hooks';
 
 const Menubar: VFC = () => {
 	const dispatch = useDispatch();
+	const { menus } = useGetUserInformation();
 
 	const activeMenu = useSelector<
 		ISelectorState,
@@ -30,10 +31,8 @@ const Menubar: VFC = () => {
 		boolean
 	>((store) => store.AsideReducer.active);
 
-	const [
-		showMenuList,
-		setShowMenuList,
-	] = useState<boolean>(false);
+	const [showMenuList, setShowMenuList] =
+		useState<boolean>(false);
 
 	useEffect(() => {
 		if (!activeMenu) {
@@ -95,19 +94,18 @@ const Menubar: VFC = () => {
 						: 'initial',
 				}}
 			>
-				{NavigationItems.map(
-					({ text, ...rest }, key) => (
-						<MenuItem
-							{...rest}
-							key={key}
-							index={key}
-							active={showMenuList}
-							onClick={clickItemHandler}
-						>
-							{text}
-						</MenuItem>
-					),
-				)}
+				{menus.map(({ title, href, to }, key) => (
+					<MenuItem
+						key={key}
+						index={key}
+						active={showMenuList}
+						onClick={clickItemHandler}
+						to={to}
+						href={href}
+					>
+						{title}
+					</MenuItem>
+				))}
 			</ul>
 		);
 	};

@@ -10,11 +10,10 @@ import styles from './Details.module.scss';
 import { IDetailsProps } from './types';
 import { monthes } from '../../../constant/monthes';
 
-const statusText: string[] = [
-	'ناموفق',
-	'موفق',
-	'در حال انجام',
-];
+const statusText = {
+	Done: 'به پایان رسیده',
+	InDevelopment: 'در حال انجام',
+};
 
 const Details: VFC<IDetailsProps> = ({
 	status,

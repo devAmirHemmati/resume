@@ -1,3 +1,4 @@
+import { tMyWorkItem } from '../../../Api/Work/types';
 import { IComponentProps } from '../../types';
 
 export interface IDetailsProps
@@ -5,7 +6,7 @@ export interface IDetailsProps
 	description: string;
 	startDate: Date;
 	doneDate: Date;
-	status: 0 | 1 | 2;
+	status: tMyWorkItem;
 	customer: string;
 	location: string;
 	url?: string;

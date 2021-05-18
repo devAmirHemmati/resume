@@ -7,6 +7,7 @@ export interface IUserProfile {
 	email: string;
 	age: string;
 	country: string;
+	description?: string;
 	state: string;
 	city: string;
 	small_avatar: string;
@@ -46,10 +47,20 @@ export interface IUserSocial {
 	updated_at: string;
 }
 
+export interface IUserMenu {
+	id: string;
+	title: string;
+	to?: string;
+	href?: string;
+	created_at: string;
+	updated_at: string;
+}
+
 export interface IAPIUserInformation {
 	profile: IUserProfile;
 	language: IUserLanguage[];
 	skill: IUserSkill[];
 	knowledge: IUserKnowledge[];
 	social: IUserSocial[];
+	menus: IUserMenu[];
 }

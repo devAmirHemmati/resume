@@ -1,26 +1,37 @@
+import { VFC } from 'react';
+import { APIGetMyWorks } from '../../Api';
 import {
 	Typography,
 	CardWork,
 	Isotope,
 } from '../../interfaces';
+import { IMyWorksPageProps } from '../../pages-types';
 import { MY_WORKS } from './../../constant/DUMMY/my-works';
 
-const MyWorks = () => {
+const MyWorks: VFC<IMyWorksPageProps> = ({
+	works,
+}) => {
 	const IsotopeFiltering = () => {
+		if (works.length < 1) {
+			return <></>;
+		}
 		return (
 			<Isotope
-				cardsDefault={MY_WORKS.cards}
+				cardsDefault={works.map((mItem) => ({
+					filter: [mItem.filter],
+					id: `item-${mItem.id}`,
+				}))}
 				filtersDefault={MY_WORKS.filters}
 				unitHeight={300}
 			>
-				{MY_WORKS.cards.map((card) => (
+				{works.map((work) => (
 					<CardWork
-						key={card.id}
-						href={`/my-works/${card.id}`}
-						src={card.src}
-						title={card.title}
+						key={`item-${work.id}`}
+						href={`/my-works/${work.id}`}
+						src={work.src}
+						title={work.title}
 					>
-						{card.description}
+						{work.description}
 					</CardWork>
 				))}
 			</Isotope>
@@ -42,5 +53,15 @@ const MyWorks = () => {
 		</div>
 	);
 };
+
+export async function getStaticProps() {
+	const response = await APIGetMyWorks();
+
+	return {
+		props: {
+			works: response,
+		},
+	};
+}
 
 export default MyWorks;

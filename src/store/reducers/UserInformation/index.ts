@@ -25,6 +25,7 @@ const initialState: IUserInformationState = {
 	skill: [],
 	knowledge: [],
 	social: [],
+	menus: [],
 };
 
 const UserInformationReducer = (

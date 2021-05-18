@@ -16,8 +16,7 @@ export const MY_WORKS: {
 		{
 			id: 'feaojfoiweo;fiaoweifjoi',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['private'],
@@ -25,8 +24,7 @@ export const MY_WORKS: {
 		{
 			id: 'efawiow48uy893p',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-1.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-1.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['company'],
@@ -34,8 +32,7 @@ export const MY_WORKS: {
 		{
 			id: 'fea390ut90t9awj;of',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['company'],
@@ -43,8 +40,7 @@ export const MY_WORKS: {
 		{
 			id: 'vanoe;wijiwo3t',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['company'],
@@ -52,8 +48,7 @@ export const MY_WORKS: {
 		{
 			id: '30tu[3fjawfe',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['company'],
@@ -61,8 +56,7 @@ export const MY_WORKS: {
 		{
 			id: 'fejcao;wf930',
 			title: 'طراحی کارت ویزیت شخصی',
-			src:
-				'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
+			src: 'http://mimwp.com/theme/arter/demo/light/wp-content/uploads/2020/09/work-2.jpg',
 			description:
 				'طراحی بروشور به سفارش شرکت وی',
 			filter: ['company'],

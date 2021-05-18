@@ -46,10 +46,8 @@ const Aside: VFC = () => {
 		ISelectorState,
 		boolean
 	>((store) => store.AsideReducer.active);
-	const [
-		isShowData,
-		setIsShowData,
-	] = useState<boolean>(false);
+	const [isShowData, setIsShowData] =
+		useState<boolean>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -107,19 +105,20 @@ const Aside: VFC = () => {
 	const AsideDescription = () => {
 		return (
 			<div className={styles.AsideDescription}>
-				<div
-					className={styles.AsideDescriptionItem}
-				>
-					<Collapse isOpened={isShowData}>
-						<Typography noneSelection>
-							امیررضا همتی هستم، برنامه نویس ریکت
-							جی اس. شدیدا علاقمند به یادگیری
-							مباحث برنامه نویسی. هرروز تلاش میکنم
-							تا علم خود را در برنامه نویسی بیشتر
-							و بیشتر کنم
-						</Typography>
-					</Collapse>
-				</div>
+				{typeof profile.description ===
+					'string' && (
+					<div
+						className={
+							styles.AsideDescriptionItem
+						}
+					>
+						<Collapse isOpened={isShowData}>
+							<Typography noneSelection>
+								{profile.description}
+							</Typography>
+						</Collapse>
+					</div>
+				)}
 
 				<div
 					className={styles.AsideDescriptionItem}
@@ -149,13 +148,19 @@ const Aside: VFC = () => {
 						}
 					>
 						{language.map((languageItem, key) => (
-							<CircleProgress
+							<div
+								className={
+									styles.AsideDescriptionItemLanguagesItem
+								}
 								key={key}
-								text={languageItem.title}
-								value={parseInt(
-									languageItem.percent,
-								)}
-							/>
+							>
+								<CircleProgress
+									text={languageItem.title}
+									value={parseInt(
+										languageItem.percent,
+									)}
+								/>
+							</div>
 						))}
 					</div>
 				</div>
