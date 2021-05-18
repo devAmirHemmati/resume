@@ -53,9 +53,15 @@ const Details: VFC<IDetailsProps> = ({
 				>
 					<div>
 						<Card>
-							<Typography noneSelection>
-								{description}
-							</Typography>
+							<Typography
+								noneSelection
+								dangerouslySetInnerHTML={{
+									__html: description.replace(
+										/\n/g,
+										'<br />',
+									),
+								}}
+							/>
 
 							{typeof url === 'string' && (
 								<Typography

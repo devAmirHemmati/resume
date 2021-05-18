@@ -63,16 +63,12 @@ const Aside: VFC = () => {
 
 		return (
 			<div className={styles.AsideHeader}>
-				<SRLWrapper options={lightBoxOptions}>
-					<div className="avatar-image">
-						<a href={profile.normal_avatar}>
-							<Avatar
-								src={profile.small_avatar}
-								alt="avatar"
-							/>
-						</a>
-					</div>
-				</SRLWrapper>
+				<div className="avatar-image">
+					<Avatar
+						src={profile.small_avatar}
+						alt="avatar"
+					/>
+				</div>
 
 				<Typography
 					component="Link"
