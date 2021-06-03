@@ -15,6 +15,7 @@ import {
 } from '../../components/MyWork';
 import { DUMMY_HOME } from '../../constant/DUMMY/home';
 import {
+	Aparat,
 	Badge,
 	Typography,
 } from '../../interfaces';
@@ -43,20 +44,14 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 				</Badge>
 			</div>
 
-			{work.pictures.length >= 1 && (
-				<div style={{ paddingTop: 25 }}>
-					<WorkGallery
-						items={work.pictures.map(
-							(pictureItem) => ({
-								alt: pictureItem.alt,
-								src: pictureItem.src,
-							}),
-						)}
-					/>
-				</div>
-			)}
+			<div style={{ marginTop: 25 }}>
+				<Aparat
+					title="title"
+					url="https://www.aparat.com/video/video/embed/videohash/dEwsR/vt/frame"
+				/>
+			</div>
 
-			<div style={{ paddingTop: 60 }}>
+			<div style={{ paddingTop: 30 }}>
 				<WorkDetails
 					customer={work.customer}
 					description={work.description}
@@ -68,8 +63,23 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 				/>
 			</div>
 
-			{work.comments.length >= 1 && (
+			{work.pictures.length >= 1 && (
 				<div>
+					<WorkGallery
+						items={work.pictures.map(
+							(pictureItem) => ({
+								alt: pictureItem.alt,
+								src: pictureItem.src,
+							}),
+						)}
+					/>
+				</div>
+			)}
+
+			<div style={{ marginTop: 25 }} />
+
+			{work.comments.length >= 1 && (
+				<div style={{ marginTop: 50 }}>
 					<Comments
 						comments={work.comments.map(
 							(item) => ({
@@ -90,7 +100,12 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 				</div>
 			)}
 
-			<div style={{ paddingTop: 20 }}>
+			<div
+				style={{
+					paddingTop:
+						work.comments.length >= 1 ? 5 : 25,
+				}}
+			>
 				<CountUp items={DUMMY_HOME.countUp} />
 			</div>
 

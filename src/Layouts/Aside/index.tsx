@@ -4,7 +4,6 @@ import {
 	useDispatch,
 	useSelector,
 } from 'react-redux';
-import { SRLWrapper } from 'simple-react-lightbox';
 import { Collapse } from 'react-collapse';
 
 import {
@@ -20,7 +19,6 @@ import ISelectorState from '../../store/@types';
 import styles from './Aside.module.scss';
 import { deActiveAside } from '../../store/reducers/Aside/actions';
 import { deActiveNavbar } from '../../store/reducers/Navbar/actions';
-import { lightBoxOptions } from '../../options';
 import { useGetUserInformation } from '../../hooks';
 import Utilities from '../../Services/Utilities';
 import { SplashScreen } from '..';
@@ -199,7 +197,8 @@ const Aside: VFC = () => {
 						component="a"
 						variant="LinkSmall"
 						hoverColor="Dark"
-						href="https://google.com"
+						href={profile.resume_file}
+						download="resume.pdf"
 						target="_blank"
 					>
 						دانلود رزومه

@@ -1,3 +1,4 @@
+import { IApiGetHome } from './Api/Home/types';
 import {
 	IMyWorksItem,
 	IMyWorkItem,
@@ -9,4 +10,8 @@ export interface IMyWorksPageProps {
 
 export interface IMyWorkPageProps {
 	work: IMyWorkItem;
+}
+
+export interface IHomePageProps {
+	information: IApiGetHome;
 }

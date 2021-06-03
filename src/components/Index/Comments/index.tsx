@@ -73,6 +73,7 @@ const Comments: VFC<ICommentsProps> = ({
 							key={key}
 							style={{
 								padding: '33px 15px 0 5px',
+								width: '100%',
 							}}
 						>
 							<Comment

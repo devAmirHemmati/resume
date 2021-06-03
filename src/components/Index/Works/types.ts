@@ -1,4 +1,7 @@
+import { IMyWorksItem } from '../../../Api/Work/types';
 import { IComponentProps } from '../../types';
 
 export interface IIndexWorksProps
-	extends IComponentProps {}
+	extends IComponentProps {
+	works: IMyWorksItem[];
+}

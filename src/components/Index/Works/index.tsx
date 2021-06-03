@@ -1,5 +1,4 @@
 import { VFC } from 'react';
-import { MY_WORKS } from './../../../constant/DUMMY/my-works';
 import { useGetWindowSize } from '../../../hooks';
 import {
 	CardWork,
@@ -9,7 +8,9 @@ import {
 import { IIndexWorksProps } from './types';
 import styles from './Works.module.scss';
 
-const Works: VFC<IIndexWorksProps> = () => {
+const Works: VFC<IIndexWorksProps> = ({
+	works,
+}) => {
 	const [size] = useGetWindowSize();
 
 	return (
@@ -27,17 +28,17 @@ const Works: VFC<IIndexWorksProps> = () => {
 					slidesPerPage={size === 'xs' ? 1 : 2}
 					offset={size === 'xs' ? 0 : 15}
 				>
-					{MY_WORKS.cards.map((card, key) => (
+					{works.map((work, key) => (
 						<CardWork
-							href={`/my-works/${card.id}`}
-							src={card.src}
-							title={card.title}
+							href={`/my-works/${work.id}`}
+							src={work.src}
+							title={work.title}
 							key={key}
 							className={
 								styles.ContainerCarouselItem
 							}
 						>
-							{card.description}
+							{work.description}
 						</CardWork>
 					))}
 				</Carousel>

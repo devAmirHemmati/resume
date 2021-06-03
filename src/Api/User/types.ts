@@ -14,6 +14,7 @@ export interface IUserProfile {
 	normal_avatar: string;
 	created_at: string;
 	updated_at: string;
+	resume_file: string;
 }
 
 export interface IUserLanguage {

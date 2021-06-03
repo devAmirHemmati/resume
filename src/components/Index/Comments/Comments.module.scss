@@ -2,6 +2,9 @@
 	padding-top: 30px;
 
 	&List {
+		position: relative;
+		bottom: 15px;
+
 		&Item {
 			display: flex;
 		}

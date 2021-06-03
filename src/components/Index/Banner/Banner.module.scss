@@ -29,6 +29,7 @@
 		h1 {
 			line-height: 1.2 !important;
 			margin-bottom: 15px !important;
+			width: 500px !important;
 
 			@include media('max', 1600px) {
 				font-size: 42px;
@@ -45,6 +46,7 @@
 			@include media('max', 1032px) {
 				font-size: 42px;
 				text-align: center;
+				width: auto !important;
 			}
 		}
 
