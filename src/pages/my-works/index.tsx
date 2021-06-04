@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { NextPage } from 'next';
 import { APIGetMyWorks } from '../../Api';
 import {
 	Typography,
@@ -7,10 +7,20 @@ import {
 } from '../../interfaces';
 import { IMyWorksPageProps } from '../../pages-types';
 
-const MyWorks: VFC<IMyWorksPageProps> = ({
+const MyWorks: NextPage<IMyWorksPageProps> = ({
 	works,
 }) => {
+	const customFilter: any = works.filter;
+
 	const IsotopeFiltering = () => {
+		if (customFilter.length < 1) {
+			customFilter.push({
+				isChecked: true,
+				label: 'all',
+				text: 'همه',
+			});
+		}
+
 		if (works.cards.length < 1) {
 			return <></>;
 		}
@@ -22,7 +32,7 @@ const MyWorks: VFC<IMyWorksPageProps> = ({
 						id: `item-${mItem.id}`,
 					}),
 				)}
-				filtersDefault={works.filter.map(
+				filtersDefault={customFilter.map(
 					(filter, key) => ({
 						isChecked: key === 0,
 						text: filter.text,
@@ -38,7 +48,7 @@ const MyWorks: VFC<IMyWorksPageProps> = ({
 						src={work.src}
 						title={work.title}
 					>
-						{work.description}
+						{work.summary}
 					</CardWork>
 				))}
 			</Isotope>
@@ -61,14 +71,10 @@ const MyWorks: VFC<IMyWorksPageProps> = ({
 	);
 };
 
-export async function getStaticProps() {
+MyWorks.getInitialProps = async () => {
 	const response = await APIGetMyWorks();
 
-	return {
-		props: {
-			works: response,
-		},
-	};
-}
+	return { works: response };
+};
 
 export default MyWorks;

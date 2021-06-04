@@ -1,19 +1,28 @@
+import { VFC } from 'react';
 import {
 	Card,
 	Typography,
 } from '../../../interfaces';
 import styles from './Links.module.scss';
+import { ILinksProps } from './types';
 
-const Links = () => {
+const Links: VFC<ILinksProps> = ({
+	next,
+	prev,
+}) => {
 	return (
 		<section>
 			<Card className={styles.Links}>
 				<Typography
-					component="Link"
-					href="/my-works"
+					component={prev ? 'Link' : 'label'}
+					href={prev ? `/my-works/${prev}` : null}
 					decoration="None"
 					color="Danger"
 					flashBack
+					noneSelection
+					className={
+						prev ? '' : styles.LinksDisabled
+					}
 				>
 					پروژه قبلی
 				</Typography>
@@ -29,11 +38,15 @@ const Links = () => {
 				</Typography>
 
 				<Typography
-					component="Link"
-					href="/my-works"
+					component={next ? 'Link' : 'label'}
+					href={next ? `/my-works/${next}` : null}
 					decoration="None"
 					color="Danger"
 					flash
+					noneSelection
+					className={
+						next ? '' : styles.LinksDisabled
+					}
 				>
 					پروژه بعدی
 				</Typography>

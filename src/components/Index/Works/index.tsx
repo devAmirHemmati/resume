@@ -38,7 +38,7 @@ const Works: VFC<IIndexWorksProps> = ({
 								styles.ContainerCarouselItem
 							}
 						>
-							{work.description}
+							{work.summary}
 						</CardWork>
 					))}
 				</Carousel>

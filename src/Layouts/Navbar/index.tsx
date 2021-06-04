@@ -54,7 +54,13 @@ const Menubar: VFC = () => {
 
 	const NavbarMenuBar = () => {
 		return (
-			<div className={styles.NavbarMenuIcon}>
+			<div
+				className={`${styles.NavbarMenuIcon} ${
+					activeMenu
+						? styles.NavbarMenuIconActive
+						: ''
+				}`}
+			>
 				<div onClick={switchActiveMenuHandler}>
 					<MenuIcon active={activeMenu} />
 				</div>

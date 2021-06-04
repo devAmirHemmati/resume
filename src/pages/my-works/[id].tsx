@@ -1,8 +1,5 @@
-import { VFC } from 'react';
-import {
-	APIGetMyWork,
-	APIGetMyWorks,
-} from '../../Api';
+import { NextPage } from 'next';
+import { APIGetMyWork } from '../../Api';
 import {
 	Comments,
 	CountUp,
@@ -22,7 +19,7 @@ import {
 import { IMyWorkPageProps } from '../../pages-types';
 import { DUMMY_MY_WORK } from './../../constant/DUMMY/my-work';
 
-const MyWork: VFC<IMyWorkPageProps> = ({
+const MyWork: NextPage<IMyWorkPageProps> = ({
 	work,
 }) => {
 	return (
@@ -44,12 +41,28 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 				</Badge>
 			</div>
 
-			<div style={{ marginTop: 25 }}>
-				<Aparat
-					title="title"
-					url="https://www.aparat.com/video/video/embed/videohash/dEwsR/vt/frame"
-				/>
-			</div>
+			{work.video_link !== null && (
+				<div style={{ marginTop: 25 }}>
+					<Aparat
+						title={work.title}
+						url={work.video_link}
+					/>
+				</div>
+			)}
+
+			{work.pictures.length >= 1 &&
+				work.video_link === null && (
+					<div style={{ marginBottom: 40 }}>
+						<WorkGallery
+							items={work.pictures.map(
+								(pictureItem) => ({
+									alt: pictureItem.alt,
+									src: pictureItem.src,
+								}),
+							)}
+						/>
+					</div>
+				)}
 
 			<div style={{ paddingTop: 30 }}>
 				<WorkDetails
@@ -63,20 +76,24 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 				/>
 			</div>
 
-			{work.pictures.length >= 1 && (
-				<div>
-					<WorkGallery
-						items={work.pictures.map(
-							(pictureItem) => ({
-								alt: pictureItem.alt,
-								src: pictureItem.src,
-							}),
-						)}
-					/>
-				</div>
-			)}
+			{work.pictures.length >= 1 &&
+				work.video_link !== null && (
+					<div>
+						<WorkGallery
+							items={work.pictures.map(
+								(pictureItem) => ({
+									alt: pictureItem.alt,
+									src: pictureItem.src,
+								}),
+							)}
+						/>
+					</div>
+				)}
 
-			<div style={{ marginTop: 25 }} />
+			{work.pictures.length >= 1 &&
+				work.video_link !== null && (
+					<div style={{ marginTop: 25 }} />
+				)}
 
 			{work.comments.length >= 1 && (
 				<div style={{ marginTop: 50 }}>
@@ -114,35 +131,23 @@ const MyWork: VFC<IMyWorkPageProps> = ({
 			</div>
 
 			<div style={{ marginTop: 25 }}>
-				<Links />
+				<Links
+					prev={work.perv}
+					next={work.next}
+				/>
 			</div>
 		</section>
 	);
 };
 
-export async function getStaticProps({ params }) {
-	const work = await APIGetMyWork(params.id);
+MyWork.getInitialProps = async (args) => {
+	const response = await APIGetMyWork(
+		args.query.id as any,
+	);
 
 	return {
-		props: {
-			work,
-		},
+		work: response,
 	};
-}
-
-export async function getStaticPaths() {
-	const works = await APIGetMyWorks();
-
-	return {
-		paths: works.map((post) => {
-			return {
-				params: {
-					id: post.id.toString(),
-				},
-			};
-		}),
-		fallback: false,
-	};
-}
+};
 
 export default MyWork;

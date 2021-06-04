@@ -2,15 +2,13 @@ import { IApiGetHome } from './Api/Home/types';
 import {
 	IMyWorksItem,
 	IMyWorkItem,
+	IMyWorksFilter,
 } from './Api/Work/types';
 
 export interface IMyWorksPageProps {
 	works: {
 		cards: IMyWorksItem[];
-		filter: {
-			text: string;
-			label: string;
-		}[];
+		filter: IMyWorksFilter[];
 	};
 }
 

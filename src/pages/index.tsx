@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { NextPage } from 'next';
 import { APIGetHome } from '../Api/Home';
 import {
 	Banner,
@@ -8,19 +8,19 @@ import {
 } from '../components/Index';
 import { IHomePageProps } from '../pages-types';
 
-const Home: VFC<IHomePageProps> = ({
+const Home: NextPage<IHomePageProps> = ({
 	information,
 }) => {
 	return (
 		<div>
 			<Banner
-				title={information.summary[0].title}
-				skills={information.summary[0].skills}
-				profile={information.summary[0].avatar}
+				title={information.summary.title}
+				skills={information.summary.skills}
+				profile={information.summary.avatar}
 			/>
 
 			<CountUp
-				items={information.summary[0].count_up.map(
+				items={information.summary.count_up.map(
 					(item) => ({
 						text: item.text,
 						value: parseInt(item.value),
@@ -41,7 +41,7 @@ const Home: VFC<IHomePageProps> = ({
 							name: c.name,
 							description: c.description,
 							rating: parseInt(c.rating) as any,
-							workName: c.my_works_id.toString(),
+							workName: c.work,
 						}),
 					)}
 				/>
@@ -50,14 +50,10 @@ const Home: VFC<IHomePageProps> = ({
 	);
 };
 
-export async function getStaticProps() {
+Home.getInitialProps = async () => {
 	const response = await APIGetHome();
 
-	return {
-		props: {
-			information: response,
-		},
-	};
-}
+	return { information: response };
+};
 
 export default Home;

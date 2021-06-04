@@ -11,6 +11,7 @@ export interface tMyWorkComment {
 	rating: string;
 	['created_at']: string;
 	['updated_at']: string;
+	work: string;
 }
 
 export interface IMyWorksItemPictures {
@@ -26,10 +27,10 @@ export interface IMyWorksItem {
 	id: number;
 	title: string;
 	src: string;
-	description: string;
 	filter: string;
 	url: string;
 	customer: string;
+	summary: string;
 	location: string;
 	['start_date']: string;
 	['done_date']: string;
@@ -45,6 +46,7 @@ export interface IMyWorkItem {
 	title: string;
 	src: string;
 	description: string;
+	summary: string;
 	filter: string;
 	url: string;
 	customer: string;
@@ -54,11 +56,22 @@ export interface IMyWorkItem {
 	status: tMyWorkItem;
 	['created_at']: Date;
 	['updated_at']: Date;
+	['video_link']: string | null;
 	pictures: IMyWorksItemPictures[];
 	comments: tMyWorkComment[];
+	next?: number;
+	perv?: number;
 }
 
-export interface IAPIMyWorks
-	extends IMyWorksItem {}
+export interface IMyWorksFilter {
+	id: number;
+	label: string;
+	text: string;
+}
+
+export interface IAPIMyWorks {
+	cards: IMyWorksItem[];
+	filter: IMyWorksFilter[];
+}
 
 export interface IAPIMyWork extends IMyWorkItem {}

@@ -20,9 +20,7 @@ const Grid: FC<IProps> = forwardRef(
 			return (
 				<div
 					ref={
-						ref as ForwardRefExoticComponent<
-							HTMLDivElement
-						>
+						ref as ForwardRefExoticComponent<HTMLDivElement>
 					}
 					{...others}
 					className={`${styles.Row} ${others.className}`}
@@ -49,12 +47,11 @@ const Grid: FC<IProps> = forwardRef(
 				},
 			);
 		}
+
 		return (
 			<div
 				ref={
-					ref as ForwardRefExoticComponent<
-						HTMLDivElement
-					>
+					ref as ForwardRefExoticComponent<HTMLDivElement>
 				}
 				{...others}
 				className={`${classGrid} ${others.className}`}

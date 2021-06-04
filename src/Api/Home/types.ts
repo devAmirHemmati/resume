@@ -19,5 +19,5 @@ export interface IApiGetHomeSummary {
 export interface IApiGetHome {
 	comments: tMyWorkComment[];
 	works: IMyWorksItem[];
-	summary: IApiGetHomeSummary[];
+	summary: IApiGetHomeSummary;
 }

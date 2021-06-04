@@ -11,10 +11,29 @@
 	transition: $animation-transition;
 	z-index: 50;
 
+	@include media('min', 'xl') {
+		border-radius: 15px 0 0 15px;
+	}
+
 	&MenuIcon {
 		height: 70px;
 		background-color: #fff;
 		box-shadow: 0 1px 4px 0 rgb(160, 160, 160);
+		transition: $animation-transition;
+
+		@include media('min', 'xl') {
+			border-radius: 15px 0 15px 15px;
+		}
+
+		&:hover {
+			border-radius: 15px 0 0 0;
+		}
+
+		&Active {
+			@include media('min', 'xl') {
+				border-radius: 15px 0 0 0;
+			}
+		}
 
 		& > div {
 			height: 100%;
@@ -53,13 +72,13 @@
 	}
 
 	&Active {
-		left: 0 !important;
+		width: 230px !important;
 	}
 
 	@include media('max', 'lg') {
-		left: -240px;
+		width: calc(230px - 240px);
 	}
 	@include media('min', 'xl') {
-		left: -150px;
+		width: calc(230px - 150px);
 	}
 }

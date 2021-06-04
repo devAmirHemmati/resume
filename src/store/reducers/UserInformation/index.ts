@@ -20,6 +20,8 @@ const initialState: IUserInformationState = {
 		normal_avatar: '',
 		created_at: '',
 		updated_at: '',
+		resume_file: '',
+		description: '',
 	},
 	language: [],
 	skill: [],

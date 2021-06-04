@@ -1,17 +1,16 @@
 import Http from '../Http';
-import { IAPIMyWorks } from './types';
+import { IAPIMyWorks, IAPIMyWork } from './types';
 
-export const APIGetMyWorks = async (): Promise<
-	IAPIMyWorks[]
-> => {
-	const { data } = await Http.get('/my-works');
+export const APIGetMyWorks =
+	async (): Promise<IAPIMyWorks> => {
+		const { data } = await Http.get('/my-works');
 
-	return data;
-};
+		return data;
+	};
 
 export const APIGetMyWork = async (
 	id: string,
-): Promise<IAPIMyWorks[]> => {
+): Promise<IAPIMyWork> => {
 	const { data } = await Http.get(
 		`/my-work/${id}`,
 	);
