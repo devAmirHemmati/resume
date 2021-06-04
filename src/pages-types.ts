@@ -5,7 +5,13 @@ import {
 } from './Api/Work/types';
 
 export interface IMyWorksPageProps {
-	works: IMyWorksItem[];
+	works: {
+		cards: IMyWorksItem[];
+		filter: {
+			text: string;
+			label: string;
+		}[];
+	};
 }
 
 export interface IMyWorkPageProps {

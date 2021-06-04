@@ -6,25 +6,32 @@ import {
 	Isotope,
 } from '../../interfaces';
 import { IMyWorksPageProps } from '../../pages-types';
-import { MY_WORKS } from './../../constant/DUMMY/my-works';
 
 const MyWorks: VFC<IMyWorksPageProps> = ({
 	works,
 }) => {
 	const IsotopeFiltering = () => {
-		if (works.length < 1) {
+		if (works.cards.length < 1) {
 			return <></>;
 		}
 		return (
 			<Isotope
-				cardsDefault={works.map((mItem) => ({
-					filter: [mItem.filter],
-					id: `item-${mItem.id}`,
-				}))}
-				filtersDefault={MY_WORKS.filters}
+				cardsDefault={works.cards.map(
+					(mItem) => ({
+						filter: [mItem.filter],
+						id: `item-${mItem.id}`,
+					}),
+				)}
+				filtersDefault={works.filter.map(
+					(filter, key) => ({
+						isChecked: key === 0,
+						text: filter.text,
+						label: filter.label,
+					}),
+				)}
 				unitHeight={300}
 			>
-				{works.map((work) => (
+				{works.cards.map((work) => (
 					<CardWork
 						key={`item-${work.id}`}
 						href={`/my-works/${work.id}`}
