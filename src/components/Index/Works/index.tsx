@@ -18,6 +18,7 @@ const Works: VFC<IIndexWorksProps> = ({
 			<Typography
 				component="h4"
 				variant="Display4"
+				noneSelection
 			>
 				نمونه کار ها
 			</Typography>
