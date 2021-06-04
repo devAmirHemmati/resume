@@ -20,6 +20,11 @@
 		transform: translate(0, -1.5px);
 	}
 
+	&:disabled {
+		cursor: default;
+		opacity: 0.8;
+	}
+
 	&NoneSelection {
 		&::selection {
 			background-color: transparent;

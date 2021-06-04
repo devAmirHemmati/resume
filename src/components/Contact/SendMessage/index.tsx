@@ -5,6 +5,7 @@ import {
 	ChangeEvent,
 } from 'react';
 import { toast } from 'react-toastify';
+import { APIPostNewMessage } from '../../../Api/Contact';
 import {
 	Button,
 	Card,
@@ -20,24 +21,29 @@ import {
 import styles from './SendMessage.module.scss';
 
 const SendMessage: VFC = () => {
-	const [fullName, setFullName] = useState<
-		string
-	>('');
+	const [loading, setLoading] =
+		useState<boolean>(false);
+	const [fullName, setFullName] =
+		useState<string>('');
 	const [email, setEmail] = useState<string>('');
-	const [message, setMessage] = useState<string>(
-		'',
-	);
+	const [message, setMessage] =
+		useState<string>('');
 
 	const showNameErrorMessage = () =>
 		toast.error(
 			'نام خود را به فارسی وارد نمائید',
+			{ toastId: 'validate' },
 		);
 
 	const showEmailErrorMessage = () =>
-		toast.error('ایمیل خود را صحیح وارد نمائید');
+		toast.error('ایمیل خود را صحیح وارد نمائید', {
+			toastId: 'validate',
+		});
 
 	const showMessageErrorMessage = () =>
-		toast.error('پیام خود را وارد نمائید');
+		toast.error('پیام خود را وارد نمائید', {
+			toastId: 'validate',
+		});
 
 	const setFormHandler = (
 		event: ChangeEvent<any>,
@@ -60,9 +66,9 @@ const SendMessage: VFC = () => {
 		}
 	};
 
-	const submitFormHandler = (
+	const submitFormHandler = async (
 		event: FormEvent,
-	): void => {
+	): Promise<void> => {
 		event.preventDefault();
 
 		if (!rIsPersianOnly.test(fullName.trim())) {
@@ -76,7 +82,21 @@ const SendMessage: VFC = () => {
 			return;
 		}
 
-		toast.success('پیام ارسال شد');
+		try {
+			setLoading(true);
+
+			await APIPostNewMessage({
+				email: email.trim(),
+				message: message.trim(),
+				name: fullName.trim(),
+			});
+
+			setLoading(false);
+
+			toast.success('پیام ارسال شد');
+		} catch {
+			toast.error('پیام باموفقیت ارسال نشد');
+		}
 	};
 
 	return (
@@ -123,7 +143,12 @@ const SendMessage: VFC = () => {
 						/>
 					</Field>
 
-					<Button type="submit">ارسال</Button>
+					<Button
+						type="submit"
+						disabled={loading}
+					>
+						ارسال
+					</Button>
 				</form>
 			</Card>
 		</section>

@@ -8,3 +8,18 @@ export interface IApiGetContact {
 	virgool: string;
 	whatsapp: string;
 }
+
+export interface IApiPostNewMessageData {
+	name: string;
+	email: string;
+	message: string;
+}
+
+export interface IApiPostNewMessage {
+	name: string;
+	email: string;
+	message: string;
+	['updated_at']: string;
+	['created_at']: string;
+	id: number;
+}
