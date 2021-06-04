@@ -13,17 +13,15 @@ const HistoryCard: FC<IHistoryCardProps> = ({
 	children,
 	...rest
 }) => {
-	const mStartDate: number[] = moment(startDate)
+	const mStartDate: number[] = moment
+		.from(startDate, 'fa', 'YYYY/MM/DD')
 		.locale('fa')
 		.format('YYYY/MM/DD')
 		.split('/')
 		.map((m) => parseInt(m));
 
-	const mEndDate: number[] = moment(
-		typeof endDate === 'string'
-			? endDate
-			: new Date(),
-	)
+	const mEndDate: number[] = moment
+		.from(endDate, 'fa', 'YYYY/MM/DD')
 		.locale('fa')
 		.format('YYYY/MM/DD')
 		.split('/')

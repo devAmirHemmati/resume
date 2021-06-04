@@ -1,3 +1,4 @@
+import { IApiGetHistory } from './Api/History/types';
 import { IApiGetHome } from './Api/Home/types';
 import {
 	IMyWorksItem,
@@ -18,4 +19,8 @@ export interface IMyWorkPageProps {
 
 export interface IHomePageProps {
 	information: IApiGetHome;
+}
+
+export interface IHistoryPageProps {
+	information: IApiGetHistory;
 }
