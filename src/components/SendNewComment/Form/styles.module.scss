@@ -1,0 +1,23 @@
+.Container {
+	max-width: 600px;
+	margin: 0 auto;
+
+	&Title {
+		margin: 0 auto 30px auto !important;
+		max-width: 300px;
+	}
+
+	&Star {
+		margin-top: 10px;
+		direction: ltr;
+
+		svg {
+			font-size: 20px;
+			cursor: pointer;
+
+			&:not(:last-child) {
+				padding-right: 6px;
+			}
+		}
+	}
+}

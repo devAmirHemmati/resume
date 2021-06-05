@@ -1,8 +1,42 @@
+@import './../../styles/abstract/media';
+
 .HistoryCard {
 	&Header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include media('min', 'md') {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		@media (min-width: 1200px) {
+			display: block;
+		}
+
+		@media (min-width: 1600px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		// &Title {
+		// }
+
+		&Badge {
+			@include media('max', 'sm') {
+				margin-top: 10px;
+				margin-bottom: 5px;
+			}
+
+			@media (min-width: 1200px) {
+				margin-top: 10px;
+				margin-bottom: 5px;
+			}
+
+			@media (min-width: 1600px) {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&Description {

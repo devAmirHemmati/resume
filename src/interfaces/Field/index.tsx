@@ -1,9 +1,17 @@
 import { FC } from 'react';
 import styles from './Field.module.scss';
+import { IFieldProps } from './types';
 
-const Field: FC = ({ children }) => {
+const Field: FC<IFieldProps> = ({
+	className = '',
+	children,
+}) => {
 	return (
-		<div className={styles.Field}>{children}</div>
+		<div
+			className={`${styles.Field} ${className}`}
+		>
+			{children}
+		</div>
 	);
 };
 

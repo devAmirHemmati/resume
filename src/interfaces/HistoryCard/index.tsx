@@ -38,11 +38,19 @@ const HistoryCard: FC<IHistoryCardProps> = ({
 					variant="Display4"
 					fontFamily="Vazir"
 					noneSelection
+					className={
+						styles.HistoryCardHeaderTitle
+					}
 				>
 					{title}
 				</Typography>
 
-				<Badge noneSelection>
+				<Badge
+					className={
+						styles.HistoryCardHeaderBadge
+					}
+					noneSelection
+				>
 					{monthes[mStartDate[1] - 1]}{' '}
 					{mStartDate[0]} -{' '}
 					{typeof endDate === 'string'

@@ -1,4 +1,5 @@
 import { IApiGetContact } from './Api/Contact/types';
+import { IApiGetCommentStatus } from './Api/EmployerComment/types';
 import { IApiGetHistory } from './Api/History/types';
 import { IApiGetHome } from './Api/Home/types';
 import {
@@ -28,4 +29,8 @@ export interface IHistoryPageProps {
 
 export interface IContactPageProps {
 	information: IApiGetContact;
+}
+
+export interface ISendNewCommentProps {
+	information: IApiGetCommentStatus;
 }

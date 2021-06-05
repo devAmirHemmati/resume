@@ -28,6 +28,10 @@
 		align-items: center;
 		border-radius: 0 15px 15px 15px;
 
+		@include media('max', 'lg') {
+			border-radius: 0 0 15px 15px;
+		}
+
 		a {
 			margin-top: 15px !important;
 			font-weight: bold;
@@ -107,7 +111,11 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 35px;
-		border-radius: 15px;
+		border-radius: 15px 15px 15px 0;
+
+		@include media('max', 'lg') {
+			border-radius: 15px 15px 0 0;
+		}
 	}
 
 	&Active {
