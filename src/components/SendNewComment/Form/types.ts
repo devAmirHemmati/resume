@@ -4,6 +4,7 @@ export interface ISendNewCommentFormProps {
 	sendCommentHandler(
 		message: string,
 		star: number,
+		avatar?: File,
 	): void;
 	description: string;
 }

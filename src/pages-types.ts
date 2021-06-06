@@ -16,7 +16,7 @@ export interface IMyWorksPageProps {
 }
 
 export interface IMyWorkPageProps {
-	work: IMyWorkItem;
+	work?: IMyWorkItem;
 }
 
 export interface IHomePageProps {

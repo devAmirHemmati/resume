@@ -16,11 +16,14 @@ const SendNewComment: NextPage<ISendNewCommentProps> =
 		const sendCommentHandler = async (
 			message: string,
 			star: number,
+			avatar?: File,
 		) => {
+			console.log(avatar);
 			await APIPostEmployerCommentStatus(id, {
-				description: message,
+				message,
 				rate: star,
 				status: 'closed',
+				avatar,
 			});
 		};
 
@@ -43,11 +46,7 @@ SendNewComment.getInitialProps = async (args) => {
 	);
 
 	return {
-		information: {
-			status: response.status,
-			description:
-				'جناب آقای یاوری لطفا نظر خود درباره بخش فرانت پنل دایرکت را ثبت کنید',
-		},
+		information: response,
 	};
 };
 

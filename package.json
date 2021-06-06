@@ -62,6 +62,7 @@
 		"nprogress": "^0.2.0",
 		"rc-tooltip": "^5.1.0",
 		"react": "^17.0.1",
+		"react-avatar-edit": "^1.0.0",
 		"react-circular-progressbar": "^2.0.3",
 		"react-collapse": "^5.1.0",
 		"react-countup": "^4.3.3",

@@ -41,7 +41,7 @@ const Home: NextPage<IHomePageProps> = ({
 							name: c.name,
 							description: c.description,
 							rating: parseInt(c.rating) as any,
-							workName: c.work,
+							workName: c.work.title,
 						}),
 					)}
 				/>

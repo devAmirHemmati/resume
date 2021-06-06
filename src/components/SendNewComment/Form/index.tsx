@@ -8,6 +8,7 @@ import { FaStar } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import {
+	AvatarUploader,
 	Button,
 	Card,
 	Field,
@@ -33,10 +34,18 @@ const SendNewCommentForm: VFC<ISendNewCommentFormProps> =
 			setStar(index);
 		};
 
+		const [avatar, setAvatar] = useState<File>();
+
 		const setMessageHandler = (
 			event: ChangeEvent<HTMLInputElement>,
 		) => {
 			setMessage(event.target.value);
+		};
+
+		const avatarChangeHandler = (
+			newFile: File,
+		) => {
+			setAvatar(newFile);
 		};
 
 		const submitFormHandler = async (
@@ -58,6 +67,7 @@ const SendNewCommentForm: VFC<ISendNewCommentFormProps> =
 				await sendCommentHandler(
 					message.trim(),
 					star + 1,
+					avatar,
 				);
 
 				setIsClose(true);
@@ -103,6 +113,14 @@ const SendNewCommentForm: VFC<ISendNewCommentFormProps> =
 		return (
 			<div className={styles.Container}>
 				<Card>
+					<div
+						className={styles.ContainerUploader}
+					>
+						<AvatarUploader
+							fileChange={avatarChangeHandler}
+						/>
+					</div>
+
 					<Typography
 						component="h1"
 						variant="Display4"

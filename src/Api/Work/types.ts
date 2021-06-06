@@ -11,7 +11,7 @@ export interface tMyWorkComment {
 	rating: string;
 	['created_at']: string;
 	['updated_at']: string;
-	work: string;
+	work: IMyWorksItem;
 }
 
 export interface IMyWorksItemPictures {

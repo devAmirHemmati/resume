@@ -20,9 +20,22 @@ export const APIPostEmployerCommentStatus =
 		id: string,
 		payloadData: IApiPostEmployerCommentData,
 	): Promise<IApiPostEmployerComment> => {
+		const formData = new FormData();
+
+		formData.append(
+			'message',
+			payloadData.message,
+		);
+		formData.append(
+			'rate',
+			payloadData.rate.toString(),
+		);
+		formData.append('status', payloadData.status);
+		formData.append('avatar', payloadData.avatar);
+
 		const { data } = await Http.post(
 			`/send-work-comment/${id}`,
-			payloadData,
+			formData,
 		);
 
 		return data;

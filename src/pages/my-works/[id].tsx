@@ -18,10 +18,14 @@ import {
 } from '../../interfaces';
 import { IMyWorkPageProps } from '../../pages-types';
 import { DUMMY_MY_WORK } from './../../constant/DUMMY/my-work';
+import NotFound from './../404';
 
 const MyWork: NextPage<IMyWorkPageProps> = ({
 	work,
 }) => {
+	if (typeof work === 'undefined') {
+		return <NotFound />;
+	}
 	return (
 		<section>
 			<div className="d-flex justify-content-between align-items-center">
@@ -141,13 +145,19 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 };
 
 MyWork.getInitialProps = async (args) => {
-	const response = await APIGetMyWork(
-		args.query.id as any,
-	);
+	try {
+		const response = await APIGetMyWork(
+			args.query.id as any,
+		);
 
-	return {
-		work: response,
-	};
+		return {
+			work: response,
+		};
+	} catch {
+		return {
+			work: undefined,
+		};
+	}
 };
 
 export default MyWork;

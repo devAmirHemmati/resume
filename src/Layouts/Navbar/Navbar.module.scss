@@ -22,7 +22,7 @@
 		transition: $animation-transition;
 
 		@include media('min', 'xl') {
-			border-radius: 15px 0 15px 15px;
+			border-radius: 15px 0 0 0;
 		}
 
 		&:hover {

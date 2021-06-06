@@ -7,6 +7,12 @@
 		max-width: 300px;
 	}
 
+	&Uploader {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
 	&Star {
 		margin-top: 10px;
 		direction: ltr;
