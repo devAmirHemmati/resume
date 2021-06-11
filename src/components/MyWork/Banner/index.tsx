@@ -27,7 +27,7 @@ const Banner: VFC = () => {
 				بیایید با هم شروع کنیم !
 			</Typography>
 
-			<Link href="/contact">
+			<Link href="contact">
 				<Button component="a" noneSelection>
 					تماس با من
 				</Button>

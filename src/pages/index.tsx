@@ -40,8 +40,8 @@ const Home: NextPage<IHomePageProps> = ({
 							avatar: c.avatar,
 							name: c.name,
 							description: c.description,
-							rating: parseInt(c.rating) as any,
-							workName: c.work.title,
+							rating: parseInt(c?.rating || 0) as any,
+							workName: c.work?.title,
 						}),
 					)}
 				/>

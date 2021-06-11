@@ -101,7 +101,7 @@ const SendNewCommentForm: VFC<ISendNewCommentFormProps> =
 							ثبت نهایی میگردد.
 						</Typography>
 
-						<Link href="/">
+						<Link href="">
 							<Button component="a">
 								صفحه اصلی
 							</Button>

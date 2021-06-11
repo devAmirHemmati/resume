@@ -58,25 +58,27 @@ const Comment: FC<ICommentProps> = ({
 					{children}
 				</Typography>
 
-				<Badge
-					className={
-						styles.CommentContainerRating
-					}
-					style={{
-						width: rating * 15,
-						justifyContent:
-							rating === 1
-								? 'center'
-								: 'space-between',
-					}}
-					notText
-				>
-					{Array(rating)
-						.fill(null)
-						.map((_, key) => (
-							<FaStar key={key} />
-						))}
-				</Badge>
+				{rating >= 1 && (
+					<Badge
+						className={
+							styles.CommentContainerRating
+						}
+						style={{
+							width: rating * 15,
+							justifyContent:
+								rating === 1
+									? 'center'
+									: 'space-between',
+						}}
+						notText
+					>
+						{Array(rating)
+							.fill(null)
+							.map((_, key) => (
+								<FaStar key={key} />
+							))}
+					</Badge>
+				)}
 			</div>
 		</Card>
 	);

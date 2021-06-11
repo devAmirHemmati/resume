@@ -1,4 +1,5 @@
 import { VFC } from 'react';
+import { useRouter } from 'next/router';
 import {
 	Card,
 	Typography,
@@ -10,6 +11,14 @@ const Links: VFC<ILinksProps> = ({
 	next,
 	prev,
 }) => {
+	const router = useRouter();
+
+	const showAllWorksHandler = (event) => {
+		event.preventDefault();
+
+		router.push('my-works');
+	};
+
 	return (
 		<section>
 			<Card className={styles.Links}>
@@ -28,8 +37,8 @@ const Links: VFC<ILinksProps> = ({
 				</Typography>
 
 				<Typography
-					component="Link"
-					href="/my-works"
+					component="a"
+					onClick={showAllWorksHandler}
 					color="Secondary"
 					hoverColor="Dark"
 					decoration="None"

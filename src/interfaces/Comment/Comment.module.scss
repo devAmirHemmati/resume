@@ -12,6 +12,7 @@
 
 	&Container {
 		overflow: hidden;
+		height: 190px;
 
 		h5 {
 			font-weight: bold !important;
@@ -24,6 +25,8 @@
 
 		p {
 			margin-top: 15px !important;
+			overflow: auto;
+			height: 80px;
 		}
 
 		&Rating {

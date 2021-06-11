@@ -6,7 +6,7 @@ import { IHttp } from './types';
 
 const INITIAL_AXIOS_CONFIG: AxiosRequestConfig = {
 	timeout: 15000,
-	baseURL: 'http://localhost:8000/api/',
+	baseURL: 'https://api.mohamadmasoudi.ir/api/',
 };
 
 class Http implements IHttp {

@@ -72,7 +72,7 @@ const Banner: VFC<IBanner> = ({
 					</Typography>
 				</Typography>
 
-				<Link href="/my-works">
+				<Link href="my-works">
 					<Button component="a" noneSelection>
 						مشاهده نمونه کار ها
 					</Button>

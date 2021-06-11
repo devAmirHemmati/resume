@@ -70,7 +70,7 @@ const Aside: VFC = () => {
 
 				<Typography
 					component="Link"
-					href="/"
+					href=""
 					fontFamily="mikhak"
 					variant="TextLarge"
 					color="Dark"
