@@ -35,15 +35,15 @@ const Home: NextPage<IHomePageProps> = ({
 			{information?.comments?.length >= 1 && (
 				<Comments
 					title="نظر مشتریان"
-					comments={information.comments.map(
-						(c) => ({
+					comments={
+						information.comments.map((c) => ({
 							avatar: c.avatar,
 							name: c.name,
 							description: c.description,
-							rating: parseInt(c?.rating || 0) as any,
+							rating: (c?.rating || 0) as any,
 							workName: c.work?.title,
-						}),
-					)}
+						})) as any
+					}
 				/>
 			)}
 		</div>
