@@ -47,9 +47,10 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 							component="p"
 							variant="Default"
 							noneSelection
-						>
-							{children}
-						</Typography>
+							dangerouslySetInnerHTML={{
+								__html: children as any,
+							}}
+						/>
 
 						<Typography
 							component="Link"

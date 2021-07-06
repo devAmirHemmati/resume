@@ -128,9 +128,10 @@ const SendNewCommentForm: VFC<ISendNewCommentFormProps> =
 						align="Center"
 						className={styles.ContainerTitle}
 						noneSelection
-					>
-						{description}
-					</Typography>
+						dangerouslySetInnerHTML={{
+							__html: description,
+						}}
+					/>
 
 					<form onSubmit={submitFormHandler}>
 						<TextArea

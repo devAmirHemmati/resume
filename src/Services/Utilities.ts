@@ -135,6 +135,12 @@ class Utilities {
 				return Fa500Px;
 		}
 	}
+
+	public static removeZeroFromOneDigitNumber(
+		str: string,
+	): string {
+		return str.replace(/^0/, '');
+	}
 }
 
 export default Utilities;

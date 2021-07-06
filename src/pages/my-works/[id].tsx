@@ -1,23 +1,18 @@
 import { NextPage } from 'next';
 import { APIGetMyWork } from '../../Api';
-import {
-	Comments,
-	CountUp,
-} from '../../components/Index';
+import { Comments } from '../../components/Index';
 import {
 	Links,
 	WorkBanner,
 	WorkDetails,
 	WorkGallery,
 } from '../../components/MyWork';
-import { DUMMY_HOME } from '../../constant/DUMMY/home';
 import {
 	Aparat,
 	Badge,
 	Typography,
 } from '../../interfaces';
 import { IMyWorkPageProps } from '../../pages-types';
-import { DUMMY_MY_WORK } from './../../constant/DUMMY/my-work';
 import NotFound from './../404';
 
 const MyWork: NextPage<IMyWorkPageProps> = ({
@@ -40,9 +35,7 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 					{work.title}
 				</Typography>
 
-				<Badge noneSelection>
-					{DUMMY_MY_WORK.label}
-				</Badge>
+				<Badge noneSelection>فرانت اند</Badge>
 			</div>
 
 			{work.video_link !== null && (
@@ -72,9 +65,9 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 				<WorkDetails
 					customer={work.customer}
 					description={work.description}
-					doneDate={new Date()}
+					doneDate={work.done_date}
 					location={work.location}
-					startDate={new Date()}
+					startDate={work.start_date}
 					status={work.status}
 					url={work.url}
 				/>
@@ -99,10 +92,10 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 					<div style={{ marginTop: 25 }} />
 				)}
 
-			{work.comments.length >= 1 && (
+			{work.employer_comments.length >= 1 && (
 				<div style={{ marginTop: 50 }}>
 					<Comments
-						comments={work.comments.map(
+						comments={work.employer_comments.map(
 							(item) => ({
 								avatar: item.avatar,
 								name: item.name,
@@ -120,15 +113,6 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 					/>
 				</div>
 			)}
-
-			<div
-				style={{
-					paddingTop:
-						work.comments.length >= 1 ? 5 : 25,
-				}}
-			>
-				<CountUp items={DUMMY_HOME.countUp} />
-			</div>
 
 			<div style={{ marginTop: 40 }}>
 				<WorkBanner />

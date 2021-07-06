@@ -1,59 +1,74 @@
 @import './../../../styles/abstract/variables';
 @import './../../../styles/abstract/media';
 
-.Gallery {
-	&Item {
-		margin-top: 20px;
+.Container {
+	padding-top: 5px;
+	margin-bottom: 90px;
+
+	&Title {
 		position: relative;
-		height: 300px;
+		top: 20px;
+	}
 
-		&Shadow {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			left: 0;
-			top: 0;
-			background-color: rgba(000, 000, 000, 0.1);
-			transition: $animation-transition;
-
-			@include media('max', 'md') {
-				display: none;
-			}
-		}
-
-		&Icon {
-			position: absolute;
-			width: 27px;
-			height: 27px;
-			top: 30px;
-			right: 30px;
-			background: rgba(255, 255, 255, 0.5);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border-radius: 50%;
-			transition: $animation-transition;
-			opacity: 1;
-		}
-
-		&Image {
-			width: 100%;
+	.Gallery {
+		&Item {
+			margin-top: 20px;
+			position: relative;
 			height: 300px;
-			transition: $animation-transition;
-		}
 
-		div[data-feature='box'] {
-			cursor: pointer;
-		}
+			&Shadow {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-color: rgba(
+					000,
+					000,
+					000,
+					0.1
+				);
+				transition: $animation-transition;
 
-		&:hover {
-			& > div[data-feature='box'] > div,
-			& > div[data-feature='box'] > span {
-				opacity: 0;
+				@include media('max', 'md') {
+					display: none;
+				}
 			}
 
-			& > div[data-feature='box'] {
-				visibility: hidden;
+			&Icon {
+				position: absolute;
+				width: 27px;
+				height: 27px;
+				top: 30px;
+				right: 30px;
+				background: rgba(255, 255, 255, 0.5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				transition: $animation-transition;
+				opacity: 1;
+			}
+
+			&Image {
+				width: 100%;
+				height: 300px;
+				transition: $animation-transition;
+			}
+
+			div[data-feature='box'] {
+				cursor: pointer;
+			}
+
+			&:hover {
+				& > div[data-feature='box'] > div,
+				& > div[data-feature='box'] > span {
+					opacity: 0;
+				}
+
+				& > div[data-feature='box'] {
+					visibility: hidden;
+				}
 			}
 		}
 	}

@@ -27,7 +27,7 @@ export const APIPostEmployerCommentStatus =
 			payloadData.message,
 		);
 		formData.append(
-			'rate',
+			'rating',
 			payloadData.rate.toString(),
 		);
 		formData.append('status', payloadData.status);

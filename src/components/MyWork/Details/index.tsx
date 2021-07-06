@@ -1,5 +1,4 @@
-import { VFC } from 'react';
-import moment from 'jalali-moment';
+import { VFC, useState, useEffect } from 'react';
 import {
 	Card,
 	Grid,
@@ -9,6 +8,7 @@ import {
 import styles from './Details.module.scss';
 import { IDetailsProps } from './types';
 import { monthes } from '../../../constant/monthes';
+import Utilities from '../../../Services/Utilities';
 
 const statusText = {
 	Done: 'به پایان رسیده',
@@ -24,14 +24,29 @@ const Details: VFC<IDetailsProps> = ({
 	startDate,
 	url,
 }) => {
-	const startDateString = moment(startDate)
-		.locale('fa')
-		.format('YYYY/M')
-		.split('/');
-	const envDateString = moment(doneDate)
-		.locale('fa')
-		.format('YYYY/M')
-		.split('/');
+	const [
+		customDescription,
+		setCustomDescription,
+	] = useState('');
+
+	const startDateString = startDate
+		.split('-')
+		.map((item) =>
+			Utilities.removeZeroFromOneDigitNumber(
+				item,
+			),
+		);
+	const doneDateString = doneDate
+		.split('-')
+		.map((item) =>
+			Utilities.removeZeroFromOneDigitNumber(
+				item,
+			),
+		);
+
+	useEffect(() => {
+		setCustomDescription(description);
+	}, [description]);
 
 	return (
 		<section>
@@ -56,10 +71,7 @@ const Details: VFC<IDetailsProps> = ({
 							<Typography
 								noneSelection
 								dangerouslySetInnerHTML={{
-									__html: description.replace(
-										/\n/g,
-										'<br />',
-									),
+									__html: customDescription,
 								}}
 							/>
 
@@ -87,7 +99,7 @@ const Details: VFC<IDetailsProps> = ({
 						<Card>
 							<ListQAA
 								question="تاریخ سفارش"
-								answer={`${
+								answer={`${startDateString[2]} ${
 									monthes[
 										parseInt(startDateString[1]) -
 											1
@@ -97,12 +109,12 @@ const Details: VFC<IDetailsProps> = ({
 
 							<ListQAA
 								question="تاریخ تحویل"
-								answer={`${
+								answer={`${doneDateString[2]} ${
 									monthes[
-										parseInt(startDateString[1]) -
+										parseInt(doneDateString[1]) -
 											1
 									]
-								} ${envDateString[0]}`}
+								} ${doneDateString[0]}`}
 							/>
 
 							<ListQAA

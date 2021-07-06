@@ -69,8 +69,9 @@
 		img {
 			width: 400px;
 			position: absolute;
-			bottom: -1px;
+			bottom: 0;
 			left: 30px;
+			height: 377px;
 		}
 
 		@include media('max', 1032px) {

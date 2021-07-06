@@ -54,9 +54,10 @@ const Comment: FC<ICommentProps> = ({
 					component="p"
 					variant="Default"
 					noneSelection
-				>
-					{children}
-				</Typography>
+					dangerouslySetInnerHTML={{
+						__html: children as any,
+					}}
+				/>
 
 				{rating >= 1 && (
 					<Badge

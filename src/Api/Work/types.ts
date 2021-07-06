@@ -59,6 +59,7 @@ export interface IMyWorkItem {
 	['video_link']: string | null;
 	pictures: IMyWorksItemPictures[];
 	comments: tMyWorkComment[];
+	['employer_comments']: tMyWorkComment[];
 	next?: number;
 	perv?: number;
 }

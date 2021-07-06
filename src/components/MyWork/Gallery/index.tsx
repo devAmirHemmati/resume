@@ -2,7 +2,10 @@ import { VFC } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 import { AiOutlineExpandAlt } from 'react-icons/ai';
 import { useGetWindowSize } from '../../../hooks';
-import { Carousel } from '../../../interfaces';
+import {
+	Carousel,
+	Typography,
+} from '../../../interfaces';
 import { IWorkGalleryProps } from './types';
 import styles from './Gallery.module.scss';
 import { lightBoxOptions } from '../../../options';
@@ -13,7 +16,16 @@ const Gallery: VFC<IWorkGalleryProps> = ({
 	const [size] = useGetWindowSize();
 
 	return (
-		<section>
+		<section className={styles.Container}>
+			<Typography
+				component="h5"
+				variant="Display4"
+				noneSelection
+				className={styles.ContainerTitle}
+			>
+				تصاویر نمونه کار
+			</Typography>
+
 			<SRLWrapper options={lightBoxOptions}>
 				<div className={styles.GalleryItem}>
 					<div>
