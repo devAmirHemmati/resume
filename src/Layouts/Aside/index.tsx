@@ -46,12 +46,18 @@ const Aside: VFC = () => {
 	>((store) => store.AsideReducer.active);
 	const [isShowData, setIsShowData] =
 		useState<boolean>(false);
+	const [description, setDescription] =
+		useState('');
 
 	useEffect(() => {
 		setTimeout(() => {
 			setIsShowData(true);
 		}, 650);
 	}, []);
+
+	useEffect(() => {
+		setDescription(profile.description);
+	}, [profile.description]);
 
 	const AsideHeader = () => {
 		const clickLinkHandler = (): void => {
@@ -107,9 +113,15 @@ const Aside: VFC = () => {
 						}
 					>
 						<Collapse isOpened={isShowData}>
-							<Typography noneSelection>
-								{profile.description}
-							</Typography>
+							<Typography
+								dangerouslySetInnerHTML={{
+									__html: description.replace(
+										/\n/g,
+										'<br />',
+									),
+								}}
+								noneSelection
+							/>
 						</Collapse>
 					</div>
 				)}
