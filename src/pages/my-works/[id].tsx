@@ -99,13 +99,9 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 							(item) => ({
 								avatar: item.avatar,
 								name: item.name,
-								description: item.description,
-								rating: parseInt(item.rating) as
-									| 1
-									| 2
-									| 3
-									| 4
-									| 5,
+								lastName: item.lastname,
+								message: item.message,
+								rating: item.rating,
 								workName: work.title,
 							}),
 						)}
