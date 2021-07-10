@@ -6,8 +6,9 @@ export interface tMyWorkComment {
 	id: number;
 	['my_works_id']: number;
 	name: string;
+	lastname: string;
 	avatar: string;
-	description: string;
+	message: string;
 	rating: string;
 	['created_at']: string;
 	['updated_at']: string;

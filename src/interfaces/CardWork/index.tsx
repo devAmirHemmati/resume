@@ -1,4 +1,9 @@
-import { FC, forwardRef } from 'react';
+import {
+	FC,
+	forwardRef,
+	useState,
+	useEffect,
+} from 'react';
 import Link from 'next/link';
 import { ICardWorkProps } from './types';
 import styles from './CardWork.module.scss';
@@ -16,6 +21,15 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 		},
 		ref,
 	) => {
+		const [
+			shortDescription,
+			setShortDescription,
+		] = useState<string>('');
+
+		useEffect(() => {
+			setShortDescription(children as any);
+		}, []);
+
 		return (
 			<div
 				ref={ref as any}
@@ -48,7 +62,7 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 							variant="Default"
 							noneSelection
 							dangerouslySetInnerHTML={{
-								__html: children as any,
+								__html: shortDescription,
 							}}
 						/>
 

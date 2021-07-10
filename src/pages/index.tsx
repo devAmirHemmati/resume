@@ -39,7 +39,8 @@ const Home: NextPage<IHomePageProps> = ({
 						information.comments.map((c) => ({
 							avatar: c.avatar,
 							name: c.name,
-							description: c.description,
+							lastName: c.lastname,
+							message: c.message,
 							rating: (c?.rating || 0) as any,
 							workName: c.work?.title,
 						})) as any

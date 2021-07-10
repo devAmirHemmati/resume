@@ -77,12 +77,18 @@ const Comments: VFC<ICommentsProps> = ({
 							}}
 						>
 							<Comment
-								name={comment.name}
-								avatar={comment.avatar}
-								rating={comment.rating}
+								name={`${comment.name} ${comment.lastName}`}
+								avatar={
+									comment.avatar !== null
+										? comment.avatar
+										: undefined
+								}
+								rating={
+									parseInt(comment.rating) as any
+								}
 								workName={comment.workName}
 							>
-								{comment.description}
+								{comment.message}
 							</Comment>
 						</div>
 					))}
