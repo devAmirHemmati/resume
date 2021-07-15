@@ -53,6 +53,7 @@
 			&Image {
 				width: 100%;
 				transition: $animation-transition;
+				min-height: 300px;
 			}
 
 			div[data-feature='box'] {

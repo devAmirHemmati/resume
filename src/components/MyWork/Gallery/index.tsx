@@ -42,11 +42,11 @@ const Gallery: VFC<IWorkGalleryProps> = ({
 									className={styles.GalleryItem}
 								>
 									<div data-feature="box">
-										<div
+										{/* <div
 											className={
 												styles.GalleryItemShadow
 											}
-										/>
+										/> */}
 
 										<span
 											className={

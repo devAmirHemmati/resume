@@ -7,7 +7,7 @@ const Footer: VFC = () => {
 		<footer className={styles.Footer}>
 			<div className={styles.FooterContainer}>
 				<Typography noneSelection>
-					© تمامی حفوق برای شخص امیررضا همتی محفوظ
+					© تمامی حقوق برای شخص امیررضا همتی محفوظ
 					است.
 				</Typography>
 
