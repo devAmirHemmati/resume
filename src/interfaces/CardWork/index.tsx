@@ -42,6 +42,7 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 							src={src}
 							alt={title}
 							draggable={false}
+							loading="lazy"
 						/>
 					</a>
 				</Link>

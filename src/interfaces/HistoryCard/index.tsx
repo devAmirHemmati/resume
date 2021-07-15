@@ -11,6 +11,7 @@ const HistoryCard: FC<IHistoryCardProps> = ({
 	startDate,
 	endDate,
 	children,
+	dangerouslySetInnerHTML,
 	...rest
 }) => {
 	const mStartDate: number[] = moment
@@ -74,6 +75,9 @@ const HistoryCard: FC<IHistoryCardProps> = ({
 				color="Dark"
 				className={styles.HistoryCardDescription}
 				noneSelection
+				dangerouslySetInnerHTML={
+					dangerouslySetInnerHTML
+				}
 			>
 				{children}
 			</Typography>

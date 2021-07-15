@@ -1,3 +1,5 @@
+@import './../../styles/abstract/media';
+
 .Isotope {
 	padding-top: 20px;
 
@@ -11,12 +13,21 @@
 	}
 
 	&Container {
-		position: relative;
-		left: -10px;
+		padding-top: 20px;
+		margin-top: -15px;
+
+		@include media('min', 'md') {
+			margin-left: -7.5px;
+			margin-right: -7.5px;
+		}
 
 		&Item {
-			background-color: blue;
-			width: 33.33%;
+			margin-top: 15px;
+
+			@include media('min', 'md') {
+				margin-right: 7.5px;
+				margin-left: 7.5px;
+			}
 		}
 	}
 }

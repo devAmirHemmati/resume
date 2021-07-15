@@ -1,3 +1,5 @@
+import { IMyWorksItem } from '../../Api/Work/types';
+
 export type tFilterDefault = {
 	text: string;
 	label: string;
@@ -11,7 +13,6 @@ export type tCardsDefault = {
 
 export interface IIsotopeProps {
 	filtersDefault: tFilterDefault[];
-	cardsDefault: tCardsDefault[];
-	unitHeight?: number;
+	cards: IMyWorksItem[];
 	cols?: number;
 }

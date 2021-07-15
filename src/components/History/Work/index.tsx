@@ -1,10 +1,13 @@
-import { VFC } from 'react';
+import { VFC, useState, useEffect } from 'react';
 import {
 	HistoryCard,
 	TimeLine,
 	Typography,
 } from '../../../interfaces';
-import { IHistoryWorkProps } from './types';
+import {
+	IHistoryWorkProps,
+	IHistoryWorkItems,
+} from './types';
 import styles from './Work.module.scss';
 
 const Work: VFC<IHistoryWorkProps> = ({
@@ -13,6 +16,22 @@ const Work: VFC<IHistoryWorkProps> = ({
 	className = '',
 	...rest
 }) => {
+	const [customItems, setCustomItems] = useState<
+		IHistoryWorkItems[]
+	>([]);
+
+	useEffect(() => {
+		const newCustomItems = items.map((nci) => ({
+			...nci,
+			description: nci.description.replace(
+				/\n/g,
+				'<br />',
+			),
+		}));
+
+		setCustomItems(newCustomItems);
+	}, [items]);
+
 	return (
 		<section
 			className={`${styles.Work} ${className}`}
@@ -27,7 +46,7 @@ const Work: VFC<IHistoryWorkProps> = ({
 			</Typography>
 
 			<div className={styles.WorkItems}>
-				{items.map((item, key) => (
+				{customItems.map((item, key) => (
 					<TimeLine
 						key={key}
 						index={key}
@@ -38,9 +57,10 @@ const Work: VFC<IHistoryWorkProps> = ({
 							startDate={item.startDate}
 							title={item.title}
 							endDate={item.endDate}
-						>
-							{item.description}
-						</HistoryCard>
+							dangerouslySetInnerHTML={{
+								__html: item.description,
+							}}
+						/>
 					</TimeLine>
 				))}
 			</div>

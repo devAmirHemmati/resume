@@ -26,7 +26,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		border-radius: 0 15px 15px 15px;
+		border-radius: 0 15px 15px 0;
 
 		@include media('max', 'lg') {
 			border-radius: 0 0 15px 15px;
@@ -49,7 +49,11 @@
 		padding: 5px 15px;
 
 		&::-webkit-scrollbar {
-			display: none;
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $secondary-higher;
 		}
 
 		&Item {
@@ -111,7 +115,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 35px;
-		border-radius: 15px 15px 15px 0;
+		border-radius: 0 15px 15px 0;
 
 		@include media('max', 'lg') {
 			border-radius: 15px 15px 0 0;

@@ -15,7 +15,11 @@
 	background-position: center;
 
 	&::-webkit-scrollbar {
-		display: none;
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $secondary-higher;
 	}
 
 	&Page {

@@ -9,7 +9,6 @@ import {
 } from '../../components/MyWork';
 import {
 	Aparat,
-	Badge,
 	Typography,
 } from '../../interfaces';
 import { IMyWorkPageProps } from '../../pages-types';
@@ -23,20 +22,16 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 	}
 	return (
 		<section>
-			<div className="d-flex justify-content-between align-items-center">
-				<Typography
-					component="h1"
-					variant="Display4"
-					color="Dark"
-					fontFamily="mikhak"
-					style={{ fontSize: 22 }}
-					noneSelection
-				>
-					{work.title}
-				</Typography>
-
-				<Badge noneSelection>فرانت اند</Badge>
-			</div>
+			<Typography
+				component="h1"
+				variant="Display4"
+				color="Dark"
+				fontFamily="mikhak"
+				style={{ fontSize: 22 }}
+				noneSelection
+			>
+				{work.title}
+			</Typography>
 
 			{work.video_link !== null && (
 				<div style={{ marginTop: 25 }}>
@@ -49,7 +44,7 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 
 			{work.pictures.length >= 1 &&
 				work.video_link === null && (
-					<div style={{ marginBottom: 40 }}>
+					<div style={{ marginBottom: -70 }}>
 						<WorkGallery
 							items={work.pictures.map(
 								(pictureItem) => ({

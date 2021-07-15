@@ -1,10 +1,13 @@
-import { VFC } from 'react';
+import { VFC, useEffect, useState } from 'react';
 import {
 	HistoryCard,
 	TimeLine,
 	Typography,
 } from '../../../interfaces';
-import { IHistoryEducationProps } from './types';
+import {
+	IHistoryEducationProps,
+	IHistoryEducationItems,
+} from './types';
 import styles from './Education.module.scss';
 
 const Education: VFC<IHistoryEducationProps> = ({
@@ -13,6 +16,22 @@ const Education: VFC<IHistoryEducationProps> = ({
 	className = '',
 	...rest
 }) => {
+	const [customItems, setCustomItems] = useState<
+		IHistoryEducationItems[]
+	>([]);
+
+	useEffect(() => {
+		const newCustomItems = items.map((nci) => ({
+			...nci,
+			description: nci.description.replace(
+				/\n/g,
+				'<br />',
+			),
+		}));
+
+		setCustomItems(newCustomItems);
+	}, [items]);
+
 	return (
 		<section
 			className={`${styles.Education} ${className}`}
@@ -27,7 +46,7 @@ const Education: VFC<IHistoryEducationProps> = ({
 			</Typography>
 
 			<div className={styles.EducationItems}>
-				{items.map((item, key) => (
+				{customItems.map((item, key) => (
 					<TimeLine
 						key={key}
 						index={key}
@@ -38,9 +57,10 @@ const Education: VFC<IHistoryEducationProps> = ({
 							startDate={item.startDate}
 							title={item.title}
 							endDate={item.endDate}
-						>
-							{item.description}
-						</HistoryCard>
+							dangerouslySetInnerHTML={{
+								__html: item.description,
+							}}
+						/>
 					</TimeLine>
 				))}
 			</div>

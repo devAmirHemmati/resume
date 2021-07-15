@@ -1,95 +1,20 @@
-import {
-	useState,
-	useRef,
-	useEffect,
-	FC,
-} from 'react';
-import IsoTopeGrid from 'react-isotope';
-import { Typography } from '..';
-import { useGetWindowSize } from '../../hooks';
+import { useState, FC } from 'react';
+import { CardWork, Grid, Typography } from '..';
 import styles from './Isotope.module.scss';
 import { IIsotopeProps } from './types';
 
 const Isotope: FC<IIsotopeProps> = ({
-	cardsDefault,
 	filtersDefault,
-	children,
-	unitHeight = 100,
-	cols = 2,
+	cards,
 }) => {
-	const [filters, updateFilters] = useState(
-		filtersDefault,
-	);
-	const [containerHeight, setContainerHeight] =
-		useState<number>(0);
-	const [itemWidth, setItemWidth] =
-		useState<number>(0);
-	const containerRef = useRef<HTMLDivElement>();
+	const [filterActive, setFilterActive] =
+		useState<string>('همه');
 
-	useEffect(() => {
-		resizeHandler();
-		window.addEventListener(
-			'resize',
-			resizeHandler,
-		);
+	const filterCards = cards.filter((card) => {
+		if (filterActive === 'همه') return card;
 
-		return () => {
-			window.removeEventListener(
-				'resize',
-				resizeHandler,
-			);
-		};
-	}, []);
-
-	useEffect(() => {
-		const timer = setInterval(() => {
-			if (containerRef.current) {
-				setContainerHeight(
-					containerRef.current.scrollHeight + 2,
-				);
-			}
-
-			resizeWindowHandler();
-		}, 225);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, [filters]);
-
-	useEffect(() => {
-		window.addEventListener(
-			'resize',
-			resizeWindowHandler,
-		);
-
-		return () => {
-			window.removeEventListener(
-				'resize',
-				resizeWindowHandler,
-			);
-		};
-	}, []);
-
-	function resizeWindowHandler() {
-		if (!containerRef.current) {
-			return;
-		}
-
-		setItemWidth(
-			(containerRef.current.offsetWidth -
-				(cols === 1 ? 0 : 10)) /
-				cols,
-		);
-	}
-
-	function resizeHandler() {
-		updateFilters((prevFilters) => {
-			prevFilters[0].isChecked = true;
-
-			return prevFilters;
-		});
-	}
+		return card.filter === filterActive;
+	});
 
 	const onFilter = (
 		event: UIEvent,
@@ -97,37 +22,26 @@ const Isotope: FC<IIsotopeProps> = ({
 	) => {
 		event.preventDefault();
 
-		updateFilters((state) =>
-			state.map((f) => {
-				if (f.label === value) {
-					return {
-						...f,
-						isChecked: true,
-					};
-				}
-
-				f.isChecked = false;
-
-				return f;
-			}),
-		);
+		setFilterActive(value);
 	};
 
 	const FilterList = () => {
 		return (
 			<ul className={styles.IsotopeFilterList}>
-				{filters.map((f, key) => (
+				{filtersDefault.map((f, key) => (
 					<li key={key}>
 						<Typography
 							href="/"
 							onClick={(event) => {
-								onFilter(event as any, f.label);
+								onFilter(event as any, f.text);
 							}}
 							component="a"
 							variant="TextLarge"
 							decoration="None"
 							color={
-								f.isChecked ? 'Dark' : 'Muted'
+								f.text === filterActive
+									? 'Dark'
+									: 'Muted'
 							}
 						>
 							{f.text}
@@ -138,69 +52,38 @@ const Isotope: FC<IIsotopeProps> = ({
 		);
 	};
 
-	const IsotopeData = () => {
-		return (
-			<IsoTopeGrid
-				gridLayout={cardsDefault as any}
-				noOfCols={cols}
-				unitHeight={unitHeight}
-				unitWidth={itemWidth}
-				filters={filters}
-			>
-				{children as any}
-			</IsoTopeGrid>
-		);
-	};
-
 	return (
-		<div
-			className={styles.Isotope}
-			style={{
-				height: containerHeight,
-			}}
-		>
+		<div className={styles.Isotope}>
 			{FilterList()}
 
-			<div
+			<Grid
 				className={styles.IsotopeContainer}
-				ref={containerRef as any}
+				container
 			>
-				{IsotopeData()}
-			</div>
+				{filterCards.map((card, key) => (
+					<Grid
+						key={key}
+						grid={{ Md: 6, Xs: 12 }}
+					>
+						<div
+							className={
+								styles.IsotopeContainerItem
+							}
+						>
+							<CardWork
+								key={`item-${card.id}`}
+								href={`/my-works/${card.id}`}
+								src={card.src}
+								title={card.title}
+							>
+								{card.summary}
+							</CardWork>
+						</div>
+					</Grid>
+				))}
+			</Grid>
 		</div>
 	);
 };
 
-const Compose: FC<IIsotopeProps> = ({
-	cols,
-	...rest
-}) => {
-	const [size] = useGetWindowSize();
-
-	const [loading, setLoading] =
-		useState<boolean>(true);
-
-	useEffect(() => {
-		setLoading(true);
-	}, [size]);
-
-	useEffect(() => {
-		if (loading) {
-			setLoading(false);
-		}
-	}, [loading]);
-
-	let noCols: number = cols;
-	if (size === 'xs') {
-		noCols = 1;
-	} else {
-		noCols = 2;
-	}
-
-	if (loading) {
-		return <></>;
-	}
-	return <Isotope cols={noCols || 2} {...rest} />;
-};
-
-export default Compose;
+export default Isotope;

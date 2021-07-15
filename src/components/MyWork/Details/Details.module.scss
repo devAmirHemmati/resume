@@ -3,6 +3,7 @@
 .Details {
 	&Grid {
 		padding-top: 20px;
+		position: relative;
 
 		&Item {
 			&:first-child {
@@ -30,6 +31,9 @@
 				& > div {
 					@include media('min', 'lg') {
 						padding-right: 15px;
+						position: sticky;
+						left: 0;
+						top: 20px;
 					}
 
 					@include media('max', 'md') {

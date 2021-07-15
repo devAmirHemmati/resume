@@ -6,6 +6,7 @@
 	position: relative;
 	overflow: hidden;
 	transition: $animation-transition;
+	height: 300px;
 
 	&Link {
 		position: absolute;
@@ -19,22 +20,22 @@
 			height: 100%;
 		}
 
-		&::after {
-			content: '';
-			transition: $animation-transition;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(000, 000, 000, 0.2);
-		}
+		// &::after {
+		// 	content: '';
+		// 	transition: $animation-transition;
+		// 	position: absolute;
+		// 	left: 0;
+		// 	top: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color: rgba(000, 000, 000, 0.2);
+		// }
 
-		&:hover {
-			&::after {
-				opacity: 0;
-			}
-		}
+		// &:hover {
+		// 	&::after {
+		// 		opacity: 0;
+		// 	}
+		// }
 	}
 
 	&Content {

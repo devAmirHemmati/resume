@@ -21,17 +21,8 @@ const MyWorks: NextPage<IMyWorksPageProps> = ({
 			});
 		}
 
-		if (works.cards.length < 1) {
-			return <></>;
-		}
 		return (
 			<Isotope
-				cardsDefault={works.cards.map(
-					(mItem) => ({
-						filter: [mItem.filter],
-						id: `item-${mItem.id}`,
-					}),
-				)}
 				filtersDefault={customFilter.map(
 					(filter, key) => ({
 						isChecked: key === 0,
@@ -39,19 +30,8 @@ const MyWorks: NextPage<IMyWorksPageProps> = ({
 						label: filter.label,
 					}),
 				)}
-				unitHeight={300}
-			>
-				{works.cards.map((work) => (
-					<CardWork
-						key={`item-${work.id}`}
-						href={`/my-works/${work.id}`}
-						src={work.src}
-						title={work.title}
-					>
-						{work.summary}
-					</CardWork>
-				))}
-			</Isotope>
+				cards={works.cards}
+			/>
 		);
 	};
 
