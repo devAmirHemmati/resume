@@ -33,14 +33,15 @@ const MyWork: NextPage<IMyWorkPageProps> = ({
 				{work.title}
 			</Typography>
 
-			{work.video_link !== null && (
-				<div style={{ marginTop: 25 }}>
-					<Aparat
-						title={work.title}
-						url={work.video_link}
-					/>
-				</div>
-			)}
+			{work.video_link !== null &&
+				work.video_link !== 'null' && (
+					<div style={{ marginTop: 25 }}>
+						<Aparat
+							title={work.title}
+							url={work.video_link}
+						/>
+					</div>
+				)}
 
 			{work.pictures.length >= 1 &&
 				work.video_link === null && (

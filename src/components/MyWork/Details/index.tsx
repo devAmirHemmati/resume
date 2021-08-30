@@ -71,7 +71,11 @@ const Details: VFC<IDetailsProps> = ({
 							<Typography
 								noneSelection
 								dangerouslySetInnerHTML={{
-									__html: customDescription,
+									__html:
+										customDescription.replace(
+											/<a/g,
+											'<a target="_blank"',
+										),
 								}}
 							/>
 

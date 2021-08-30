@@ -18,6 +18,7 @@ import {
 import store from '../store';
 import '@brainhubeu/react-carousel/lib/style.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const MyApp: VFC = ({
 	Component,

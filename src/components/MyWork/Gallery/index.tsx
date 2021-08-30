@@ -1,5 +1,6 @@
 import { VFC } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { AiOutlineExpandAlt } from 'react-icons/ai';
 import { useGetWindowSize } from '../../../hooks';
 import {
@@ -58,9 +59,11 @@ const Gallery: VFC<IWorkGalleryProps> = ({
 									</div>
 
 									<a href={data.src}>
-										<img
+										<LazyLoadImage
 											src={data.src}
 											alt={data.alt}
+											draggable={false}
+											effect="blur"
 											className={
 												styles.GalleryItemImage
 											}
