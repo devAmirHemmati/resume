@@ -5,4 +5,5 @@ export interface IInputProps
 	id: string;
 	type: string;
 	icon?: string;
+	ref?: any;
 }

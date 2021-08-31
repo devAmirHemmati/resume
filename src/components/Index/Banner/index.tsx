@@ -1,6 +1,7 @@
 import { VFC } from 'react';
 import Link from 'next/link';
 import ReactRotatingText from 'react-rotating-text';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
 	Button,
 	Typography,
@@ -80,10 +81,11 @@ const Banner: VFC<IBanner> = ({
 			</div>
 
 			<div className={styles.BannerImageBox}>
-				<img
+				<LazyLoadImage
 					src={profile}
 					alt="Profile"
 					draggable="false"
+					effect="blur"
 				/>
 			</div>
 		</section>

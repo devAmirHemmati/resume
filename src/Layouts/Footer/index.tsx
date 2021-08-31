@@ -19,7 +19,7 @@ const Footer: VFC = () => {
 						fontFamily="mikhak"
 						hoverColor="Dark"
 					>
-						dev.amirhemmati1382@gmail.com
+						officedev.amirhemmati@gmail.com
 					</Typography>
 				</Typography>
 			</div>

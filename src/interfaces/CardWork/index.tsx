@@ -42,6 +42,9 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 						<LazyLoadImage
 							src={src}
 							alt={title}
+							wrapperClassName={
+								styles.CardWorkLinkWrapper
+							}
 							draggable={false}
 							effect="blur"
 						/>

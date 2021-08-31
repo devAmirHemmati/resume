@@ -3,9 +3,12 @@ import {
 	FormEvent,
 	useState,
 	ChangeEvent,
+	useRef,
+	useEffect,
 } from 'react';
 import { toast } from 'react-toastify';
 import { APIPostNewMessage } from '../../../Api/Contact';
+import { useGetWindowSize } from '../../../hooks';
 import {
 	Button,
 	Card,
@@ -21,6 +24,8 @@ import {
 import styles from './SendMessage.module.scss';
 
 const SendMessage: VFC = () => {
+	const [windowSize] = useGetWindowSize();
+
 	const [loading, setLoading] =
 		useState<boolean>(false);
 	const [fullName, setFullName] =
@@ -28,6 +33,23 @@ const SendMessage: VFC = () => {
 	const [email, setEmail] = useState<string>('');
 	const [message, setMessage] =
 		useState<string>('');
+
+	const fullNameFieldRef =
+		useRef<HTMLInputElement>();
+
+	useEffect(() => {
+		setTimeout(() => {
+			if (
+				!fullNameFieldRef.current ||
+				(windowSize !== 'xl' &&
+					windowSize !== 'lg')
+			) {
+				return;
+			}
+
+			fullNameFieldRef.current.focus();
+		}, 100);
+	}, [windowSize]);
 
 	const showNameErrorMessage = () =>
 		toast.error(
@@ -114,11 +136,11 @@ const SendMessage: VFC = () => {
 					<Field>
 						<Input
 							type="text"
+							ref={fullNameFieldRef as any}
 							value={fullName}
 							onChange={setFormHandler}
 							id="full-name"
 							placeholder="نام"
-							autoFocus
 							autoComplete="off"
 						/>
 					</Field>
