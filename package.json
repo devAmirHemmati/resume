@@ -6,13 +6,10 @@
 	"private": "true",
 	"scripts": {
 		"start": "next",
-		"start:server": "next start",
 		"build": "next build",
 		"export": "next export",
 		"lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
-		"prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'"
 	},
 	"repository": {
 		"type": "git",
