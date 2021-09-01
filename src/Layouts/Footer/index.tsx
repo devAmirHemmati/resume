@@ -3,6 +3,8 @@ import { Typography } from '../../interfaces';
 import styles from './Footer.module.scss';
 
 const Footer: VFC = () => {
+	const email: string = 'resume@hemmati.dev';
+
 	return (
 		<footer className={styles.Footer}>
 			<div className={styles.FooterContainer}>
@@ -15,11 +17,11 @@ const Footer: VFC = () => {
 					ایمیل:{' '}
 					<Typography
 						component="a"
-						href="mailto://dev.amirhemmati1382@gmail.com"
+						href={`mailto://${email}`}
 						fontFamily="mikhak"
 						hoverColor="Dark"
 					>
-						officedev.amirhemmati@gmail.com
+						{email}
 					</Typography>
 				</Typography>
 			</div>
