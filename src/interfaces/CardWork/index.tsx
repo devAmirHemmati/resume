@@ -4,11 +4,11 @@ import {
 	useState,
 	useEffect,
 } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Link from 'next/link';
 import { ICardWorkProps } from './types';
 import styles from './CardWork.module.scss';
 import { Card, Typography } from '..';
+import LazyImage from '../LazyImage';
 
 const CardWork: FC<ICardWorkProps> = forwardRef(
 	(
@@ -39,14 +39,14 @@ const CardWork: FC<ICardWorkProps> = forwardRef(
 			>
 				<Link href={href}>
 					<a className={styles.CardWorkLink}>
-						<LazyLoadImage
+						<LazyImage
 							src={src}
 							alt={title}
-							wrapperClassName={
+							className={
 								styles.CardWorkLinkWrapper
 							}
 							draggable={false}
-							effect="blur"
+							scale={7}
 						/>
 					</a>
 				</Link>

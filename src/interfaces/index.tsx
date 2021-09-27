@@ -22,3 +22,4 @@ export { default as TimeLine } from './TimeLine';
 export { default as HistoryCard } from './HistoryCard';
 export { default as Aparat } from './Aparat';
 export { default as AvatarUploader } from './AvatarUploader';
+export { default as LazyImage } from './LazyImage';

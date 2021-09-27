@@ -13,7 +13,8 @@
 	.Gallery {
 		&Item {
 			margin-top: 20px;
-			position: relative;
+			width: 100%;
+			// position: relative;
 			height: 300px;
 
 			&Shadow {
