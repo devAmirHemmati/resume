@@ -43,6 +43,7 @@ const LazyImage: VFC<ILazyImageProps> = ({
 				src={src}
 				alt={alt}
 				ref={imageRef}
+				draggable="false"
 				onLoad={handleLoadImage}
 				className={`${styles.image} ${className}`}
 				style={{

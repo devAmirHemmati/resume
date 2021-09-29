@@ -3,10 +3,10 @@ import Head from 'next/head';
 
 const IndexHead: VFC = () => {
 	const siteInformation = {
-		title:
-			'رزومه امیرررضا همتی | Amirreza Hemmati resume',
-		description:
-			'this is resume of Amirreza Hemmatis',
+		title: 'رزومه امیررضا همتی',
+		description: `علاقه و تخصص اصلی من در برنامه نویسی هست،‌ و هرروزسعی میکنم در حال یادگیری و بروزرسانی خودم در این حوزه باشم.
+
+همیشه سعی کردم پروژه هایی که دریافت کردم رو به بهترین شکل توسعه بدم تا بتونم شاهد رضایت کارفرما و مشتریان باشم :)`,
 	};
 	return (
 		<Head>
@@ -32,6 +32,7 @@ const IndexHead: VFC = () => {
 				name="description"
 				content={siteInformation.description}
 			/>
+
 			<meta
 				property="og:site_name"
 				content={siteInformation.title}
