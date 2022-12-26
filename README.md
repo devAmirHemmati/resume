@@ -8,7 +8,6 @@
 
 > styled with: sass<br/><br/>
 http request with: axios<br/><br/>
-stories components with: story book
 
 ### how to start project
 > cd ./resume <br />
@@ -21,5 +20,3 @@ build <br/><br/>
 lint:fix <br/><br/>
 prettier:fix <br/><br/>
 commit 
-
-
